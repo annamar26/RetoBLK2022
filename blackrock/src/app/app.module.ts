@@ -15,12 +15,20 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { HttpClientModule } from "@angular/common/http";
 import { FormApiComponent } from './components/form-api/form-api.component';
+import { FourthquestionComponent } from './components/fourthquestion/fourthquestion.component';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import { ChipComponent } from './components/chip/chip.component';
+import {MatChipsModule} from '@angular/material/chips';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     FormComponent,
-    FormApiComponent
+    FormApiComponent,
+    FourthquestionComponent,
+    ChipComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +43,8 @@ import { FormApiComponent } from './components/form-api/form-api.component';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule, 
     HttpClientModule,
+    DragDropModule,
+    MatChipsModule
 
   ],
   providers: [],
