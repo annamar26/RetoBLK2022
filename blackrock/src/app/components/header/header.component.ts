@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { FirebaseService } from 'src/app/services/firebase.service';
 import { ModalLoginComponent } from '../modal-login/modal-login.component';
-import Cookies from "universal-cookie"
+
 
 @Component({
   selector: 'app-header',
@@ -9,9 +10,8 @@ import Cookies from "universal-cookie"
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-cookies = new Cookies()
-userLogged = this.cookies.get('name')
-  constructor(public dialog: MatDialog) { }
+  userEmail= this.userData.getUser()
+  constructor(public dialog: MatDialog,  private userData: FirebaseService ) { }
 
 	openDialog() {
     const dialogRef = this.dialog.open(ModalLoginComponent);
