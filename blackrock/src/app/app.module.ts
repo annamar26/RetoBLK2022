@@ -19,6 +19,7 @@ import { FourthquestionComponent } from './components/fourthquestion/fourthquest
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { ChipComponent } from './components/chip/chip.component';
 import {MatChipsModule} from '@angular/material/chips';
+import { HomeComponent } from './pages/home/home.component';
 
 
 
@@ -28,7 +29,8 @@ import {MatChipsModule} from '@angular/material/chips';
     FormComponent,
     FormApiComponent,
     FourthquestionComponent,
-    ChipComponent
+    ChipComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
