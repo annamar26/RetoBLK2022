@@ -1,7 +1,8 @@
 <header>
 	<img src="https://www.blackrock.com/amer-retail-k-assets/cache-1542297526000/images/media-bin/web/global/wordmark/blackrock-logo-nav.svg" width="150" />
 	<section>
-		<button mat-stroked-button>Iniciar sesión</button>
+		<button mat-stroked-button (click)="openDialog()">Iniciar sesión</button>
+	
 		<span>
 			<mat-icon aria-label="language" class="language-icon">language</mat-icon>
 			<mat-icon aria-label="arrow" class="arrow-icon">keyboard_arrow_down</mat-icon>

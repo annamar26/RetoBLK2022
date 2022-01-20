@@ -62,7 +62,7 @@ import { GifHelloComponent } from './components/gif-hello/gif-hello.component'
     HttpClientModule,
     DragDropModule,
     MatChipsModule,
-    MatStepperModule
+    MatStepperModule,
     MatChipsModule, 
     MatDialogModule
 
