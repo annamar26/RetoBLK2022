@@ -27,8 +27,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { ModalLoginComponent } from './components/modal-login/modal-login.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { GifHelloComponent } from './components/gif-hello/gif-hello.component';
+import { FifthQuestionComponent } from './components/fifth-question/fifth-question.component'
+import {MatCardModule} from '@angular/material/card';
 import { QuizComponent } from './pages/quiz/quiz.component';
-
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { QuizComponent } from './pages/quiz/quiz.component';
     HeaderComponent,
     HomeComponent,
     ModalLoginComponent,
-    GifHelloComponent
+    GifHelloComponent,
+    FifthQuestionComponent
 
   ],
   imports: [
@@ -65,8 +67,9 @@ import { QuizComponent } from './pages/quiz/quiz.component';
     MatChipsModule,
     MatStepperModule,
     MatChipsModule, 
-    MatDialogModule
-
+    MatDialogModule,
+    MatCardModule,
+    
 
   ],
   providers: [],
