@@ -61,8 +61,10 @@
         </mat-error>
       </mat-form-field>
     </div>
-      <div class="login"> <button mat-button cdkFocusInitial type="submit">
-        <mat-icon class='arrow'>keyboard_arrow_right</mat-icon>Inicia sesión</button></div>
+      <div class="login"> <button mat-button  [mat-dialog-close]="true" cdkFocusInitial type="submit">
+        <mat-icon class='arrow'>keyboard_arrow_right</mat-icon>Inicia sesión</button>
+        <button mat-button  [mat-dialog-close]="true" cdkFocusInitial type="button" (click)="google()">
+          <mat-icon class='arrow'>keyboard_arrow_right</mat-icon>Inicia sesión con Google</button></div>
    
   </form>
 </mat-dialog-content>
