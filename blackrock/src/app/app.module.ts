@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -23,8 +22,11 @@ import { FirstQuestionComponent } from './components/first-question/first-questi
 import { QuizStartComponent } from './components/quiz-start/quiz-start.component';
 import { QuizComponent } from './components/quiz/quiz.component';
 import {MatStepperModule} from '@angular/material/stepper';
-
-
+import { HeaderComponent } from './components/header/header.component';
+import { HomeComponent } from './pages/home/home.component';
+import { ModalLoginComponent } from './components/modal-login/modal-login.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { GifHelloComponent } from './components/gif-hello/gif-hello.component'
 
 @NgModule({
   declarations: [
@@ -36,6 +38,11 @@ import {MatStepperModule} from '@angular/material/stepper';
     FirstQuestionComponent,
     QuizStartComponent,
     QuizComponent
+    HeaderComponent
+    HomeComponent,
+    ModalLoginComponent,
+    GifHelloComponent
+
   ],
   imports: [
     BrowserModule,
@@ -48,11 +55,14 @@ import {MatStepperModule} from '@angular/material/stepper';
     MatIconModule,
     MatButtonModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule, 
+    AngularFireAuthModule,
     HttpClientModule,
     DragDropModule,
     MatChipsModule,
     MatStepperModule
+    MatChipsModule, 
+    MatDialogModule
+
 
   ],
   providers: [],

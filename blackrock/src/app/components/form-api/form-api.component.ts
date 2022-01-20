@@ -16,7 +16,7 @@ export class FormApiComponent implements OnInit {
     mail: new FormControl('', [Validators.required, Validators.email])
   });
 
-  constructor(private APIservice: FakeAPIService) { }  
+  constructor(public APIservice: FakeAPIService) { }  
   
   ngOnInit() {
   }

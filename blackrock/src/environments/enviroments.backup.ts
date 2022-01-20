@@ -1,3 +1,4 @@
+
 export const firebaseConfig = {
     apiKey: "AIzaSyD-vVZvG7c8l3l9ee-kD3eyCwEMuvxlFd4",
     authDomain: "blackrockchallenge-96045.firebaseapp.com",
