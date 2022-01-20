@@ -1,8 +1,8 @@
 <header>
 	<img src="https://www.blackrock.com/amer-retail-k-assets/cache-1542297526000/images/media-bin/web/global/wordmark/blackrock-logo-nav.svg" width="150" />
 	<section>
-		<button mat-button *ngIf="userLogged as name; else elseBlock" (click)="openDialog()">
-			Welcome {{ name}}
+		<button mat-button *ngIf="userEmail | async as user; else elseBlock" (click)="openDialog()">
+			Welcome {{ !user.displayName ? user.email : user.displayName }}
 		  </button>
 		  <ng-template #elseBlock
 		  >

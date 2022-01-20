@@ -1,5 +1,11 @@
+<div class="questionfour">
+<h1>Nombre, arrastra cada enunciado a la columna que consideres correcta</h1>
+</div>
+<div class="formulario">
+
 <div cdkDropListGroup>
     <div class="example-container">
+       
         <h2>Preguntas</h2>
     
         <div
@@ -21,23 +27,24 @@
     <div class="example-container">
       <h2>Ahorrar</h2>
   
-      <div
-        cdkDropList
-        #ahorrarList="cdkDropList"
-        [cdkDropListConnectedTo]="[invertirList]"
-        [cdkDropListData]="ahorrar"
-        class="example-list"
-        (cdkDropListDropped)="drop($event)">
-        <div class="example-box" *ngFor="let item of ahorrar" >
-        <app-chip [content]="item" cdkDrag >
-                  
-        </app-chip>
-      </div>
+        <div
+          cdkDropList
+          #ahorrarList="cdkDropList"
+          [cdkDropListConnectedTo]="[invertirList]"
+          [cdkDropListData]="ahorrar"
+          class="example-list"
+          (cdkDropListDropped)="drop($event)">
+          <div class="example-box" *ngFor="let item of ahorrar" >
+              <app-chip [content]="item" cdkDrag >
+                        
+              </app-chip>
+          </div>
+        </div>
     </div>
-  
+
     <div class="example-container">
       <h2>Invertir</h2>
-  
+
       <div
         cdkDropList
         #invertirList="cdkDropList"
@@ -46,9 +53,12 @@
         class="example-list"
         (cdkDropListDropped)="drop($event)">
         <div class="example-box" *ngFor="let item of invertir">
-        <app-chip [content]="item" cdkDrag>
-                  
-        </app-chip>
+          <app-chip [content]="item" cdkDrag>
+                      
+          </app-chip>
+        </div>
       </div>
     </div>
-  </div>
+<div>
+ 
+</div>

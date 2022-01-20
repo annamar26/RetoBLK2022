@@ -1,0 +1,35 @@
+<div  [formGroup]="questions">
+    <section class="header">
+        <h2>Verdadero o falso</h2>
+        <section> <span>V</span>
+        <span>F</span></section>
+       
+    </section>
+  <section>
+    <p>
+      Entre mas diversificado un portafolio, mas rendimientos puedes esperar
+    </p>
+    <section>
+    <mat-checkbox formControlName="1-true"  (change)="toggleSelection()"></mat-checkbox>
+    <mat-checkbox formControlName="1-false" (change)="toggleSelection()"></mat-checkbox></section>
+  </section>
+  <section>
+      <p>Mayor diversificación es sinónimo de mayor seguridad en tus inversiones</p>
+      <section>
+      <mat-checkbox formControlName="2-true" (change)="toggleSelection()"></mat-checkbox>
+      <mat-checkbox formControlName="2-false" (change)="toggleSelection()"></mat-checkbox></section>
+     
+  </section>
+  <section>
+      <p>Entre mas tipos de instrumentos financieros en tu portafolio menor será tu diversificación</p>
+      <section>
+      <mat-checkbox formControlName="3-true" (change)="toggleSelection()"></mat-checkbox>
+      <mat-checkbox formControlName="3-false" (change)="toggleSelection()"></mat-checkbox></section>
+      
+  </section>
+  <section>
+      <p>Un portafolio diversificado siempre es preferible a uno no diversificado sin importar el tipo de inversionista</p>
+     <section> <mat-checkbox formControlName="4-true" (change)="toggleSelection()"></mat-checkbox>
+      <mat-checkbox formControlName="4-true" (change)="toggleSelection()"></mat-checkbox></section>
+  </section>
+</div>
