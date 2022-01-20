@@ -4,7 +4,6 @@
     <mat-step [stepControl]="firstFormGroup">
         <app-first-question></app-first-question>
         <div>
-            <button mat-button matStepperPrevious>Back</button>
             <button mat-button matStepperNext>Next</button>
         </div>
     </mat-step>
@@ -15,11 +14,26 @@
             <button mat-button matStepperNext>Next</button>
         </div>
     </mat-step>
-    <mat-step>
+    <mat-step [stepControl]="thirdFormGroup">
         <app-first-question></app-first-question>
         <div>
             <button mat-button matStepperPrevious>Back</button>
             <button mat-button matStepperNext>Next</button>
+        </div>
+    </mat-step>
+    <mat-step [stepControl]="fourthFormGroup">
+        <app-first-question></app-first-question>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+        </div>
+    </mat-step>
+    <mat-step [stepControl]="fifthFormGroup">
+        <app-first-question></app-first-question>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button > <mat-icon class='iconBtn' aria-hidden='false' aria-label='Arrow forward'>arrow_forward_ios            
+            </mat-icon> Ver mis resultados</button>
         </div>
     </mat-step>
   </mat-stepper>

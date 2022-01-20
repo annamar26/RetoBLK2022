@@ -21,7 +21,6 @@ import {MatChipsModule} from '@angular/material/chips';
 import { FooterComponent } from './components/footer/footer.component';
 import { FirstQuestionComponent } from './components/first-question/first-question.component';
 import { QuizStartComponent } from './components/quiz-start/quiz-start.component';
-import { QuizComponent } from './components/quiz/quiz.component';
 import {MatStepperModule} from '@angular/material/stepper';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -30,6 +29,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { GifHelloComponent } from './components/gif-hello/gif-hello.component';
 import { FifthQuestionComponent } from './components/fifth-question/fifth-question.component'
 import {MatCardModule} from '@angular/material/card';
+import { QuizComponent } from './pages/quiz/quiz.component';
 
 
 @NgModule({
