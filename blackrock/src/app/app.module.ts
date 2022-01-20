@@ -19,9 +19,13 @@ import { FourthquestionComponent } from './components/fourthquestion/fourthquest
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { ChipComponent } from './components/chip/chip.component';
 import {MatChipsModule} from '@angular/material/chips';
+
+import { HomeComponent } from './pages/home/home.component';
+
 import { ModalLoginComponent } from './components/modal-login/modal-login.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { GifHelloComponent } from './components/gif-hello/gif-hello.component'
+
 
 
 
@@ -32,8 +36,10 @@ import { GifHelloComponent } from './components/gif-hello/gif-hello.component'
     FormApiComponent,
     FourthquestionComponent,
     ChipComponent,
+    HomeComponent,
     ModalLoginComponent,
     GifHelloComponent
+
   ],
   imports: [
     BrowserModule,
