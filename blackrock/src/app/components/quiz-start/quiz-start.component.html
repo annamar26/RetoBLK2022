@@ -1,10 +1,10 @@
 <section class="intro">
-    <form [formGroup]="userquiz">
+    <form [formGroup]="userquiz" (ngSubmit)= 'startQuiz()'>
     <h1> Aquí inicia tu travesía... </h1>
         <div class="quizNameComponer">
             <mat-form-field class="example-form-field" appearance='legacy'>
                 <mat-label>Ingresa tu nombre</mat-label>
-                <input matInput type="text" formControlName="name">
+                <input matInput #name type="text" formControlName="name">
                 <mat-error *ngIf="f['name'].touched">
                     <span *ngIf="f['name'].errors && f['name'].errors['required']">Este campo es obligatorio.</span>
                     <span *ngIf="f['name'].errors && f['name'].errors['minlength']">Ingresa un nombre válido.</span>

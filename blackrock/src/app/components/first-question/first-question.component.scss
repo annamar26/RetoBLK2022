@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+$bg-color: #ffce00;
+
+.firstQuestion{
+    background-color: $bg-color;
+    height: 100%;
+    h1{
+        padding: 2rem;
+        font-family: 'Noto Sans', sans-serif;
+        font-weight: bold;
+        font-size: 2rem;
+    }
+}
+
+.optionscontainer{
+    display: flex;
+    justify-content: space-evenly;
+    ::ng-deep .mat-chip-list-wrapper{
+        justify-content: center;
+        margin-bottom: 3rem;
+    }
+    ::ng-deep .mat-chip.mat-standard-chip{
+        padding: 1.6rem;
+        font-size: 1.3em;
+        font-family: 'Noto Sans', sans-serif;
+        background-color: black;
+        color: white;
+        margin: 1em;
+    }
+    .mat-chip.mat-standard-chip.mat-chip-selected.mat-primary {
+        background-color: #ff4713 !important;
+    }
+}
