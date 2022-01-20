@@ -1,0 +1,15 @@
+<form [formGroup]="userquiz">
+<h1> Para comenzar... </h1>
+    <div class="quizNameComponer">
+        <mat-form-field class="example-form-field" appearance="fill">
+            <mat-label>Ingresa tu nombre</mat-label>
+            <input matInput type="text" formControlName="name">
+            <mat-error *ngIf="f['name'].touched">
+                <span *ngIf="f['name'].errors && f['name'].errors['required']">Este campo es obligatorio.</span>
+                <span *ngIf="f['name'].errors && f['name'].errors['minlength']">Ingresa un nombre válido.</span>
+            </mat-error>
+        </mat-form-field>
+    </div>
+  <h2>¡...Qué la fuerza te acompañe!</h2>
+  <button mat-stroked-button type="submit" >Comenzar</button>
+</form>

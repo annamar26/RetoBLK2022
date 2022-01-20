@@ -11,8 +11,7 @@
           [cdkDropListEnterPredicate]="noReturnPredicate"
           (cdkDropListDropped)="drop($event)">
           <div class="example-box" *ngFor="let item of questions" >
-              <app-chip [content]="item" cdkDrag>
-                  
+              <app-chip [content]="item" cdkDrag>                  
               </app-chip>
           </div>
         </div>
