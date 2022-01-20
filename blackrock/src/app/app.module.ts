@@ -27,7 +27,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ModalLoginComponent } from './components/modal-login/modal-login.component';
 import {MatDialogModule} from '@angular/material/dialog';
-import { GifHelloComponent } from './components/gif-hello/gif-hello.component'
+import { GifHelloComponent } from './components/gif-hello/gif-hello.component';
+import { SecondquestionComponent } from './components/secondquestion/secondquestion.component'
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { GifHelloComponent } from './components/gif-hello/gif-hello.component'
     HeaderComponent,
     HomeComponent,
     ModalLoginComponent,
-    GifHelloComponent
+    GifHelloComponent,
+    SecondquestionComponent
 
   ],
   imports: [
