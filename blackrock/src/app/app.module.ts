@@ -19,6 +19,7 @@ import { FourthquestionComponent } from './components/fourthquestion/fourthquest
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { ChipComponent } from './components/chip/chip.component';
 import {MatChipsModule} from '@angular/material/chips';
+import { HeaderComponent } from './components/header/header.component';
 
 
 
@@ -28,7 +29,8 @@ import {MatChipsModule} from '@angular/material/chips';
     FormComponent,
     FormApiComponent,
     FourthquestionComponent,
-    ChipComponent
+    ChipComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,7 @@ import {MatChipsModule} from '@angular/material/chips';
     MatIconModule,
     MatButtonModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule, 
+    AngularFireAuthModule,
     HttpClientModule,
     DragDropModule,
     MatChipsModule
