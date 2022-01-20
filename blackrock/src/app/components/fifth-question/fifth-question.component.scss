@@ -1,0 +1,45 @@
+div {
+  background-color: #ffce00;
+  height: 100%;
+  padding: 0.5rem;
+  h1 {
+    margin: 2rem 0rem 2rem 2rem;
+    font-weight: bold;
+    font-size: 36px;
+  }
+  section {
+    display: grid;
+    justify-content: center;
+    width: 90%;
+    padding: 0%;
+    grid-template-columns: 210px 210px;
+    column-gap: 150px;
+    row-gap: 25px;
+
+    .mat-card {
+      background-color: #ff4713;
+      justify-items: center;
+      width: 210px;
+
+      .mat-card-title {
+        color: #fff;
+        font-size: 16px;
+        font-weight: lighter;
+        text-align: center;
+      }
+
+      img {
+        border-radius: 0%;
+        width: 210px;
+        margin-left: 1px;
+      }
+    }
+
+    .mat-card:active {
+      background-color: white;
+      .mat-card-title {
+        color: #ff4713;
+      }
+    }
+  }
+}
