@@ -29,6 +29,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { GifHelloComponent } from './components/gif-hello/gif-hello.component';
 import { ThirdQuestionComponent } from './components/third-question/third-question.component'
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { SecondquestionComponent } from './components/secondquestion/secondquestion.component';
+import { MatSliderModule } from '@angular/material/slider';
 import { FifthQuestionComponent } from './components/fifth-question/fifth-question.component'
 import {MatCardModule} from '@angular/material/card';
 import { QuizComponent } from './pages/quiz/quiz.component';
@@ -49,8 +51,13 @@ import { QuizComponent } from './pages/quiz/quiz.component';
     HomeComponent,
     ModalLoginComponent,
     GifHelloComponent,
+
     ThirdQuestionComponent,
+
+    SecondquestionComponent,
+
     FifthQuestionComponent
+
 
   ],
   imports: [
@@ -69,12 +76,16 @@ import { QuizComponent } from './pages/quiz/quiz.component';
     DragDropModule,
     MatChipsModule,
     MatStepperModule,
+    MatChipsModule,
+    MatDialogModule,
+		MatSliderModule
     MatChipsModule, 
     MatDialogModule,
     MatCheckboxModule,
 
     MatCardModule,
     
+
 
   ],
   providers: [],
