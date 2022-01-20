@@ -1,7 +1,13 @@
 <header>
 	<img src="https://www.blackrock.com/amer-retail-k-assets/cache-1542297526000/images/media-bin/web/global/wordmark/blackrock-logo-nav.svg" width="150" />
 	<section>
-		<button mat-stroked-button (click)="openDialog()">Iniciar sesión</button>
+		<button mat-button *ngIf="userLogged as name; else elseBlock">
+			Welcome {{ name}}
+		  </button>
+		  <ng-template #elseBlock
+		  >
+		<button mat-stroked-button (click)="openDialog()">Iniciar sesión</button></ng-template
+		>
 	
 		<span>
 			<mat-icon aria-label="language" class="language-icon">language</mat-icon>
