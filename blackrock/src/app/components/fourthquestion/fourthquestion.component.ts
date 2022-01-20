@@ -1,5 +1,5 @@
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-fourthquestion',
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./fourthquestion.component.scss']
 })
 export class FourthquestionComponent  {
-	
+  @Input() userName: string='';
 	playAudio(){
 		const audio = new Audio();
 		audio.src = "../../../assets/draganddrop_sound.mp3";
