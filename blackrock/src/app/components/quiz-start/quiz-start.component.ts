@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -11,11 +11,16 @@ export class QuizStartComponent implements OnInit {
   userquiz = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(2)]),
   })
+  @ViewChild('name') nameKey!: ElementRef; 
   constructor() { }
 
   ngOnInit(): void {
   }
   get f(): { [key: string]: AbstractControl } {
     return this.userquiz.controls;
+  }
+
+  startQuiz(){
+    sessionStorage.setItem('name', this.nameKey.nativeElement.value);
   }
 }
