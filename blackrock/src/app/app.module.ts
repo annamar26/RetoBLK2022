@@ -20,6 +20,11 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 import { ChipComponent } from './components/chip/chip.component';
 import {MatChipsModule} from '@angular/material/chips';
 import { HeaderComponent } from './components/header/header.component';
+import { HomeComponent } from './pages/home/home.component';
+import { ModalLoginComponent } from './components/modal-login/modal-login.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { GifHelloComponent } from './components/gif-hello/gif-hello.component'
+
 
 
 
@@ -31,6 +36,10 @@ import { HeaderComponent } from './components/header/header.component';
     FourthquestionComponent,
     ChipComponent,
     HeaderComponent
+    HomeComponent,
+    ModalLoginComponent,
+    GifHelloComponent
+
   ],
   imports: [
     BrowserModule,
@@ -46,7 +55,8 @@ import { HeaderComponent } from './components/header/header.component';
     AngularFireAuthModule,
     HttpClientModule,
     DragDropModule,
-    MatChipsModule
+    MatChipsModule, 
+    MatDialogModule
 
   ],
   providers: [],
