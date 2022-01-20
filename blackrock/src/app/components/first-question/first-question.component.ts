@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatChip } from '@angular/material/chips';
 
 @Component({
@@ -7,11 +7,10 @@ import { MatChip } from '@angular/material/chips';
   styleUrls: ['./first-question.component.scss']
 })
 export class FirstQuestionComponent implements OnInit {
-  public name: string='';
+  @Input() userName: any;
   constructor() { }
 
-  ngOnInit(): void {
-    this.name = localStorage.getItem('name')!
+  ngOnInit(): void {   
   }
 
   options = new Set(['Acciones', 'Bonos', 'Derivados', 'Opciones', 'EFT\'s', 'Fondo de inversión', 'Commodity', 'Moneda/ Tipo de Cambio', 'Cetes', 'Crypto']);

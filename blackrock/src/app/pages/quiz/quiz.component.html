@@ -1,15 +1,15 @@
-<app-quiz-start></app-quiz-start>
+<app-quiz-start (userName)="pullname($event)" ></app-quiz-start>
 
 <mat-stepper orientation="vertical" #stepper>
     <mat-step [stepControl]="firstFormGroup">
-        <app-first-question></app-first-question>
+        <app-first-question [userName]="name"></app-first-question>
         <div>
             <button mat-button matStepperNext><mat-icon class='iconBtn' aria-hidden='false' aria-label='arrow_circle_down'>arrow_circle_down            
             </mat-icon></button>
         </div>
     </mat-step>
     <mat-step [stepControl]="secondFormGroup">
-        <app-secondquestion></app-secondquestion>
+        <app-secondquestion [userName]="name"></app-secondquestion>
         <div>
             <button mat-button matStepperPrevious><mat-icon class='iconBtn' aria-hidden='false' aria-label='arrow_circle_up'>arrow_circle_up            
             </mat-icon></button>
@@ -27,7 +27,7 @@
         </div>
     </mat-step>
     <mat-step [stepControl]="fourthFormGroup">
-        <app-fourthquestion></app-fourthquestion>
+        <app-fourthquestion [userName]="name"></app-fourthquestion>
         <div>
             <button mat-button matStepperPrevious><mat-icon class='iconBtn' aria-hidden='false' aria-label='arrow_circle_up'>arrow_circle_up            
             </mat-icon></button>
@@ -36,7 +36,7 @@
         </div>
     </mat-step>
     <mat-step [stepControl]="fifthFormGroup">
-        <app-fifth-question></app-fifth-question>
+        <app-fifth-question [userName]="name"></app-fifth-question>
         <div>
             <button mat-button matStepperPrevious><mat-icon class='iconBtn' aria-hidden='false' aria-label='arrow_circle_up'>arrow_circle_up            
             </mat-icon></button>
