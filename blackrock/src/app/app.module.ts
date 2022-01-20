@@ -29,6 +29,7 @@ import { ModalLoginComponent } from './components/modal-login/modal-login.compon
 import {MatDialogModule} from '@angular/material/dialog';
 import { GifHelloComponent } from './components/gif-hello/gif-hello.component';
 import { ThirdQuestionComponent } from './components/third-question/third-question.component'
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 @NgModule({
@@ -66,7 +67,8 @@ import { ThirdQuestionComponent } from './components/third-question/third-questi
     MatChipsModule,
     MatStepperModule,
     MatChipsModule, 
-    MatDialogModule
+    MatDialogModule,
+    MatCheckboxModule
 
 
   ],
