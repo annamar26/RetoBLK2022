@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { FakeAPIService } from 'src/app/services/fake-api.service';
-import Cookies from "universal-cookie"
+import Cookies from 'universal-cookie/es6';
+
 
 @Component({
   selector: 'app-modal-login',
