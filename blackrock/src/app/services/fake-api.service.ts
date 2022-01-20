@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { user } from '../../classes/user';
+import { EmailValidator } from '@angular/forms';
 
 const ruta = "https://fakeapi-bk.herokuapp.com/users"
 
@@ -14,8 +15,8 @@ export class FakeAPIService {
     return this.http.post(`${ruta}`, user);
   }
 
-   getUsersData(){
-    return this.http.get(`${ruta}`)
+   getUserData(email: string, password:string){
+    return this.http.get(`${ruta}`, {params: {email: email, password: password}})
   }
 //   
 

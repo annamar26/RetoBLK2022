@@ -27,14 +27,32 @@ export class ModalLoginComponent implements OnInit {
   }
 
    logIn(){
-   
-  this.APIservice.getUsersData()
-   
-    .subscribe((users: any)=> {
-      const userEmails =users.filter((userData: any)=> userData.email=== this.user.value.email);
-      console.log(userEmails)
-      const userLogged = userEmails.filter((emails: any)=> emails.password=== this.user.value.password)
-console.log(userLogged)
-  })
+     const cookies = new Cookies
+    
+  this.APIservice.getUserData(this.user.value.mail, this.user.value.password)
+  
+    .subscribe(
+      
+      (users: any)=> {
+      if(users.length>0){
+         console.log(users)
+  
+      cookies.set("id", users[0].id, {path:'/'});
+      cookies.set("name", users[0].name, {path:'/'});
+      cookies.set("email", users[0].email, {path:'/'});
+      console.log(cookies.get("email"))
+      }else{
+        alert('Verifique sus credenciales')
+      }
+     
+            
+      
+      }, 
+      (error=> {
+        alert("Ocurrió un error con el servidor, intente nuevamente");
+        console.log(error)}))
+      
+    
+  
 
 }}
