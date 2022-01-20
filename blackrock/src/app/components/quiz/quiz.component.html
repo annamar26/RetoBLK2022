@@ -1,0 +1,25 @@
+<app-quiz-start></app-quiz-start>
+
+<mat-stepper orientation="vertical" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+        <app-first-question></app-first-question>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+        </div>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+        <app-first-question></app-first-question>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+        </div>
+    </mat-step>
+    <mat-step>
+        <app-first-question></app-first-question>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+        </div>
+    </mat-step>
+  </mat-stepper>

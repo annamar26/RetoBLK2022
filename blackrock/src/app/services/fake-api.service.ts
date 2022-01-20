@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { user } from '../../classes/user';
 
-const ruta = "http://localhost:3000/users"
+const ruta = "https://fakeapi-bk.herokuapp.com/users"
 
 @Injectable({
   providedIn: 'root'
@@ -10,12 +10,14 @@ const ruta = "http://localhost:3000/users"
 export class FakeAPIService {
   constructor(private http: HttpClient) { }
 
-  getUser() {
-    return this.http.get(`${ruta}`);
-  }
-
-  register(user: user) {
+   register(user: user) {
     return this.http.post(`${ruta}`, user);
   }
+
+   getUsersData(){
+    return this.http.get(`${ruta}`)
+  }
+//   
+
 
 }

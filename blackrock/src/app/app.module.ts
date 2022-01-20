@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,7 +19,15 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 import { ChipComponent } from './components/chip/chip.component';
 import {MatChipsModule} from '@angular/material/chips';
 import { FooterComponent } from './components/footer/footer.component';
-
+import { FirstQuestionComponent } from './components/first-question/first-question.component';
+import { QuizStartComponent } from './components/quiz-start/quiz-start.component';
+import { QuizComponent } from './components/quiz/quiz.component';
+import {MatStepperModule} from '@angular/material/stepper';
+import { HeaderComponent } from './components/header/header.component';
+import { HomeComponent } from './pages/home/home.component';
+import { ModalLoginComponent } from './components/modal-login/modal-login.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { GifHelloComponent } from './components/gif-hello/gif-hello.component'
 
 
 @NgModule({
@@ -30,7 +37,15 @@ import { FooterComponent } from './components/footer/footer.component';
     FormApiComponent,
     FourthquestionComponent,
     ChipComponent,
-    FooterComponent
+    FooterComponent,
+    FirstQuestionComponent,
+    QuizStartComponent,
+    QuizComponent
+    HeaderComponent
+    HomeComponent,
+    ModalLoginComponent,
+    GifHelloComponent
+
   ],
   imports: [
     BrowserModule,
@@ -43,10 +58,14 @@ import { FooterComponent } from './components/footer/footer.component';
     MatIconModule,
     MatButtonModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule, 
+    AngularFireAuthModule,
     HttpClientModule,
     DragDropModule,
-    MatChipsModule
+    MatChipsModule,
+    MatStepperModule
+    MatChipsModule, 
+    MatDialogModule
+
 
   ],
   providers: [],
