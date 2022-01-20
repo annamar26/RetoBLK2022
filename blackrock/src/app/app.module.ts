@@ -40,8 +40,8 @@ import { GifHelloComponent } from './components/gif-hello/gif-hello.component'
     FooterComponent,
     FirstQuestionComponent,
     QuizStartComponent,
-    QuizComponent
-    HeaderComponent
+    QuizComponent,
+    HeaderComponent,
     HomeComponent,
     ModalLoginComponent,
     GifHelloComponent
