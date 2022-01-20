@@ -7,6 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./fourthquestion.component.scss']
 })
 export class FourthquestionComponent  {
+	
+	playAudio(){
+		const audio = new Audio();
+		audio.src = "../../../assets/draganddrop_sound.mp3";
+		audio.load();
+    audio.play();
+	}
 
   ahorrar = ["Te ayuda a tener más confianza"];
 
@@ -15,6 +22,7 @@ export class FourthquestionComponent  {
   "Existen múltiples instrumentos financieros para esta estrategia","Me producirá mas dinero en el futuro", "Me protege contra la inflación"];
 
   drop(event: CdkDragDrop <string[]>) {
+		this.playAudio();
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
@@ -23,7 +31,6 @@ export class FourthquestionComponent  {
         event.container.data,
         event.previousIndex,
         event.currentIndex,
-
       );
     }
   }
