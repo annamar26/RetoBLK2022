@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalLoginComponent } from '../modal-login/modal-login.component';
+import Cookies from "universal-cookie"
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,8 @@ import { ModalLoginComponent } from '../modal-login/modal-login.component';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
+cookies = new Cookies()
+userLogged = this.cookies.get('name')
   constructor(public dialog: MatDialog) { }
 
 	openDialog() {
