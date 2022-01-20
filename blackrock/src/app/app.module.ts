@@ -28,7 +28,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { ModalLoginComponent } from './components/modal-login/modal-login.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { GifHelloComponent } from './components/gif-hello/gif-hello.component';
-import { SecondquestionComponent } from './components/secondquestion/secondquestion.component'
+import { SecondquestionComponent } from './components/secondquestion/secondquestion.component';
+import { MatSliderModule } from '@angular/material/slider';
 
 
 @NgModule({
@@ -65,9 +66,9 @@ import { SecondquestionComponent } from './components/secondquestion/secondquest
     DragDropModule,
     MatChipsModule,
     MatStepperModule,
-    MatChipsModule, 
-    MatDialogModule
-
+    MatChipsModule,
+    MatDialogModule,
+		MatSliderModule
 
   ],
   providers: [],
