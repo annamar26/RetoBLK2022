@@ -1,0 +1,17 @@
+<header>
+	<img src="https://www.blackrock.com/amer-retail-k-assets/cache-1542297526000/images/media-bin/web/global/wordmark/blackrock-logo-nav.svg" width="150" />
+	<section>
+		<button mat-button *ngIf="userEmail | async as user; else elseBlock" (click)="openDialog()">
+			Welcome {{ !user.displayName ? user.email : user.displayName }}
+		  </button>
+		  <ng-template #elseBlock
+		  >
+		<button mat-stroked-button (click)="openDialog()">Iniciar sesión</button></ng-template
+		>
+	
+		<span>
+			<mat-icon aria-label="language" class="language-icon">language</mat-icon>
+			<mat-icon aria-label="arrow" class="arrow-icon">keyboard_arrow_down</mat-icon>
+		</span>
+	</section>
+</header>
