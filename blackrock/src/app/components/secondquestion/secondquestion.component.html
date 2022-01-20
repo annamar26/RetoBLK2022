@@ -1,0 +1,25 @@
+<div>
+	<h2> ¿Qué tan confiado de tus conocimientos financieros te sientes al tomar decisiones de inversión?</h2>
+	<section>
+		<div>
+			<p style="font-size: 40px">🤪</p>
+			<p>Nada confiado</p>
+		</div>
+		<mat-slider
+			thumbLabel
+			tickInterval="1000"
+			step="10"
+			min="0"
+			max="100"
+			[(ngModel)]="value"
+			aria-label="units">
+		</mat-slider>
+		<div>
+			<p style="font-size: 40px">😎</p>
+			<p>Extremadamente confiado</p>
+		</div>
+	</section>
+	<section>
+		<span>{{value}}%</span>
+	</section>
+</div>

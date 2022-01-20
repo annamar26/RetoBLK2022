@@ -1,20 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+$bg-color: #ffce00;
+
 div {
-  background-color: #ffce00;
+  background-color: $bg-color;
   height: 100%;
   padding: 0.5rem;
   h1 {
     margin: 2rem 0rem 2rem 2rem;
     font-weight: bold;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 36px;
+    padding-top: 2rem;
   }
   section {
     display: grid;
     justify-content: center;
     width: 90%;
-    padding: 0%;
-    grid-template-columns: 210px 210px;
+    padding-left: 5%;
+    padding-top: 2rem;
+    grid-template-columns: 210px 210px 210px;
     column-gap: 150px;
-    row-gap: 25px;
+    row-gap: 50px;
 
     .mat-card {
       background-color: #ff4713;
@@ -23,6 +29,7 @@ div {
 
       .mat-card-title {
         color: #fff;
+        font-family: 'Noto Sans', sans-serif;
         font-size: 16px;
         font-weight: lighter;
         text-align: center;
