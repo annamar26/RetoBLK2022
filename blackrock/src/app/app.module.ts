@@ -19,6 +19,10 @@ import { FourthquestionComponent } from './components/fourthquestion/fourthquest
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { ChipComponent } from './components/chip/chip.component';
 import {MatChipsModule} from '@angular/material/chips';
+import { FirstQuestionComponent } from './components/first-question/first-question.component';
+import { QuizStartComponent } from './components/quiz-start/quiz-start.component';
+import { QuizComponent } from './components/quiz/quiz.component';
+import {MatStepperModule} from '@angular/material/stepper';
 
 
 
@@ -28,7 +32,10 @@ import {MatChipsModule} from '@angular/material/chips';
     FormComponent,
     FormApiComponent,
     FourthquestionComponent,
-    ChipComponent
+    ChipComponent,
+    FirstQuestionComponent,
+    QuizStartComponent,
+    QuizComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +51,8 @@ import {MatChipsModule} from '@angular/material/chips';
     AngularFireAuthModule, 
     HttpClientModule,
     DragDropModule,
-    MatChipsModule
+    MatChipsModule,
+    MatStepperModule
 
   ],
   providers: [],
