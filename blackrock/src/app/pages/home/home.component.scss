@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+
 section {
   display: flex;
   flex-direction: column;
@@ -14,9 +16,11 @@ section {
       color: #fff;
       width: 50%;
       h1 {
+				font-family: "Noto Sans", sans-serif;
         font-size: 80px;
+				font-weight: 700;
         margin-bottom: 7rem;
-        line-height: normal;
+        line-height: 110%;
         height: 200px;
       }
       p {

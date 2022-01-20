@@ -27,6 +27,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { ModalLoginComponent } from './components/modal-login/modal-login.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { GifHelloComponent } from './components/gif-hello/gif-hello.component';
+import { SecondquestionComponent } from './components/secondquestion/secondquestion.component';
+import { MatSliderModule } from '@angular/material/slider';
 import { FifthQuestionComponent } from './components/fifth-question/fifth-question.component'
 import {MatCardModule} from '@angular/material/card';
 import { QuizComponent } from './pages/quiz/quiz.component';
@@ -47,7 +49,9 @@ import { QuizComponent } from './pages/quiz/quiz.component';
     HomeComponent,
     ModalLoginComponent,
     GifHelloComponent,
+    SecondquestionComponent,
     FifthQuestionComponent
+
 
   ],
   imports: [
@@ -66,10 +70,14 @@ import { QuizComponent } from './pages/quiz/quiz.component';
     DragDropModule,
     MatChipsModule,
     MatStepperModule,
+    MatChipsModule,
+    MatDialogModule,
+		MatSliderModule
     MatChipsModule, 
     MatDialogModule,
     MatCardModule,
     
+
 
   ],
   providers: [],
