@@ -70,10 +70,8 @@ import { QuizComponent } from './pages/quiz/quiz.component';
     DragDropModule,
     MatChipsModule,
     MatStepperModule,
-    MatChipsModule,
     MatDialogModule,
-		MatSliderModule
-    MatChipsModule, 
+		MatSliderModule,     
     MatDialogModule,
     MatCardModule,
     
