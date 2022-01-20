@@ -18,6 +18,7 @@ import { FourthquestionComponent } from './components/fourthquestion/fourthquest
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { ChipComponent } from './components/chip/chip.component';
 import {MatChipsModule} from '@angular/material/chips';
+import { FooterComponent } from './components/footer/footer.component';
 import { FirstQuestionComponent } from './components/first-question/first-question.component';
 import { QuizStartComponent } from './components/quiz-start/quiz-start.component';
 import { QuizComponent } from './components/quiz/quiz.component';
@@ -28,6 +29,7 @@ import { ModalLoginComponent } from './components/modal-login/modal-login.compon
 import {MatDialogModule} from '@angular/material/dialog';
 import { GifHelloComponent } from './components/gif-hello/gif-hello.component'
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +37,7 @@ import { GifHelloComponent } from './components/gif-hello/gif-hello.component'
     FormApiComponent,
     FourthquestionComponent,
     ChipComponent,
+    FooterComponent,
     FirstQuestionComponent,
     QuizStartComponent,
     QuizComponent
