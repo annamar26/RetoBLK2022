@@ -1,0 +1,47 @@
+<form (ngSubmit)="register()" [formGroup]="user">
+    <mat-form-field appearance="legacy">
+      <mat-label>Ingresa tu nombre completo</mat-label>
+      <input matInput id="name" name="name" formControlName="name" placeholder="Nombre completo" />
+      <mat-error *ngIf="f['name'].touched">
+          <span *ngIf="f['name'].errors && f['name'].errors['required']">Este campo es obligatorio.</span>
+          <span *ngIf="f['name'].errors && f['name'].errors['minlength']">Ingresa un nombre válido.</span>
+      </mat-error>
+  </mat-form-field>
+  
+    <mat-form-field appearance="legacy">
+      <mat-label>Ingresa tu email</mat-label>
+      <input
+      id="email"
+      name="mail"
+      matInput
+        placeholder="pat@example.com"
+        formControlName="mail"
+        required
+      />
+      <mat-error *ngIf="f['mail'].touched">
+          <span *ngIf="f['mail'].errors && f['mail'].errors['required']">Este campo es obligatorio.</span>
+          <span *ngIf="f['mail'].errors && f['mail'].errors['email']">Ingresa un correo válido.</span>
+      </mat-error>
+    </mat-form-field>
+  
+    <mat-form-field appearance="legacy">
+      <mat-label>Ingresa tu contraseña</mat-label>
+      <input matInput id="password" name="password" formControlName="password" [type]="hide ? 'password' : 'text'" />
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"      
+      >
+        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+      <mat-error *ngIf="f['password'].touched">
+          <span *ngIf="f['password'].errors && f['password'].errors['required']">Este campo es obligatorio.</span>
+          <span *ngIf="f['password'].errors && f['password'].errors['minlength']">La contraseña debe contener al menos 8 caracteres.</span>
+      </mat-error>
+    </mat-form-field>
+  
+    <button mat-stroked-button type="submit" >Regístrate</button>
+  </form>
+  

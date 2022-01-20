@@ -45,4 +45,4 @@ testem.log
 .DS_Store
 Thumbs.db
 
-blackrock/src/environments/environments.backup.ts
+environments.backup.ts
