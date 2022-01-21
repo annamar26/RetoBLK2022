@@ -34,6 +34,8 @@ import { MatSliderModule } from '@angular/material/slider';
 import { FifthQuestionComponent } from './components/fifth-question/fifth-question.component'
 import {MatCardModule} from '@angular/material/card';
 import { QuizComponent } from './pages/quiz/quiz.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 
 @NgModule({
@@ -51,12 +53,10 @@ import { QuizComponent } from './pages/quiz/quiz.component';
     HomeComponent,
     ModalLoginComponent,
     GifHelloComponent,
-
     ThirdQuestionComponent,
-
     SecondquestionComponent,
-
-    FifthQuestionComponent
+    FifthQuestionComponent,
+    ProfileComponent
 
 
   ],
@@ -80,10 +80,8 @@ import { QuizComponent } from './pages/quiz/quiz.component';
 		MatSliderModule,
     MatDialogModule,
     MatCheckboxModule,
-
     MatCardModule,
-
-
+		MatProgressBarModule,
 
   ],
   providers: [],
