@@ -5,7 +5,7 @@ $bg-color: #ffce00;
   font-family: "Noto Sans", sans-serif;
   font-weight: bold;
   background-color: $bg-color;
-  height: 90vh;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -18,9 +18,8 @@ $bg-color: #ffce00;
     font-weight: 700;
     margin-bottom: 33px;
   }
-  section {
-    width: 85%;
-    display: flex;
+  section {width: 80%;
+        display: flex;
     flex-direction: row;
     justify-content: flex-end; 
 
@@ -35,11 +34,12 @@ $bg-color: #ffce00;
         background-color: #ff4713;
         width: 120px;
         border-radius: 20px;
+        margin-right: 90px;
       }
-      #pig{
-        margin-right: 33px;
-      }
-    }
+    #pig{
+       margin-right: 38px;
+     }
+     }
   }
 }
 
