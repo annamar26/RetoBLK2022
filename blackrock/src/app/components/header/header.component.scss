@@ -28,6 +28,10 @@ header {
     .name-user {
       border-color: white;
     }
+    .name-user:hover{
+      background-color: white;
+      color: black;
+    }
     span {
       padding-left: 1rem;
       .language-icon {

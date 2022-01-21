@@ -13,11 +13,15 @@ export class QuizStartComponent implements OnInit {
  userquiz= new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(2)]),
   })
- 
+
+ user: any
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this.user= sessionStorage.getItem('Nombre')
   }
+
   get f(): { [key: string]: AbstractControl } {
     return this.userquiz.controls;
   }

@@ -8,9 +8,19 @@ import { MatChip } from '@angular/material/chips';
 })
 export class FirstQuestionComponent implements OnInit {
   @Input() userName: any;
+  playAudio(){
+		const audio = new Audio();
+		audio.src = "../../../assets/draganddrop_sound.mp3";
+		audio.load();
+    audio.play();
+	}
+ 
+  user: any
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this.user= sessionStorage.getItem('Nombre')
   }
 
   options = new Set(['Acciones', 'Bonos', 'Derivados', 'Opciones', 'EFT\'s', 'Fondo de inversión', 'Commodity', 'Moneda/Tipo de Cambio', 'Cetes', 'Crypto']);
@@ -18,5 +28,7 @@ export class FirstQuestionComponent implements OnInit {
   toggleSelection(chip: MatChip) {
     chip.toggleSelected();
     console.log(chip.value)
+    this.playAudio();
+
  }
 }
