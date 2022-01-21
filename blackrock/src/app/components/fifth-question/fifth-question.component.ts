@@ -9,16 +9,22 @@ import {MatCardModule} from '@angular/material/card';
 export class FifthQuestionComponent implements OnInit {
   @Input() userName: string='';
 
-  
+  user: any
+
  isVisited = false;
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this.user= sessionStorage.getItem('Nombre')
   }
   
-  checkVisited() {
-     this.isVisited = !this.isVisited;
+
+  checkVisited(event: any) {
+    const valor = event.target.value
+     console.log(valor)
+  
   }
+
   
 }

@@ -1,15 +1,13 @@
-<app-quiz-start (userName)="pullname($event)" ></app-quiz-start>
-
 <mat-stepper orientation="vertical" #stepper>
     <mat-step [stepControl]="firstFormGroup">
-        <app-first-question [userName]="name"></app-first-question>
+        <app-first-question ></app-first-question>
         <div>
             <button mat-button matStepperNext><mat-icon class='iconBtn' aria-hidden='false' aria-label='arrow_circle_down'>arrow_circle_down            
             </mat-icon></button>
         </div>
     </mat-step>
     <mat-step [stepControl]="secondFormGroup">
-        <app-secondquestion [userName]="name"></app-secondquestion>
+        <app-secondquestion ></app-secondquestion>
         <div>
             <button mat-button matStepperPrevious><mat-icon class='iconBtn' aria-hidden='false' aria-label='arrow_circle_up'>arrow_circle_up            
             </mat-icon></button>
@@ -27,7 +25,7 @@
         </div>
     </mat-step>
     <mat-step [stepControl]="fourthFormGroup">
-        <app-fourthquestion [userName]="name"></app-fourthquestion>
+        <app-fourthquestion ></app-fourthquestion>
         <div>
             <button mat-button matStepperPrevious><mat-icon class='iconBtn' aria-hidden='false' aria-label='arrow_circle_up'>arrow_circle_up            
             </mat-icon></button>
@@ -36,11 +34,11 @@
         </div>
     </mat-step>
     <mat-step [stepControl]="fifthFormGroup">
-        <app-fifth-question [userName]="name"></app-fifth-question>
+        <app-fifth-question ></app-fifth-question>
         <div>
-            <button mat-button matStepperPrevious><mat-icon class='iconBtn' aria-hidden='false' aria-label='arrow_circle_up'>arrow_circle_up            
+            <button mat-button matStepperPrevious><mat-icon class='iconBtn' aria-hidden='false' aria-label='arrow_circle_up' >arrow_circle_up            
             </mat-icon></button>
-            <button mat-button > <mat-icon class='iconBtn' aria-hidden='false' aria-label='Arrow forward'>arrow_forward_ios            
+            <button mat-button routerLink="/results"> <mat-icon class='iconBtn' aria-hidden='false' aria-label='Arrow forward' >arrow_forward_ios            
             </mat-icon> Ver mis resultados</button>
         </div>
     </mat-step>

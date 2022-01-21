@@ -26,10 +26,12 @@ export class SecondquestionComponent implements OnInit {
 
     return 0;
   }
-
+ user: any
+ 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this.user= sessionStorage.getItem('Nombre')
   }
 
 }

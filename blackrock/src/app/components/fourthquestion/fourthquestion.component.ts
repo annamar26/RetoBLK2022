@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './fourthquestion.component.html',
   styleUrls: ['./fourthquestion.component.scss']
 })
-export class FourthquestionComponent  {
+export class FourthquestionComponent implements OnInit  {
   @Input() userName: string='';
 	playAudio(){
 		const audio = new Audio();
@@ -14,12 +14,17 @@ export class FourthquestionComponent  {
 		audio.load();
     audio.play();
 	}
-
+  user: any
+  
   ahorrar = ["Te ayuda a tener más confianza"];
 
   invertir = ["Te puedes diversificar"];
   questions=["Me da rendimientos","Es la opción más liquida",
   "Existen múltiples instrumentos financieros para esta estrategia","Me producirá mas dinero en el futuro", "Me protege contra la inflación"];
+
+  ngOnInit(){
+    this.user= sessionStorage.getItem('Nombre')
+  }
 
   drop(event: CdkDragDrop <string[]>) {
 		this.playAudio();
@@ -37,6 +42,7 @@ export class FourthquestionComponent  {
   noReturnPredicate() {
     return false;
   }
+
 
 
 }

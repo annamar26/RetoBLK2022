@@ -34,9 +34,15 @@ import { MatSliderModule } from '@angular/material/slider';
 import { FifthQuestionComponent } from './components/fifth-question/fifth-question.component'
 import {MatCardModule} from '@angular/material/card';
 import { QuizComponent } from './pages/quiz/quiz.component';
+import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { PersonalInformationComponent } from './components/personal-information/personal-information.component';
+import {MatSelectModule} from '@angular/material/select';
+import { ResultsComponent } from './pages/results/results.component';
 import { CoursesComponent } from './pages/courses/courses.component';
-
-
+import { QuizMainComponent } from './pages/quiz-main/quiz-main.component';
+import { RegisterComponent } from './components/register/register.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,15 +58,18 @@ import { CoursesComponent } from './pages/courses/courses.component';
     HomeComponent,
     ModalLoginComponent,
     GifHelloComponent,
-
     ThirdQuestionComponent,
-
     SecondquestionComponent,
-
     FifthQuestionComponent,
-      CoursesComponent
-
-
+    ProfileComponent,
+    FifthQuestionComponent,
+      PersonalInformationComponent,
+     ResultsComponent,
+      CoursesComponent,
+    FifthQuestionComponent,
+      EditProfileComponent,
+      QuizMainComponent,
+      RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -82,9 +91,9 @@ import { CoursesComponent } from './pages/courses/courses.component';
 		MatSliderModule,
     MatDialogModule,
     MatCheckboxModule,
-
     MatCardModule,
-
+		MatProgressBarModule,
+    MatSelectModule
 
 
   ],
