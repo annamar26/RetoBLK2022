@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
 
 @Component({
@@ -7,6 +7,7 @@ import {MatCardModule} from '@angular/material/card';
   styleUrls: ['./fifth-question.component.scss']
 })
 export class FifthQuestionComponent implements OnInit {
+  @Input() userName: string='';
 
   
  isVisited = false;

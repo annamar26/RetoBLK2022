@@ -1,5 +1,6 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-quiz-start',
@@ -8,10 +9,11 @@ import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/fo
 })
 export class QuizStartComponent implements OnInit {
   
-  userquiz = new FormGroup({
+  @Output() userName = new EventEmitter<object>()
+ userquiz= new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(2)]),
   })
-  @ViewChild('name') nameKey!: ElementRef; 
+ 
   constructor() { }
 
   ngOnInit(): void {
@@ -21,6 +23,7 @@ export class QuizStartComponent implements OnInit {
   }
 
   startQuiz(){
-    sessionStorage.setItem('name', this.nameKey.nativeElement.value);
+    this.userName.emit(this.userquiz.value.name)
+    // sessionStorage.setItem('name', this.nameKey.nativeElement.value);
   }
 }
