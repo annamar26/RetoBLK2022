@@ -1,38 +1,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@300;400;700;900&family=Noto+Sans:wght@400;700&display=swap");
+
 $font-color: #000000;
 
-footer{
+footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 10px solid #000000;
+  background-color: #ffffff;
+  font-family: "Noto Sans Display", sans-serif;
+  color: $font-color;
+  font-size: 16px;
+  height: 146px;
+  bottom: 0px;
+  padding: 5%;
+  backdrop-filter: blur(1rem);
+
+	p{
+		font: {
+			family: "Noto Sans Display", Sans-serif;
+			weight:300;
+			size: 16px;
+		}
+	}
+
+  section {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border-top:10px solid 	#000000;
-    background-color: #C4C4C4;
-    font-family: sans-serif;
-    color:$font-color;
-    font-size:16px;
-    height: 146px;
-    bottom: 0px;
-    //padding-top: 5px;
-    //padding-left:  5px;
-    //padding-right:20px;
-    padding: 5%;
-    backdrop-filter: blur(1rem);
-    
-        section{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        //padding-left:20px;
-        //padding-right:20px;
-
-    }
-        .iconos{
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-end;
-        
-        }
-
-    
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .iconos {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
 }

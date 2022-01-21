@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-secondquestion',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./secondquestion.component.scss']
 })
 export class SecondquestionComponent implements OnInit {
-
+  @Input() userName: string='';
 	autoTicks = false;
   disabled = false;
   invert = false;
