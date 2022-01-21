@@ -5,35 +5,61 @@ $bg-color: #ffce00;
   font-family: 'Noto Sans', sans-serif;
   font-weight: bold;
   background-color: $bg-color;
-  height:80vh;
-  padding:5%;
+  height:90vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+
   h1{
-    width:100%
-  }}
+    margin-top: 60px;
+    width:90%;
+    font-size:40px;
+    font-weight: 700;
+    margin-bottom: 33px;
+  }
+section{
+ width: 95%;
+  display: flex;
+  flex-direction: row;
+justify-content: flex-end;
+
+  
+  .background{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+  width: 455px;
+ 
+    
+ 
+    display: flex;
+    justify-content: center;
+    img{background-color: #FF4713;
+      width:120px; border-radius: 20px;
+    }
+  }
+}}
 
  div{
 
 display:flex;
 flex-direction:row;
-align-items:space-around;
-justify-content: space-around;
-width:100%
+
+
  }
 
 
 .example-container {
   font-family: 'Noto Sans', sans-serif;
   font-weight: bold;
-  width: 300px;
+
+  width: 450px;
   max-width: 100%;
-  margin: 0 25px 25px 0;
-  display:inline-block;
-  vertical-align: top;
-  background-color:$bg-color;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+ 
 
   }
 
@@ -45,6 +71,7 @@ width:100%
     overflow: hidden;
     display: block;
     align-items: center;
+    
 
 
   }
@@ -61,6 +88,9 @@ width:100%
     cursor: move;
     background-color:#FECE00;
     font-size: 14px;
+    app-chip{
+      font-size: 24px;
+    }
 
   }
 
