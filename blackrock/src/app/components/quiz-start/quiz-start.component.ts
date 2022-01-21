@@ -24,6 +24,7 @@ export class QuizStartComponent implements OnInit {
 
   startQuiz(){
     this.userName.emit(this.userquiz.value.name)
+    sessionStorage.setItem('Nombre', this.userquiz.value.name)
     // sessionStorage.setItem('name', this.nameKey.nativeElement.value);
   }
 }

@@ -35,6 +35,13 @@ import { FifthQuestionComponent } from './components/fifth-question/fifth-questi
 import {MatCardModule} from '@angular/material/card';
 import { QuizComponent } from './pages/quiz/quiz.component';
 import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { PersonalInformationComponent } from './components/personal-information/personal-information.component';
+import {MatSelectModule} from '@angular/material/select';
+import { ResultsComponent } from './pages/results/results.component';
+import { CoursesComponent } from './pages/courses/courses.component';
+
 
 
 @NgModule({
@@ -52,13 +59,18 @@ import { EditProfileComponent } from './pages/edit-profile/edit-profile.componen
     HomeComponent,
     ModalLoginComponent,
     GifHelloComponent,
-
     ThirdQuestionComponent,
-
     SecondquestionComponent,
+    FifthQuestionComponent,
+    ProfileComponent,
+    FifthQuestionComponent,
+      PersonalInformationComponent,
+     ResultsComponent,
+      CoursesComponent,
 
     FifthQuestionComponent,
       EditProfileComponent
+
 
 
   ],
@@ -82,9 +94,9 @@ import { EditProfileComponent } from './pages/edit-profile/edit-profile.componen
 		MatSliderModule,
     MatDialogModule,
     MatCheckboxModule,
-
     MatCardModule,
-
+		MatProgressBarModule,
+    MatSelectModule
 
 
   ],

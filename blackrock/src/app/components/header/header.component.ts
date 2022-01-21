@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { ModalLoginComponent } from '../modal-login/modal-login.component';
@@ -10,6 +10,7 @@ import { ModalLoginComponent } from '../modal-login/modal-login.component';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+ 
   userEmail= this.userData.getUser()
   constructor(public dialog: MatDialog,  private userData: FirebaseService ) { }
 
@@ -24,6 +25,6 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  
 
 }
