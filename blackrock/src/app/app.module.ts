@@ -36,6 +36,10 @@ import {MatCardModule} from '@angular/material/card';
 import { QuizComponent } from './pages/quiz/quiz.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { PersonalInformationComponent } from './components/personal-information/personal-information.component';
+import {MatSelectModule} from '@angular/material/select';
+import { ResultsComponent } from './pages/results/results.component';
+import { CoursesComponent } from './pages/courses/courses.component';
 
 
 @NgModule({
@@ -56,7 +60,13 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     ThirdQuestionComponent,
     SecondquestionComponent,
     FifthQuestionComponent,
-    ProfileComponent
+    ProfileComponent,
+    FifthQuestionComponent,
+      PersonalInformationComponent,
+     ResultsComponent,
+      CoursesComponent
+
+
 
 
   ],
@@ -82,6 +92,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatCheckboxModule,
     MatCardModule,
 		MatProgressBarModule,
+    MatSelectModule
+
 
   ],
   providers: [],
