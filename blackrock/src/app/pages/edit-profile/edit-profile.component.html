@@ -1,0 +1,90 @@
+<app-header></app-header>
+
+<h1>Información de la cuenta</h1>
+
+<form>
+  <div class="inputs-edit">
+    <mat-form-field appearance="legacy">
+      <mat-label>Nombre</mat-label>
+      <input
+        size="large"
+        id="name-edit"
+        name="name"
+        matInput
+        placeholder="Nombre"
+        formControlName="name"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+      <mat-label>Email</mat-label>
+      <input
+        size="large"
+        id="email-edit"
+        name="mail"
+        matInput
+        placeholder="pat@example.com"
+        formControlName="mail"
+        required
+      />
+    </mat-form-field>
+
+    <section>
+      <mat-form-field appearance="fill">
+        <mat-label>Sexo <span>(opcional)</span></mat-label>
+        <select matNativeControl [(ngModel)]="selectedGender" name="gender">
+          <option value="" selected></option>
+          <option *ngFor="let gender of genders" [value]="gender.value">
+            {{ gender.viewValue }}
+          </option>
+        </select>
+      </mat-form-field>
+
+      <mat-form-field appearance="legacy">
+        <mat-label>Edad <span>(opcional)</span></mat-label>
+        <input
+          size="large"
+          id="age-edit"
+          name="age"
+          matInput
+          formControlName="age"
+        />
+      </mat-form-field>
+
+    </section>
+
+    <mat-form-field appearance="legacy">
+      <mat-label>Educación</mat-label>
+      <input
+        size="large"
+        id="education-edit"
+        name="education"
+        matInput
+        formControlName="education"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+      <mat-label>Ocupación</mat-label>
+      <input
+        size="large"
+        id="job-edit"
+        name="job"
+        matInput
+        formControlName="job"
+        required
+      />
+    </mat-form-field>
+  </div>
+  <div class="btn-container">
+      <button mat-stroked-button type="submit" class="saveBtn">
+        <mat-icon class="iconBtn" aria-hidden="false" aria-label="Arrow forward"
+          >arrow_forward_ios </mat-icon
+        >Guardar
+      </button>
+  </div>
+</form>
+
+<footer></footer>
