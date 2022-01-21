@@ -1,61 +1,59 @@
 <div class="formulario">
-<h1>{{userName}}, arrastra cada enunciado a la columna que consideres correcta</h1>
-<div cdkDropListGroup>
+  <h1>
+    {{ userName }}, arrastra cada enunciado a la columna que consideres correcta
+  </h1>
+  <section class="names">
+    <section class="background" id='pig'>
+      <img src="../../../assets/Piggy bank_Outline.png" alt="Ahorrar" />
+    </section>
+    <section class="background" ><img src="../../../assets/Coins_Two Color.png" alt="Invertir" /></section>
+  </section>
+  <div cdkDropListGroup>
     <div class="example-container">
-
-
-
-        <div
-          cdkDropList
-          #questionList="cdkDropList"
-          [cdkDropListConnectedTo]="[ahorrarList, invertirList]"
-          [cdkDropListData]="questions"
-          class="example-list"
-          [cdkDropListEnterPredicate]="noReturnPredicate"
-          (cdkDropListDropped)="drop($event)">
-          <div class="example-box" *ngFor="let item of questions" >
-              <app-chip [content]="item" cdkDrag>
-
-              </app-chip>
-          </div>
+      <div
+        cdkDropList
+        #questionList="cdkDropList"
+        [cdkDropListConnectedTo]="[ahorrarList, invertirList]"
+        [cdkDropListData]="questions"
+        class="example-list"
+        [cdkDropListEnterPredicate]="noReturnPredicate"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <div class="example-box" *ngFor="let item of questions">
+          <app-chip [content]="item" cdkDrag> </app-chip>
         </div>
       </div>
-
-    <div class="example-container">
-
-
-        <div
-          cdkDropList
-          #ahorrarList="cdkDropList"
-          [cdkDropListConnectedTo]="[invertirList]"
-          [cdkDropListData]="ahorrar"
-          class="example-list"
-          (cdkDropListDropped)="drop($event)">
-          <div class="example-box" *ngFor="let item of ahorrar" >
-              <app-chip [content]="item" cdkDrag >
-
-              </app-chip>
-          </div>
-        </div>
     </div>
 
     <div class="example-container">
+      <div
+        cdkDropList
+        #ahorrarList="cdkDropList"
+        [cdkDropListConnectedTo]="[invertirList]"
+        [cdkDropListData]="ahorrar"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <div class="example-box" *ngFor="let item of ahorrar">
+          <app-chip [content]="item" cdkDrag> </app-chip>
+        </div>
+      </div>
+    </div>
 
-
+    <div class="example-container">
       <div
         cdkDropList
         #invertirList="cdkDropList"
         [cdkDropListConnectedTo]="[ahorrarList]"
         [cdkDropListData]="invertir"
         class="example-list"
-        (cdkDropListDropped)="drop($event)">
+        (cdkDropListDropped)="drop($event)"
+      >
         <div class="example-box" *ngFor="let item of invertir">
-          <app-chip [content]="item" cdkDrag>
-
-          </app-chip>
+          <app-chip [content]="item" cdkDrag> </app-chip>
         </div>
       </div>
     </div>
-<div>
-
+    <div></div>
+  </div>
 </div>
