@@ -34,12 +34,14 @@ import { MatSliderModule } from '@angular/material/slider';
 import { FifthQuestionComponent } from './components/fifth-question/fifth-question.component'
 import {MatCardModule} from '@angular/material/card';
 import { QuizComponent } from './pages/quiz/quiz.component';
+import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { PersonalInformationComponent } from './components/personal-information/personal-information.component';
 import {MatSelectModule} from '@angular/material/select';
 import { ResultsComponent } from './pages/results/results.component';
 import { CoursesComponent } from './pages/courses/courses.component';
+
 
 
 @NgModule({
@@ -64,8 +66,10 @@ import { CoursesComponent } from './pages/courses/courses.component';
     FifthQuestionComponent,
       PersonalInformationComponent,
      ResultsComponent,
-      CoursesComponent
+      CoursesComponent,
 
+    FifthQuestionComponent,
+      EditProfileComponent
 
 
 
