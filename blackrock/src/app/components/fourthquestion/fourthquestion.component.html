@@ -1,13 +1,10 @@
-<div class="questionfour">
-<h1>Nombre, arrastra cada enunciado a la columna que consideres correcta</h1>
-</div>
 <div class="formulario">
-
+<h1>{{userName}}, arrastra cada enunciado a la columna que consideres correcta</h1>
 <div cdkDropListGroup>
     <div class="example-container">
-       
-        <h2>{{userName}} Preguntas</h2>
-    
+
+
+
         <div
           cdkDropList
           #questionList="cdkDropList"
@@ -18,15 +15,15 @@
           (cdkDropListDropped)="drop($event)">
           <div class="example-box" *ngFor="let item of questions" >
               <app-chip [content]="item" cdkDrag>
-                  
+
               </app-chip>
           </div>
         </div>
       </div>
-    
+
     <div class="example-container">
-      <h2>Ahorrar</h2>
-  
+
+
         <div
           cdkDropList
           #ahorrarList="cdkDropList"
@@ -36,14 +33,14 @@
           (cdkDropListDropped)="drop($event)">
           <div class="example-box" *ngFor="let item of ahorrar" >
               <app-chip [content]="item" cdkDrag >
-                        
+
               </app-chip>
           </div>
         </div>
     </div>
 
     <div class="example-container">
-      <h2>Invertir</h2>
+
 
       <div
         cdkDropList
@@ -54,11 +51,11 @@
         (cdkDropListDropped)="drop($event)">
         <div class="example-box" *ngFor="let item of invertir">
           <app-chip [content]="item" cdkDrag>
-                      
+
           </app-chip>
         </div>
       </div>
     </div>
 <div>
- 
+
 </div>

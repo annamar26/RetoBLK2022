@@ -1,17 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
 ::ng-deep .mat-dialog-container {
   width: 75vw;
   background-color: #ffcc00;
   padding: 5%;
 
   h2 {
+		font-family: "Noto Sans", sans-serif;
     font-style: normal;
-    font-weight: bold;
+    font-weight: 700;
     font-size: 48px;
     line-height: 65px;
   }
   p {
     font-style: normal;
-    font-weight: normal;
+    font-weight: 400;
     font-size: 24px;
     line-height: 33px;
     margin-bottom: 20px;
@@ -36,8 +39,8 @@
             color:black;
             font-size: 18px
         }
-       
-        
+
+
       }
     }.login{
         margin-top: 20px;

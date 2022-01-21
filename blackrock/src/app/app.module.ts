@@ -77,12 +77,12 @@ import { QuizComponent } from './pages/quiz/quiz.component';
     MatChipsModule,
     MatStepperModule,
     MatDialogModule,
-		MatSliderModule,     
+		MatSliderModule,
     MatDialogModule,
     MatCheckboxModule,
 
     MatCardModule,
-    
+
 
 
   ],
