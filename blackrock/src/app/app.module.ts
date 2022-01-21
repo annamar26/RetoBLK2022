@@ -35,6 +35,7 @@ import { FifthQuestionComponent } from './components/fifth-question/fifth-questi
 import {MatCardModule} from '@angular/material/card';
 import { QuizComponent } from './pages/quiz/quiz.component';
 import { ResultsComponent } from './pages/results/results.component';
+import { CoursesComponent } from './pages/courses/courses.component';
 
 
 @NgModule({
@@ -58,7 +59,11 @@ import { ResultsComponent } from './pages/results/results.component';
     SecondquestionComponent,
 
     FifthQuestionComponent,
-     ResultsComponent
+
+     ResultsComponent,
+
+      CoursesComponent
+
 
 
   ],
