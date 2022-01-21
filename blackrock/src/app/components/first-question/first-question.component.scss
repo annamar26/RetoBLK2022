@@ -8,7 +8,7 @@ $bg-color: #ffce00;
         padding: 2rem;
         font-family: 'Noto Sans', sans-serif;
         font-weight: bold;
-        font-size: 4vw;
+        font-size: 32px;
 		line-height: 110%;
     }
 }
@@ -20,14 +20,14 @@ $bg-color: #ffce00;
 		align-items: center;
     ::ng-deep .mat-chip-list-wrapper{
         justify-content: center;
-        margin-bottom: 3rem;
+        margin-bottom: 0;        
     }
     ::ng-deep .mat-chip.mat-standard-chip{
         padding: 1.6rem;
         font-size: 2vw;
         font-family: 'Noto Sans', sans-serif;
         background-color: black;
-        color: white;
+        color: rgb(199, 197, 197);
         margin: 1em;
     }
     .mat-chip.mat-standard-chip.mat-chip-selected.mat-primary {
