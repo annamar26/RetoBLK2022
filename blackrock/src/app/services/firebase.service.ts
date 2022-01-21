@@ -16,6 +16,7 @@ export class FirebaseService {
       logIn=async (email: string, password: string)=>{
     return await this.afAuth.signInWithEmailAndPassword(email,password)
    }
+   
   getUser=()=>{
      return this.afAuth.authState
    }

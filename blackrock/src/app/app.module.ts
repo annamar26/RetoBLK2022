@@ -42,9 +42,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { ResultsComponent } from './pages/results/results.component';
 import { CoursesComponent } from './pages/courses/courses.component';
 import { QuizMainComponent } from './pages/quiz-main/quiz-main.component';
-
-
-
+import { RegisterComponent } from './components/register/register.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,13 +66,10 @@ import { QuizMainComponent } from './pages/quiz-main/quiz-main.component';
       PersonalInformationComponent,
      ResultsComponent,
       CoursesComponent,
-
     FifthQuestionComponent,
       EditProfileComponent,
-      QuizMainComponent
-
-
-
+      QuizMainComponent,
+      RegisterComponent
   ],
   imports: [
     BrowserModule,
