@@ -36,6 +36,9 @@ import {MatCardModule} from '@angular/material/card';
 import { QuizComponent } from './pages/quiz/quiz.component';
 import { PersonalInformationComponent } from './components/personal-information/personal-information.component';
 import {MatSelectModule} from '@angular/material/select';
+import { ResultsComponent } from './pages/results/results.component';
+import { CoursesComponent } from './pages/courses/courses.component';
+
 
 
 @NgModule({
@@ -59,7 +62,14 @@ import {MatSelectModule} from '@angular/material/select';
     SecondquestionComponent,
 
     FifthQuestionComponent,
-      PersonalInformationComponent
+
+      PersonalInformationComponent,
+
+
+     ResultsComponent,
+
+      CoursesComponent
+
 
 
   ],
