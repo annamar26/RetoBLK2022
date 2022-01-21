@@ -34,6 +34,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { FifthQuestionComponent } from './components/fifth-question/fifth-question.component'
 import {MatCardModule} from '@angular/material/card';
 import { QuizComponent } from './pages/quiz/quiz.component';
+import { ResultsComponent } from './pages/results/results.component';
 import { CoursesComponent } from './pages/courses/courses.component';
 
 
@@ -58,7 +59,11 @@ import { CoursesComponent } from './pages/courses/courses.component';
     SecondquestionComponent,
 
     FifthQuestionComponent,
+
+     ResultsComponent,
+
       CoursesComponent
+
 
 
   ],
