@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatCheckbox } from '@angular/material/checkbox';
 
@@ -8,6 +8,7 @@ import { MatCheckbox } from '@angular/material/checkbox';
   styleUrls: ['./third-question.component.scss'],
 })
 export class ThirdQuestionComponent implements OnInit {
+  @Input() userName: string='';
   questions: FormGroup;
 
   constructor(fb: FormBuilder) {

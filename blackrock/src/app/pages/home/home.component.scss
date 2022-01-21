@@ -1,52 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@300;400;700;900&family=Noto+Sans:wght@400;700&display=swap");
+
 section {
+  padding: 30px;
   display: flex;
   flex-direction: column;
   justify-items: center;
   .banner-container {
     background-image: url("../../../assets/bg-yoda.jpg");
-    background-size: cover;
+    background-image: contain;
+    background-position: right;
+    background-size: 80%;
+    background-color: #0a0d14;
+    background-repeat: no-repeat;
     display: flex;
-    flex-direction: row;
-    height: 500px;
+    flex-direction: column;
+    height: 450px;
     margin-top: 2rem;
     width: 100%;
     div {
-      color: #fff;
       width: 50%;
+
       h1 {
-        font-size: 80px;
-        margin-bottom: 7rem;
-        line-height: normal;
+				color: #fff;
+        font-family: "Noto Sans Display", sans-serif;
+        width: 100%;
+        margin-top: 33px;
+        margin-left: 50px;
+        font-size: 70px;
+        font-weight: 900;
+        line-height: 100%;
         height: 200px;
+        span {
+          &:first-of-type {
+            color: #ff4713;
+            font: {
+              family: "Noto Sans Display", sans-serif;
+              weight: 900;
+              size: 70px;
+            }
+          }
+        }
+        h1:hover + p {
+          display: block;
+        }
+      }
+		}
+      img {
+        width: 50%;
       }
       p {
-        font-size: 24px;
-        display: none;
-      }
-      h1:hover + p {
-        display: block;
+        color: #ffffff;
+        width: 70vw;
+        line-height: 110%;
+        margin-left: 45px;
+        margin-top: 40px;
+        font: {
+          size: 20px;
+          family: "Noto Sans", sans-serif;
+          weight: 400;
+        }
+
+        .question {
+          margin-top: 1rem;
+          color: #ffce00;
+          font: {
+            weight: 700;
+          }
+          span:last-of-type {
+            font-family: "Noto Sans Display", sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+          }
+        }
       }
     }
-    img {
-      width: 50%;
-    }
-  }
+
+
   .quizz-btn {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-items: center;
+    margin-left: 55px;
+    margin-right: 50px;
     background-color: #ff4713;
-    width: 80%;
-    height: 186px;
+    width: 92%;
+    height: 126px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
       background-color: #fff;
       color: #000;
+      box-shadow: inset 0 0 10px rgba(255, 255, 255, 0);
       width: 416px;
       height: 60px;
       font-size: 23px;
       font-weight: bold;
-      border: none;
+      border: 0 solid;
+      outline: 1px solid;
+      outline-offset: 0px;
+      text-shadow: none;
+      transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+      outline-color: rgba(255, 255, 255, 0.5);
+      font-family: "Noto Sans", sans-serif;
+      mat-icon {
+        color: #ff4713;
+        font-weight: 900;
+      }
+    }
+    button:hover {
+      border: 1px solid;
+      box-shadow: inset 0 0 20px #b9b6b691, 0 0 20px rgba(247, 247, 247, 0.089);
+      outline-color: rgba(255, 255, 255, 0);
+      outline-offset: 15px;
     }
   }
 }

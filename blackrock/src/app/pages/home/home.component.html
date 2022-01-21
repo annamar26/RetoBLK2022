@@ -1,11 +1,19 @@
+<app-header></app-header>
 <section>
-    <div class="banner-container">
-        <div class="banner-title">
-            <h1> ¿Te gustaría ser un maestro Yoda de las finanzas? </h1>
-        </div>
-        <p>¡Sólo>Con solo 5 preguntas sabrás si eres un Iniciado Jedi o ¡todo un maestro Yoda de las finanzas!<br>¡Sólo toma dos minutos!</p>
-    </div>
-    <div class="quizz-btn">
-        <button>Comienza aquí</button>
-    </div>
+	<div class="banner-container">
+		<div class="banner-title">
+			<h1> ¿Te gustaría ser un <span>maestro Yoda</span> de las finanzas? </h1>
+		</div>
+		<p>Con solo <span class="question">5 preguntas</span> sabrás si eres un Iniciado Jedi<br> o todo un maestro Yoda de las finanzas<br>
+		</p>
+		<p>¡Sólo toma dos minutos!</p>
+	</div>
+
+	<div class="quizz-btn">
+		<button class='btn' routerLink="/quiz">
+			<mat-icon class='iconBtn' aria-hidden='false' aria-label='Arrow forward'>arrow_forward_ios
+			</mat-icon> Comienza aquí
+		</button>
+
+	</div>
 </section>
