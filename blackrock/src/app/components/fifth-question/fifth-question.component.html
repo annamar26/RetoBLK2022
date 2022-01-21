@@ -1,7 +1,8 @@
 <div>
   <h1>{{user}}, ¿por qué quieres aprender sobre finanzas?</h1>
   <section>
-    <mat-card [class.visited]="isVisited==true" (click)="checkVisited()">
+    <button (click)="checkVisited($event)" value="Quiero tomar las riendas de mi futuro financiero">
+    <mat-card  >
       <img
         mat-card-image
         src="https://media0.giphy.com/media/DwXTeP2KeZO8g/giphy.gif?cid=790b76110318c04ba93c12fdc30ef7b65ce931733ec60fa1&rid=giphy.gif&ct=g"
@@ -9,7 +10,8 @@
       />
       <mat-card-title>Quiero tomar las riendas de mi futuro financiero</mat-card-title>
     </mat-card>
-
+</button>
+<button (click)="checkVisited($event)" value="Quiero comprar una casa">
     <mat-card >
       <img
         mat-card-image
@@ -18,7 +20,8 @@
         width="80"/>
       <mat-card-title>Quiero comprar una casa</mat-card-title>
     </mat-card>
-
+</button>
+<button (click)="checkVisited($event)" value="Quiero expandir mis conocimientos">
     <mat-card >
       <img
         mat-card-image
@@ -27,7 +30,8 @@
     />
       <mat-card-title>Quiero expandir mis conocimientos</mat-card-title>
     </mat-card>
-
+</button>
+<button (click)="checkVisited($event)" value="Tengo un objetivo en la mente al que quiero llegar">
     <mat-card>
       <img
         mat-card-image
@@ -38,7 +42,9 @@
         >Tengo un objetivo en la mente al que quiero llegar</mat-card-title
       >
     </mat-card>
-
+</button>
+<button (click)="checkVisited($event)" value="He visto que más y más gente ha comenzado a invertir y no me quiero
+quedar atrás">
     <mat-card>
       <img
         mat-card-image
@@ -49,6 +55,6 @@
         >He visto que más y más gente ha comenzado a invertir y no me quiero
         quedar atrás</mat-card-title
       >
-    </mat-card>
+    </mat-card></button>
   </section>
 </div>
