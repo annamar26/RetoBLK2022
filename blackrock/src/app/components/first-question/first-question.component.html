@@ -1,5 +1,5 @@
 <section class="firstQuestion">
-<h1>  {{userName}}, (con ayuda de la fuerza), selecciona todos los temas de los que tengas conocimiento. </h1> 
+<h1>  {{user}}, (con ayuda de la fuerza), selecciona todos los temas de los que tengas conocimiento. </h1> 
    
     <mat-chip-list  class= "optionscontainer" selectable multiple>
         <mat-chip #c="matChip" *ngFor="let option of options" [value]="option" (click)="toggleSelection(c)" >

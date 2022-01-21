@@ -41,6 +41,7 @@ import { PersonalInformationComponent } from './components/personal-information/
 import {MatSelectModule} from '@angular/material/select';
 import { ResultsComponent } from './pages/results/results.component';
 import { CoursesComponent } from './pages/courses/courses.component';
+import { QuizMainComponent } from './pages/quiz-main/quiz-main.component';
 
 
 
@@ -69,7 +70,8 @@ import { CoursesComponent } from './pages/courses/courses.component';
       CoursesComponent,
 
     FifthQuestionComponent,
-      EditProfileComponent
+      EditProfileComponent,
+      QuizMainComponent
 
 
 

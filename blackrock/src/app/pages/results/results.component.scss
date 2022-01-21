@@ -68,14 +68,12 @@
       left: 73.75%;
         width: 463px;
         position: absolute;
-        height: fit-content;
-        height: 400px;
+        height: 200px;
         z-index: 1;
        img{
            width:100%;
            z-index: 2;
-           height: 600px;
-          
+           box-sizing: border-box;          
        }
        
        

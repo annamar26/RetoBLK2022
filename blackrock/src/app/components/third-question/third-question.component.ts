@@ -11,6 +11,8 @@ export class ThirdQuestionComponent implements OnInit {
   @Input() userName: string='';
   questions: FormGroup;
 
+  user: any
+  
   constructor(fb: FormBuilder) {
     this.questions = fb.group({
       '1-true': false,
@@ -24,7 +26,9 @@ export class ThirdQuestionComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(){
+    this.user= sessionStorage.getItem('Nombre')
+  }
   	
 	playAudio(){
 		const audio = new Audio();

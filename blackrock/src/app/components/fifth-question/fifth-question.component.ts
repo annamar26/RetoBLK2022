@@ -9,12 +9,14 @@ import {MatCardModule} from '@angular/material/card';
 export class FifthQuestionComponent implements OnInit {
   @Input() userName: string='';
 
-  
+  user: any
+
  isVisited = false;
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this.user= sessionStorage.getItem('Nombre')
   }
   
   checkVisited() {

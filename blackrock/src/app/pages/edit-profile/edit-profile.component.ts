@@ -12,7 +12,7 @@ export class EditProfileComponent implements OnInit {
   genders: any[] = [
     { value: 'Mujer', viewValue: 'Mujer' },
     { value: 'Hombre', viewValue: 'Hombre' },
-    { value: 'Prefiero no decir', viewValue: 'Prefiero no decir' }
+    { value: 'Prefiero no decir', viewValue: 'Prefiero no responder' }
   ]
   
   constructor() { }
