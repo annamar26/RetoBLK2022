@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { FakeAPIService } from 'src/app/services/fake-api.service';
 
 @Component({
   selector: 'app-personal-information',
@@ -13,14 +15,15 @@ export class PersonalInformationComponent implements OnInit {
   userinfo = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(2)]),
     sex: new FormControl(''),
-   age: new FormControl(''),
+    age: new FormControl(''),
     education: new FormControl(''),
     ocupation: new FormControl('', [ Validators.minLength(2)]),
-    cp: new FormControl('',[Validators.pattern(/^-?(0|[1-9]\d*)?$/)])
-
+    cp: new FormControl('',[Validators.pattern(/^[0-9]\d*$/)]),
+    didAcceptInfo: new FormControl(false),
+    didAcceptTerms: new FormControl(false),
   });  
 
-  constructor() { }
+  constructor(private APIservice: FakeAPIService, public router: Router) { }
  
 
   ngOnInit(): void {
@@ -35,6 +38,9 @@ export class PersonalInformationComponent implements OnInit {
     } else {
       return;
     }
+    /* this.APIservice.updateUserData(id, this.userinfo.value).subscribe((users) => {
+      console.log(users);
+    this.router.navigate (['profile'])
+  })  */   
   }
-  
 }
