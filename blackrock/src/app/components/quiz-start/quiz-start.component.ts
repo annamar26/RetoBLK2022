@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class QuizStartComponent implements OnInit {
 
  user: any
 
-  constructor() { }
+  constructor(private Router: Router) { }
 
   ngOnInit(){
     this.user= sessionStorage.getItem('Nombre')
@@ -27,8 +28,11 @@ export class QuizStartComponent implements OnInit {
   }
 
   startQuiz(){
+
     this.userName.emit(this.userquiz.value.name)
+    console.log(this.userquiz.value.name)
     sessionStorage.setItem('Nombre', this.userquiz.value.name)
-    // sessionStorage.setItem('name', this.nameKey.nativeElement.value);
+    this.Router.navigate(['quiz'])
+  
   }
 }

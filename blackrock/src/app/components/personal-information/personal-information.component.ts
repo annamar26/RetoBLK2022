@@ -12,9 +12,9 @@ export class PersonalInformationComponent implements OnInit {
   education: any = ['Educación básica', 'Educación media superior', 'Técnico superior', 'Licenciatura', 'Posgrado']
   userinfo = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(2)]),
-    // sex: new FormControl(''),
-    // age: new FormControl(''),
-    // education: new FormControl(''),
+    sex: new FormControl(''),
+   age: new FormControl(''),
+    education: new FormControl(''),
     ocupation: new FormControl('', [ Validators.minLength(2)]),
     cp: new FormControl('',[Validators.pattern(/^-?(0|[1-9]\d*)?$/)])
 
