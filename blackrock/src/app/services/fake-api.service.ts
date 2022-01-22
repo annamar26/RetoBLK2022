@@ -18,10 +18,13 @@ export class FakeAPIService {
    getUserData(email: string, password:string){
     return this.http.get(`${ruta}`, {params: {email: email, password: password}})
   }
-// 
+	getEmailUser(email: string){
+		return this.http.get(`${ruta}`, {params: {email: email}})
+	}
+//
    updateUserData(id:number, user: user) {
     return this.http.patch(`${ruta}/${id}`, user);
-  }  
+  }
 
 
 }

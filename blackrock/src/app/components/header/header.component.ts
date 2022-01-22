@@ -10,7 +10,7 @@ import { ModalLoginComponent } from '../modal-login/modal-login.component';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
- 
+
   userEmail= this.userData.getUser()
   constructor(public dialog: MatDialog,  private userData: FirebaseService ) { }
 
@@ -25,6 +25,6 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
+
 
 }
