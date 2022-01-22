@@ -2,7 +2,7 @@
 	<img src="https://www.blackrock.com/amer-retail-k-assets/cache-1542297526000/images/media-bin/web/global/wordmark/blackrock-logo-nav.svg" width="150" routerLink="" />
 	<section>
 		<button class='name-user' mat-button *ngIf="userEmail | async as user; else elseBlock" routerLink="/profile">
-			Welcome {{ !user.displayName ? user.email : user.displayName }}
+			Bienvenido(a) {{ !user.displayName ? user.email : user.displayName }}
 		  </button>
 		  <ng-template #elseBlock
 		  >

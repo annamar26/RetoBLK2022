@@ -1,21 +1,24 @@
-<app-header ></app-header>
-<div class="container" >
-    <section class="data">
-        
-        <h2 >{{Score}}, tu nivel es:</h2>
-        <section class='level'>
-            <h2>Nombre del nivel</h2>
-        </section>
-        <section class="description">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore nam minima quaerat maiores corrupti. A, aliquid accusamus iure, itaque qui nesciunt reiciendis eius voluptates maxime dolor illo, molestias nemo eligendi.
-            </p>
-        </section> </section>
-        <section class="img">
-            <img src="../../../assets/obi-results.png" alt="guerrero">
-        </section>
-   
-    
+<app-header></app-header>
+<div class="container">
+	<section class="data">
+
+		<h2 class="label-level">{{userName}}, tu nivel es:</h2>
+		<section class='level'>
+			<h2>Nombre del nivel</h2>
+		</section>
+		<section class="description">
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore nam minima quaerat maiores corrupti. A,
+				aliquid accusamus iure, itaque qui nesciunt reiciendis eius voluptates maxime dolor illo, molestias nemo
+				eligendi.
+			</p>
+		</section>
+		<div class="register">
+			<h3 (click)="openDialog()">Registrate para comenzar a aprender</h3>
+			<mat-icon>share</mat-icon>
+		</div>
+	</section>
+	<section class="img">
+		<img src="../../../assets/obi-results.png" alt="guerrero">
+	</section>
 </div>
-<div class="register">
-    <h3 (click)="openDialog()">Registrate para comenzar a aprender</h3>
-</div>
+<div class="white-div"></div>
