@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { RegisterComponent } from 'src/app/components/register/register.component';
+import { FakeAPIService } from 'src/app/services/fake-api.service';
+import { FirebaseService } from 'src/app/services/firebase.service';
 
 
 @Component({
@@ -11,7 +13,8 @@ import { RegisterComponent } from 'src/app/components/register/register.componen
 export class ResultsComponent implements OnInit {
 userName: any
 level: any
-  constructor(public dialog: MatDialog) { }
+userEmail: any
+  constructor(public dialog: MatDialog, private apiService: FakeAPIService, private userData: FirebaseService) { }
 
   ngOnInit(){
     this.userName= sessionStorage.getItem('Nombre')
@@ -32,6 +35,8 @@ if(this.level === "Maestro Jedi"){
 if(this.level === "Maestro Yoda"){
 	img.setAttribute("src", "../../../assets/yoda_5.jpg")
 }
+this.addLevelAPI()
+console.log(this.addLevelAPI())
   }
   openDialog() {
     const dialogRef = this.dialog.open(RegisterComponent);
@@ -40,4 +45,15 @@ if(this.level === "Maestro Yoda"){
       console.log(`Dialog result: ${result}`);
     });
   }
+	addLevelAPI(){
+		this.userData.getUser().subscribe((user: any)=>{
+			console.log(user.email)
+			this.apiService.getEmailUser(user.email).subscribe((response: any)=>{
+				console.log(response)
+				this.apiService.updateUserData(response[0].id, {...response[0], level: this.level, email: user.email}).subscribe((data)=>{
+					console.log(data)
+				})
+			})
+		});
+	}
 }

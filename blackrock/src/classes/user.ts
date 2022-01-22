@@ -1,10 +1,12 @@
 export class user {
-  'name': string;
+  'name'?: string;
   'email': string;
-  'password': string;
-  'cp': number;
-  'education': string;
-  'age': number;
-  'gender': string;
-  'workfield': string;
+  'password'?: string;
+  'cp'?: number;
+  'education'?: string;
+  'age'?: number;
+  'gender'?: string;
+  'workfield'?: string;
+	'level'?: string;
+	'id'?: number;
 }
