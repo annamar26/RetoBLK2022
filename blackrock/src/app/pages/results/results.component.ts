@@ -9,13 +9,13 @@ import { RegisterComponent } from 'src/app/components/register/register.componen
   styleUrls: ['./results.component.scss']
 })
 export class ResultsComponent implements OnInit {
-userName: any 
-Score: any
+userName: any
+level: any
   constructor(public dialog: MatDialog) { }
 
   ngOnInit(){
     this.userName= sessionStorage.getItem('Nombre')
-    this.Score= sessionStorage.getItem('Score')
+		this.level = sessionStorage.getItem("level")
   }
   openDialog() {
     const dialogRef = this.dialog.open(RegisterComponent);

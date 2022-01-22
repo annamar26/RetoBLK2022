@@ -29,7 +29,7 @@ export class SecondquestionComponent implements OnInit {
     return 0;
   }
  user: any
- 
+
   constructor() { }
 
   ngOnInit(){
@@ -38,17 +38,19 @@ export class SecondquestionComponent implements OnInit {
 
   sendResults(){
     switch (this.value) {
-      case 0||10||20:{this.points = 1}        
+			case 0 :{this.points=0}
+			break;
+      case 10||20:{this.points = 1}
         break;
-      case 30||40:{this.points = 2}        
+      case 30||40:{this.points = 2}
         break;
-      case 50||60:{this.points = 3}        
+      case 50||60:{this.points = 3}
         break;
-      case 70||80:{this.points = 4}        
+      case 70||80:{this.points = 4}
         break;
-      case 90||100:{this.points = 5}        
+      case 90||100:{this.points = 5}
         break;
-    
+
   }
   let str = this.points.toString()
   sessionStorage.setItem("Score2", str)
