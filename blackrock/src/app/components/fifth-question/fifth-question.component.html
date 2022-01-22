@@ -1,60 +1,41 @@
 <div>
-  <h1>{{user}}, ¿por qué quieres aprender sobre finanzas?</h1>
+  <h1>{{ user }}, ¿por qué quieres aprender sobre finanzas?</h1>
   <section>
-    <button (click)="checkVisited($event)" value="Quiero tomar las riendas de mi futuro financiero">
-    <mat-card  >
-      <img
-        mat-card-image
-        src="https://media0.giphy.com/media/DwXTeP2KeZO8g/giphy.gif?cid=790b76110318c04ba93c12fdc30ef7b65ce931733ec60fa1&rid=giphy.gif&ct=g"
-        alt="dog_gif"
-      />
-      <mat-card-title>Quiero tomar las riendas de mi futuro financiero</mat-card-title>
-    </mat-card>
-</button>
-<button (click)="checkVisited($event)" value="Quiero comprar una casa">
-    <mat-card >
-      <img
-        mat-card-image
-        src="https://media.giphy.com/media/ic75hTaRrnhzY9wAXM/giphy.gif"
-        alt="womanhouse_gif"
-        width="80"/>
-      <mat-card-title>Quiero comprar una casa</mat-card-title>
-    </mat-card>
-</button>
-<button (click)="checkVisited($event)" value="Quiero expandir mis conocimientos">
-    <mat-card >
-      <img
-        mat-card-image
-        src="https://media0.giphy.com/media/xUOxeS9Ul4ptDE4kCY/giphy.gif?cid=790b76111ed608d6d5c4f89dbbdf9aaa08d2f085149468bf&rid=giphy.gif&ct=g"
-        alt="womendoor_gif"
-    />
-      <mat-card-title>Quiero expandir mis conocimientos</mat-card-title>
-    </mat-card>
-</button>
-<button (click)="checkVisited($event)" value="Tengo un objetivo en la mente al que quiero llegar">
-    <mat-card>
-      <img
-        mat-card-image
-        src="https://media3.giphy.com/media/QZQ1eDE5IRQuocAbwx/giphy.gif?cid=790b76115738bfc9c203a4e5563ad5c217c9af580dcd3c71&rid=giphy.gif&ct=g"
-        alt="arrow_gif"
-        />
-      <mat-card-title
-        >Tengo un objetivo en la mente al que quiero llegar</mat-card-title
-      >
-    </mat-card>
-</button>
-<button (click)="checkVisited($event)" value="He visto que más y más gente ha comenzado a invertir y no me quiero
-quedar atrás">
-    <mat-card>
-      <img
-        mat-card-image
-        src="https://media3.giphy.com/media/sDcfxFDozb3bO/giphy.gif?cid=790b76117e4f43965c658da6ecbcc12448c2dd325dc82a09&rid=giphy.gif&ct=g"
-        alt="shutupandtakemymoney_gif"
-      />
-      <mat-card-title
-        >He visto que más y más gente ha comenzado a invertir y no me quiero
-        quedar atrás</mat-card-title
-      >
-    </mat-card></button>
+    <button
+    id="q1"
+      (click)="checkVisited($event)"
+      value="Quiero tomar las riendas de mi futuro financiero"
+    >
+     
+      Quiero tomar las riendas de mi futuro financiero
+    </button>
+    <button id="q2" (click)="checkVisited($event)" value="Quiero comprar una casa">
+      
+      Quiero comprar una casa
+    </button>
+    <button
+    id="q3"
+      (click)="checkVisited($event)"
+      value="Quiero expandir mis conocimientos"
+    >
+      Quiero expandir mis conocimientos
+    </button>
+    <button
+    id="q4"
+      (click)="checkVisited($event)"
+      value="Tengo un objetivo en la mente al que quiero llegar"
+    >
+      
+      Tengo un objetivo en la mente al que quiero llegar
+    </button>
+    <button
+    id="q5"
+      (click)="checkVisited($event)"
+      value="He visto que más y más gente ha comenzado a invertir y no me quiero
+quedar atrás"
+    >
+      He visto que más y más gente ha comenzado a invertir y no me quiero quedar
+      atrás
+    </button>
   </section>
 </div>
