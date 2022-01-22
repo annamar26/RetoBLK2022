@@ -1,3 +1,4 @@
+import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 import { Component, Input, OnInit } from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
 
@@ -21,9 +22,11 @@ export class FifthQuestionComponent implements OnInit {
   
 
   checkVisited(event: any) {
-    const valor = event.target.value
+    const valor = event.target
      console.log(valor)
-  
+     //valor.style.-webkit-filter= "grayscale(0%)";
+     valor.style.filter= "grayscale(0%)";
+     valor.style.transform= "scale(1.1)"
   }
 
   
