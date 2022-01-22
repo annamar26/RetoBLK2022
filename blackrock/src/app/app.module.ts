@@ -13,7 +13,6 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { HttpClientModule } from "@angular/common/http";
-import { FormApiComponent } from './components/form-api/form-api.component';
 import { FourthquestionComponent } from './components/fourthquestion/fourthquestion.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { ChipComponent } from './components/chip/chip.component';
@@ -48,7 +47,6 @@ import { RegisterComponent } from './components/register/register.component';
   declarations: [
     AppComponent,
     FormComponent,
-    FormApiComponent,
     FourthquestionComponent,
     ChipComponent,
     FooterComponent,

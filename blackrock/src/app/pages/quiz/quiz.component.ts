@@ -33,26 +33,31 @@ console.log(e)
 			if(score <= 7){
 				this.level = "Iniciado Jedi"
 			}
-			if(score >= 8){
+			else if (score >= 8 ){
 				this.level = "Padawan Jedi"
 			}
-			if(score <= 10){
+			else if(score <= 10){
 				this.level = "Padawan Jedi"
 			}
-			if(score >= 11){
+			else if(score > 11){
 				this.level = "Caballero Jedi"
 			}
-			if(score <= 13){
+			
+			else if(score <= 13){
 				this.level = "Caballero Jedi"
 			}
-			if(score >= 14){
+			else if(score >= 14){
 				this.level = "Maestro Jedi"
 			}
-			if(score <= 16){
+			else if(score <= 16){
 				this.level = "Maestro Jedi"
 			}
-			if(score > 16){
+			else if(score >= 17){
 				this.level = "Maestro Yoda"
+			}
+			else if(score == 11)
+				{this.level = "Caballero Jedi"
+
 			}
 			return this.level
 		}
