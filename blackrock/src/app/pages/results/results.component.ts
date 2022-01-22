@@ -36,7 +36,7 @@ if(this.level === "Maestro Yoda"){
 	img.setAttribute("src", "../../../assets/yoda_5.jpg")
 }
 this.addLevelAPI()
-console.log(this.addLevelAPI())
+
   }
   openDialog() {
     const dialogRef = this.dialog.open(RegisterComponent);
@@ -45,12 +45,12 @@ console.log(this.addLevelAPI())
       console.log(`Dialog result: ${result}`);
     });
   }
-	addLevelAPI(){
-		this.userData.getUser().subscribe((user: any)=>{
+	async addLevelAPI(){
+		await this.userData.getUser().subscribe((user: any)=>{
 			console.log(user.email)
-			this.apiService.getEmailUser(user.email).subscribe((response: any)=>{
+			this.apiService.getEmailUser(user.email).then((response: any)=>{
 				console.log(response)
-				this.apiService.updateUserData(response[0].id, {...response[0], level: this.level, email: user.email}).subscribe((data)=>{
+				this.apiService.updateUserData(response[0].id, {...response[0], level: this.level, email: user.email}).then((data)=>{
 					console.log(data)
 				})
 			})
