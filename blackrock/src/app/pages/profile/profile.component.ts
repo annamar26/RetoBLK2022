@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
 import { ProgressBarMode } from '@angular/material/progress-bar';
+import { FirebaseService } from 'src/app/services/firebase.service';
 
 @Component({
   selector: 'app-profile',
@@ -14,7 +15,9 @@ export class ProfileComponent implements OnInit {
   value = 20;
   bufferValue = 30;
 
-  constructor() { }
+	userEmail= this.userData.getUser()
+
+  constructor(private userData: FirebaseService) { }
 
   ngOnInit(): void {
   }
