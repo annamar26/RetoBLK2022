@@ -21,11 +21,16 @@ div {
     grid-template-columns: 210px 210px 210px;
     column-gap: 150px;
     row-gap: 50px;
-
-    .mat-card {
+button{
+  background-color: none;
+  border: none;
+  z-index: 1;
+   .mat-card {
+     z-index:0;
       background-color: #ff4713;
       justify-items: center;
       width: 210px;
+      cursor: pointer;
 
       .mat-card-title {
         color: #fff;
@@ -36,14 +41,18 @@ div {
       }
 
       img {
+        margin-top: 5px;
         border-radius: 0%;
         width: 210px;
         margin-left: 1px;
       }
     }
+}
+   
 
-    .mat-card:active {
-      background-color: #fff;
+   .mat-card:hover  {
+      background-color: white;
+
       .mat-card-title {
         color: #ff4713;
       }

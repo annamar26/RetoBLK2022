@@ -19,8 +19,12 @@ export class FifthQuestionComponent implements OnInit {
     this.user= sessionStorage.getItem('Nombre')
   }
   
-  checkVisited() {
-     this.isVisited = !this.isVisited;
+
+  checkVisited(event: any) {
+    const valor = event.target.value
+     console.log(valor)
+  
   }
+
   
 }
