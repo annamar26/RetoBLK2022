@@ -50,13 +50,13 @@
             <span *ngIf="f['cp'].errors && f['cp'].errors['pattern']">Ingresa un código válido.</span>
         </mat-error>
     </mat-form-field>
-    <section class="checkbox-section">
-        <mat-checkbox class="checkbox-margin">Haz click aquí para recibir comunicados sobre ofertas futuras de BlackRock.</mat-checkbox>
-        <mat-checkbox class="checkbox-margin"> Acepto la <span style="font-weight: bold;">Política de Privacidad</span> de BlackRock. </mat-checkbox>
+    <section class="mat-form-field">
+        <mat-checkbox class="checkbox-margin" formControlName="didAcceptInfo">Haz click aquí para recibir comunicados sobre ofertas futuras de BlackRock.</mat-checkbox>
+        <mat-checkbox class="checkbox-margin" formControlName="didAcceptTerms"> Acepto la <span style="font-weight: bold;">Política de Privacidad</span> de BlackRock. </mat-checkbox>
       </section>   
-    <section class="mat-form-field"> 
-        <p class="info" formControlName="didAcceptInfo">* Información requerida</p>
-        <p class="privacyPolicy" formControlName="didAcceptTerms"> Lee nuestra <span style="font-weight: bold;">Política de Privacidad</span>. </p>
+    <section class='info-section'> 
+        <p class="info">* Información requerida</p>
+        <p class="privacyPolicy"> Lee nuestra <span style="font-weight: bold;">Política de Privacidad</span>. </p>
     </section>   
     <button mat-stroked-button type="submit"> <mat-icon class='arrow'>keyboard_arrow_right</mat-icon> Enviar </button>
 </form>
