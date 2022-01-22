@@ -10,10 +10,12 @@ import { RegisterComponent } from 'src/app/components/register/register.componen
 })
 export class ResultsComponent implements OnInit {
 userName: any 
+Score: any
   constructor(public dialog: MatDialog) { }
 
   ngOnInit(){
     this.userName= sessionStorage.getItem('Nombre')
+    this.Score= sessionStorage.getItem('Score')
   }
   openDialog() {
     const dialogRef = this.dialog.open(RegisterComponent);

@@ -16,6 +16,8 @@ export class FirstQuestionComponent implements OnInit {
 	}
  
   user: any
+  result=[] as any
+  points1 = 0 as any
 
   constructor() { }
 
@@ -28,7 +30,42 @@ export class FirstQuestionComponent implements OnInit {
   toggleSelection(chip: MatChip) {
     chip.toggleSelected();
     console.log(chip.value)
-    this.playAudio();
+    this.playAudio(); 
+    
+    
+    if(!this.result.includes(chip.value)){
+      
+      this.result.push(chip.value)   
+    }
+    else {
+      const exist = this.result.indexOf(chip.value)
+      if(exist){
+        this.result.splice(exist,1)
+      } 
+    }
 
- }
+    let resultLength =this.result.length
+     switch (resultLength) {
+       case 1||2 : {this.points1=1}        
+         break;
+       case 3||4 : {this.points1=2}        
+         break;
+       case 5||6 : {this.points1=3}        
+         break;
+       case 7||8 : {this.points1=4}        
+         break;
+       case 9||10 : {this.points1=5}        
+         break;
+     }
+      this.settingStorage()
+    }
+    
+    settingStorage(){
+      const str = this.points1.toString()
+      sessionStorage.setItem("Score1", str)
+      console.log(this.result)
+      console.log(typeof str)
+      console.log(sessionStorage.getItem("Score1"))
+
+    }
 }
