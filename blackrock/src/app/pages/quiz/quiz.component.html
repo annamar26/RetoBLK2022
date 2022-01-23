@@ -1,14 +1,14 @@
 <mat-stepper orientation="horizontal" #stepper>
     <mat-step [stepControl]="firstFormGroup">
         <app-first-question ></app-first-question>
-        <div>
+        <div class="arrows">
             <button mat-button matStepperNext><mat-icon class='iconBtn' aria-hidden='false' aria-label='arrow_circle_down'>arrow_circle_down
             </mat-icon></button>
         </div>
     </mat-step>
     <mat-step [stepControl]="secondFormGroup">
         <app-secondquestion ></app-secondquestion>
-        <div>
+        <div class="arrows">
             <button mat-button matStepperPrevious><mat-icon class='iconBtn' aria-hidden='false' aria-label='arrow_circle_up'>arrow_circle_up
             </mat-icon></button>
             <button mat-button matStepperNext><mat-icon class='iconBtn' aria-hidden='false' aria-label='arrow_circle_down'>arrow_circle_down
@@ -17,7 +17,7 @@
     </mat-step>
     <mat-step [stepControl]="thirdFormGroup">
         <app-third-question></app-third-question>
-        <div>
+        <div class="arrows">
             <button mat-button matStepperPrevious><mat-icon class='iconBtn' aria-hidden='false' aria-label='arrow_circle_up'>arrow_circle_up
             </mat-icon></button>
             <button mat-button matStepperNext><mat-icon class='iconBtn' aria-hidden='false' aria-label='arrow_circle_down'>arrow_circle_down
@@ -26,7 +26,7 @@
     </mat-step>
     <mat-step [stepControl]="fourthFormGroup">
         <app-fourthquestion ></app-fourthquestion>
-        <div>
+        <div class="arrows">
             <button mat-button matStepperPrevious><mat-icon class='iconBtn' aria-hidden='false' aria-label='arrow_circle_up'>arrow_circle_up
             </mat-icon></button>
             <button mat-button matStepperNext><mat-icon class='iconBtn' aria-hidden='false' aria-label='arrow_circle_down'>arrow_circle_down
@@ -35,7 +35,7 @@
     </mat-step>
     <mat-step [stepControl]="fifthFormGroup">
         <app-fifth-question ></app-fifth-question>
-        <div>
+        <div class="arrows">
             <button mat-button matStepperPrevious><mat-icon class='iconBtn' aria-hidden='false' aria-label='arrow_circle_up' >arrow_circle_up
             </mat-icon></button>
             <button mat-button (click)="levelStorage()"> <mat-icon class='iconBtn' aria-hidden='false' aria-label='Arrow forward' >arrow_forward_ios

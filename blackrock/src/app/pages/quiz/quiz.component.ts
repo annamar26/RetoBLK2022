@@ -21,6 +21,42 @@ export class QuizComponent implements OnInit {
 
 	ngOnInit(): void {
 
+
+  
+ 
+
+
+ 
+	
+			
+
+
+	
+
+	
+	
+
+	
+			
+
+	
+
+	
+
+	
+			
+			
+	
+
+	
+	
+
+	
+	
+	
+	
+	
+
 	}
 
 	// fwdMsgToSib2($event: any) { this.currentMsgFromChild1ToChild2 = $event; }
@@ -69,6 +105,7 @@ export class QuizComponent implements OnInit {
 
 	levelStorage() {
 		console.log(this.punctuation());
+
 		this.level = this.punctuation();
 		sessionStorage.setItem("level", this.punctuation())
 		this.Router.navigate(["results"])

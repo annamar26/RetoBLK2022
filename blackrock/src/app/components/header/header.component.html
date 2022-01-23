@@ -1,13 +1,23 @@
 <header>
-	<img src="https://www.blackrock.com/amer-retail-k-assets/cache-1542297526000/images/media-bin/web/global/wordmark/blackrock-logo-nav.svg" width="150" routerLink="" />
-	<section>
-		<button class='name-user' mat-button *ngIf="userEmail | async as user; else elseBlock" routerLink="/profile">
-			Bienvenido(a) {{ !user.displayName ? user.email : user.displayName }}
-		  </button>
-		  <ng-template #elseBlock
-		  >
-		<button mat-stroked-button (click)="openDialog()">Iniciar sesión</button></ng-template
-		>
+	<img
+		src="https://www.blackrock.com/amer-retail-k-assets/cache-1542297526000/images/media-bin/web/global/wordmark/blackrock-logo-nav.svg"
+		width="150" routerLink="" />
+	<section class="main">
+		<section class="section-user" *ngIf="userEmail | async as user; else elseBlock">
+			<button class='name-user' mat-button routerLink="/profile">
+				Bienvenido(a) {{ !user.displayName ? user.email : user.displayName }}
+			</button>
+			<div class="container-logout">
+				<h3 class="logout" *ngIf="path === '/profile' || path === '/courses'" (click)="logOut()">Cerrar sesión</h3>
+			</div>
+
+		</section>
+		<ng-template #elseBlock>
+			<div>
+				<h3>¿Ya hiciste este quiz?</h3>
+				<button mat-stroked-button (click)="openDialog()">Iniciar sesión</button>
+			</div>
+		</ng-template>
 
 		<span>
 			<mat-icon aria-label="language" class="language-icon">language</mat-icon>
