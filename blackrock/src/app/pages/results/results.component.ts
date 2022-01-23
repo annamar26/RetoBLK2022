@@ -49,9 +49,9 @@ this.addLevelAPI()
 	async addLevelAPI(){
 		await this.userData.getUser().subscribe((user: any)=>{
 			console.log(user.email)
-			this.apiService.getEmailUser(user.email).then((response: any)=>{
+			this.apiService.getEmailUser(user.email).subscribe((response: any)=>{
 				console.log(response)
-				this.apiService.updateUserData(response[0].id, {...response[0], level: this.level, email: user.email}).then((data)=>{
+				this.apiService.updateUserData(response[0].id, {...response[0], level: this.level, email: user.email}).subscribe((data)=>{
 					console.log(data)
 				})
 			})

@@ -59,11 +59,11 @@ export class PersonalInformationComponent implements OnInit {
       console.log(this.userinfo.value);
       this.userData.getUser().subscribe((user: any) => {
         console.log(user.email);
-        this.apiService.getEmailUser(user.email).then((response: any) => {
+        this.apiService.getEmailUser(user.email).subscribe((response: any) => {
           console.log(response);
           this.apiService
             .updateUserData(response[0].id, this.userinfo.value)
-            .then((data) => {
+            .subscribe((data) => {
               console.log(data);
               this.router.navigate (['profile'])
             });

@@ -36,8 +36,9 @@ export class SecondquestionComponent implements OnInit {
     this.user= sessionStorage.getItem('Nombre')
   }
 
-  sendResults(){
-    switch (this.value) {
+  sendResults(e: any){
+    //console.log(e.value)
+    switch (e.value) {
 			case 0 :{this.points=0}
 			break;
       case 10||20:{this.points = 1}

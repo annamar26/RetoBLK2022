@@ -36,7 +36,7 @@ export class RegisterComponent implements OnInit {
 
       .then((userCredential: any) => {
         console.log('registro correcto', userCredential);
-        this.APIservice.register({...this.user.value, level: this.level}).then((users) => {
+        this.APIservice.register({...this.user.value, level: this.level}).subscribe((users) => {
           console.log(users);
      this.router.navigate (['courses'])
         });
@@ -51,7 +51,7 @@ export class RegisterComponent implements OnInit {
   name: userCredential.user._delegate.displayName, email: userCredential.user._delegate.email,
   level: this.level
 })
-      .then((users) => {
+      .subscribe((users) => {
       console.log(users);
   this.router.navigate (['courses'])
       })
