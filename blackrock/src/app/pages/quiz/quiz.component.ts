@@ -12,7 +12,8 @@ export class QuizComponent implements OnInit {
 	level: any
 	resultarray = [sessionStorage.getItem("Score1"), sessionStorage.getItem("Score2"), sessionStorage.getItem("Score3"), sessionStorage.getItem("Score4")]
 	scoremap = this.resultarray.map((x) => parseInt(x!))
-	score = (this.scoremap.reduce((a, b) => a + b));
+	score = ((this.scoremap.reduce((a, b) => a + b)));
+	points = 0
 	firstFormGroup!: FormGroup;
 	secondFormGroup!: FormGroup;
 	thirdFormGroup!: FormGroup;
@@ -20,10 +21,10 @@ export class QuizComponent implements OnInit {
 	fifthFormGroup!: FormGroup;
 	constructor(private Router: Router) { }
 
-	ngOnInit(): void {
-		sessionStorage.clear()
+	ngOnInit(){
 		console.log(this.scoremap)
 		console.log(this.score)
+		this.points = parseInt(this.score.toString())
 
   	}
 	pullname(e: any) {
@@ -31,26 +32,24 @@ export class QuizComponent implements OnInit {
 		console.log(e)
 	}
 	punctuation() {
-	
-		if (this.score >=0 && this.score < 7) {
+
+		if (this.points >=0 && this.points < 7) {
 			this.level = "Iniciado Jedi"
 		}
-		else if (this.score >= 8 && this.score <= 10) {
+		 else if (this.points>= 8 && this.points<= 10) {
 			this.level = "Padawan Jedi"
 		}
-		else if (this.score >= 11 && this.score <= 13) {
+		else  if (this.points>= 11 && this.points<= 13) {
 			this.level = "Caballero Jedi"
 		}
-		else if (this.score >= 14 && this.score <= 16) {
+		 else if (this.points>= 14 && this.points<= 16) {
 			this.level = "Maestro Jedi"
 		}
-		else if (this.score >= 17){
+		else if (this.points>= 17){
 			this.level = 'Maestro Yoda'
-		} else {
-			this.level = 'Iniciado Jedi'
-		}
+		} 
 
-		console.log(this.score)
+		console.log(this.points)
 		return this.level
 	}
 

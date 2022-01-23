@@ -20,7 +20,9 @@ export class QuizStartComponent implements OnInit {
   constructor(private Router: Router) { }
 
   ngOnInit(){
-    this.user= sessionStorage.getItem('Nombre')
+ 
+ 
+    sessionStorage.clear()
   }
 
   get f(): { [key: string]: AbstractControl } {

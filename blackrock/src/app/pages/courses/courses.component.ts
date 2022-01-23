@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { FakeAPIService } from 'src/app/services/fake-api.service';
+import { FirebaseService } from 'src/app/services/firebase.service';
 import { Course } from 'src/classes/Course';
 import { PersonalInformationComponent } from '../../components/personal-information/personal-information.component';
 
@@ -9,32 +11,15 @@ import { PersonalInformationComponent } from '../../components/personal-informat
   styleUrls: ['./courses.component.scss']
 })
 export class CoursesComponent implements OnInit {
-  CourseLevel1: Course[] = [
-    {
-      name: 'Ahorro vs inversión',
-      topic: 'Ahorro vs inversión',
-      description: 'En este curso vas a aprender las diferencias entre ahorrar e invertir',
-      duration: '4 semanas',
-      image: 'https://media.istockphoto.com/photos/the-woman-hand-is-putting-a-coin-in-a-glass-bottle-and-a-pile-of-on-picture-id1185358443?k=20&m=1185358443&s=612x612&w=0&h=3mfXaLte0QYoz9qO8vp20aIoqvruxbInReRjuWybNa0='
-    },
-    {
-      name: 'Ahorro vs inversión',
-      topic: 'Ahorro vs inversión',
-      description: 'En este curso vas a aprender las diferencias entre ahorrar e invertir',
-      duration: '4 semanas',
-      image: 'https://media.istockphoto.com/photos/the-woman-hand-is-putting-a-coin-in-a-glass-bottle-and-a-pile-of-on-picture-id1185358443?k=20&m=1185358443&s=612x612&w=0&h=3mfXaLte0QYoz9qO8vp20aIoqvruxbInReRjuWybNa0='
-    },
-    {
-      name: 'Ahorro vs inversión',
-      topic: 'Ahorro vs inversión',
-      description: 'En este curso vas a aprender las diferencias entre ahorrar e invertir',
-      duration: '4 semanas',
-      image: 'https://media.istockphoto.com/photos/the-woman-hand-is-putting-a-coin-in-a-glass-bottle-and-a-pile-of-on-picture-id1185358443?k=20&m=1185358443&s=612x612&w=0&h=3mfXaLte0QYoz9qO8vp20aIoqvruxbInReRjuWybNa0='
-    },
-  ];
-  constructor(public dialog: MatDialog) { }
+  userEmail= this.userData.getUser()
+  userName = ""
+  userLevel = ''
+  coursesToShow = [] as any
+  
+  constructor(public dialog: MatDialog, private userData: FirebaseService, private apiservice: FakeAPIService) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this.getUserLevel()
   }
 
   openDialog() {
@@ -44,5 +29,17 @@ export class CoursesComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
+  getUserLevel(){
+    this.userData.getUser().subscribe((user: any) => {
+      console.log(user.email);
+      this.apiservice.getEmailUser(user.email).subscribe((response: any) => {
+       this.userName =(response[0].name);
+       this.userLevel =(response[0].level)
+       this.apiservice.getLevelData(this.userLevel).subscribe((response: any)=>{
+ this.coursesToShow = response
+        console.log(this.coursesToShow)
+      
+     })
+  })})}
 }
 

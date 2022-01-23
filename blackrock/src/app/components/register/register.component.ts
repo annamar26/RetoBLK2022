@@ -12,6 +12,7 @@ import { FirebaseService } from 'src/app/services/firebase.service';
 export class RegisterComponent implements OnInit {
   hide= true
 	level: any
+  goal: any
   user = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(2)]),
     password: new FormControl('', [
@@ -25,6 +26,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
 		this.level = sessionStorage.getItem("level")
+    this.goal = sessionStorage.getItem("goal")
   }
   get f(): { [key: string]: AbstractControl } {
     return this.user.controls;
@@ -36,7 +38,7 @@ export class RegisterComponent implements OnInit {
 
       .then((userCredential: any) => {
         console.log('registro correcto', userCredential);
-        this.APIservice.register({...this.user.value, level: this.level}).subscribe((users) => {
+        this.APIservice.register({...this.user.value, level: this.level, goal: this.goal}).subscribe((users) => {
           console.log(users);
      this.router.navigate (['courses'])
         });
@@ -49,7 +51,7 @@ export class RegisterComponent implements OnInit {
       console.log('inicio de sesión correcto', userCredential);
       this.APIservice.register({
   name: userCredential.user._delegate.displayName, email: userCredential.user._delegate.email,
-  level: this.level
+  level: this.level, goal: this.goal
 })
       .subscribe((users) => {
       console.log(users);

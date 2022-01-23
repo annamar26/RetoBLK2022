@@ -23,10 +23,10 @@ export class FifthQuestionComponent implements OnInit {
 
   checkVisited(event: any) {
     const valor = event.target
-     console.log(valor)
-     //valor.style.-webkit-filter= "grayscale(0%)";
+     console.log(valor.value)
      valor.style.filter= "grayscale(0%)";
-     valor.style.transform= "scale(1.1)"
+     valor.style.transform= "scale(1.1)";
+     sessionStorage.setItem('goal', valor.value)
   }
 
   

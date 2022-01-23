@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FakeAPIService } from 'src/app/services/fake-api.service';
+import { FirebaseService } from 'src/app/services/firebase.service';
 
 @Component({
   selector: 'app-edit-profile',
@@ -10,7 +13,22 @@ export class EditProfileComponent implements OnInit {
   selectedGender: string ="";
   selectedAge: string ="";
   selectedEducation: string ="";
-  
+  name: any
+  gender: any
+  age: any
+  education:any
+  ocupation:any
+  cp:any
+  userinfo = new FormGroup({
+    name: new FormControl('', [Validators.required, Validators.minLength(2)]),
+    sex: new FormControl(''),
+    age: new FormControl(''),
+    education: new FormControl(''),
+    ocupation: new FormControl('', [Validators.minLength(2)]),
+    cp: new FormControl('', [Validators.pattern(/^[0-9]\d*$/)]),
+    didAcceptInfo: new FormControl(false),
+    didAcceptTerms: new FormControl(false),
+  });
   genders: any[] = [
     { value: 'Prefiero no responder', viewValue: 'Prefiero no responder' },
     { value: 'Mujer', viewValue: 'Mujer' },
@@ -37,10 +55,23 @@ export class EditProfileComponent implements OnInit {
     { value: 'Posgrado', viewValue: 'Posgrado' },
     ]
   
-  constructor() { }
+  constructor(private userData: FirebaseService, private apiservice: FakeAPIService) { }
   
-  ngOnInit(): void {
+  ngOnInit(){
+    this.getUserData()
   } 
-  
-
+  get f(): { [key: string]: AbstractControl } {
+    return this.userinfo.controls;
+  }
+  getUserData(){
+    this.userData.getUser().subscribe((user: any) => {
+      console.log(user.email);
+      this.apiservice.getEmailUser(user.email).subscribe((response: any) => {
+       this.name =(response[0].name);
+       this.gender =(response[0].gender)
+       this.age = (response[0].age)
+       this.education= (response[0].eduation)
+       this.ocupation = (response[0].workfield)
+       this.cp = response[0].cp
+  })})}
 }
