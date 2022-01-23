@@ -29,7 +29,6 @@ console.log(e)
   }
 	punctuation(){
 				const score = (this.scoremap.reduce((a, b) => a + b));
-		const levelassign = () => {
 			if(score <= 7){
 				this.level = "Iniciado Jedi"
 			}
@@ -42,7 +41,7 @@ console.log(e)
 			else if(score > 11){
 				this.level = "Caballero Jedi"
 			}
-			
+
 			else if(score <= 13){
 				this.level = "Caballero Jedi"
 			}
@@ -59,12 +58,12 @@ console.log(e)
 				{this.level = "Caballero Jedi"
 
 			}
+					console.log(score)
 			return this.level
-		}
-		console.log(score)
-		console.log(levelassign());
-		this.level = levelassign();
-		sessionStorage.setItem("level", levelassign())
+	}
+	levelStorage(){
+		this.level = this.punctuation();
+		sessionStorage.setItem("level", this.punctuation())
 		this.Router.navigate(["results"])
 	}
 }

@@ -7,14 +7,52 @@ header {
   padding-bottom: 1rem;
   justify-content: space-between;
   border-bottom: 1px solid;
-	img{
-		cursor: pointer;
-	}
-  section {
+  img {
+    cursor: pointer;
+  }
+  .main {
     padding-right: 1rem;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
+    .section-user {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      .container-logout {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        .logout {
+          text-decoration: underline;
+					cursor: pointer;
+          font: {
+            family: "Noto Sans", sans-serif;
+            size: 16px;
+            weight: 400;
+          }
+					&:hover{
+						color: #ff4713;
+					}
+        }
+      }
+    }
+    div {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      h3 {
+        margin: 0;
+        font: {
+          family: "Noto Sans", sans-serif;
+          size: 16px;
+          weight: 400;
+        }
+      }
+    }
 
     button {
       border: 2px solid;
@@ -31,7 +69,7 @@ header {
     .name-user {
       border-color: white;
     }
-    .name-user:hover{
+    .name-user:hover {
       background-color: white;
       color: black;
     }
