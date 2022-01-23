@@ -17,6 +17,7 @@ userEmail: any
   constructor(public dialog: MatDialog, private apiService: FakeAPIService, private userData: FirebaseService) { }
 
   ngOnInit(){
+	  console.log(this.level)
     this.userName= sessionStorage.getItem('Nombre')
 		this.level = sessionStorage.getItem("level")
 		const img = document.querySelector("#levelimg") as Element;

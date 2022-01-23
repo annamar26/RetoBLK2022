@@ -20,7 +20,7 @@ export class QuizComponent implements OnInit {
 	constructor(private Router: Router) { }
 
 	ngOnInit(): void {
-
+		sessionStorage.clear()
 
   
  
@@ -67,7 +67,7 @@ export class QuizComponent implements OnInit {
 	punctuation() {
 		const score = (this.scoremap.reduce((a, b) => a + b));
 
-		if (score <= 7) {
+		if (score >=0 && score < 7) {
 			this.level = "Iniciado Jedi"
 		}
 		else if (score >= 8 && score <= 10) {
@@ -79,8 +79,10 @@ export class QuizComponent implements OnInit {
 		else if (score >= 14 && score <= 16) {
 			this.level = "Maestro Jedi"
 		}
-		else {
+		else if (score >= 17){
 			this.level = 'Maestro Yoda'
+		} else {
+			this.level = 'Iniciado Jedi'
 		}
 
 		/* else if (score <= 13) {
@@ -108,7 +110,11 @@ export class QuizComponent implements OnInit {
 
 		this.level = this.punctuation();
 		sessionStorage.setItem("level", this.punctuation())
-		this.Router.navigate(["results"])
+		sessionStorage.getItem("level")
+		console.log(sessionStorage.getItem("level"))
+		if(sessionStorage.getItem("level" )){
+			this.Router.navigate(["results"])
+				}
 	}
 	
 }
