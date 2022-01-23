@@ -5,6 +5,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import { FakeAPIService } from 'src/app/services/fake-api.service';
 import { FirebaseService } from 'src/app/services/firebase.service';
 @Component({
@@ -25,8 +26,7 @@ export class ModalLoginComponent implements OnInit {
   });
 
   constructor(
-    private APIservice: FakeAPIService,
-    private firebase: FirebaseService
+    private firebase: FirebaseService, private router: Router
   ) {}
 
   ngOnInit(): void {}
@@ -40,6 +40,8 @@ export class ModalLoginComponent implements OnInit {
 
       .then((userCredential: any) => {
         console.log('inicio de sesión correcto', userCredential);
+        this.router.navigate(['profile'])
+
       })
       .catch((error) => console.log(error.message));
   }
@@ -47,6 +49,7 @@ export class ModalLoginComponent implements OnInit {
     this.firebase.loginGoogle()
     .then((userCredential: any) => {
       console.log('inicio de sesión correcto', userCredential);
+      this.router.navigate(['profile'])
     })
     .catch((error) => console.log(error.message));
   }

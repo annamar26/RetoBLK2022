@@ -9,4 +9,6 @@ export class user {
   'workfield'?: string;
 	'level'?: string;
 	'id'?: number;
+  'doneCourses'?: number;
+  'goal'?: string;
 }

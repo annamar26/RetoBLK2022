@@ -14,26 +14,14 @@
         placeholder="Nombre"
         formControlName="name"
         required
+        value="{{name}}"
       />
     </mat-form-field>
 
-    <mat-form-field appearance="legacy">
-      <mat-label>Email</mat-label>
-      <input
-        size="large"
-        id="email-edit"
-        name="mail"
-        matInput
-        placeholder="pat@example.com"
-        formControlName="mail"
-        required
-      />
-    </mat-form-field>
-
-    <section>
+       <section>
       <mat-form-field appearance="fill">
         <mat-label>Sexo <span>(opcional)</span></mat-label>
-        <select matNativeControl [(ngModel)]="selectedGender" name="gender">
+        <select matNativeControl [(ngModel)]="selectedGender" name="gender"  value="{{gender}}">
           <option value="" selected></option>
           <option *ngFor="let gender of genders" [value]="gender.value">
             {{ gender.viewValue }}
@@ -43,7 +31,7 @@
 
       <mat-form-field appearance="fill">
       <mat-label>Age <span>(opcional)</span></mat-label>
-        <select matNativeControl [(ngModel)]="selectedAge" name="age">
+        <select matNativeControl [(ngModel)]="selectedAge" name="age"  value="{{age}}">
           <option value="" selected></option>
           <option *ngFor="let age of ages" [value]="age.value">
             {{ age.viewValue }}
@@ -55,7 +43,7 @@
 
     <mat-form-field appearance="fill">
       <mat-label>Educación </mat-label>
-        <select matNativeControl [(ngModel)]="selectedEducation" name="educaction" required>
+        <select matNativeControl [(ngModel)]="selectedEducation" name="educaction" required  value="{{education}}">
           <option value="" selected></option>
           <option *ngFor="let education of educations" [value]="education.value">
             {{ education.viewValue }}
@@ -66,6 +54,7 @@
     <mat-form-field appearance="legacy">
       <mat-label>Ocupación</mat-label>
       <input
+      value="{{ocupation}}"
         size="large"
         id="job-edit"
         name="job"
@@ -74,6 +63,13 @@
         required
       />
     </mat-form-field>
+    <mat-form-field appearance="legacy">
+      <mat-label>Código Postal</mat-label>
+      <input matInput id="cp" name="cp" formControlName="cp" placeholder="Tu código postal"  value="{{cp}}"/>
+      <mat-error *ngIf="f['cp'].touched">
+          <span *ngIf="f['cp'].errors && f['cp'].errors['pattern']">Ingresa un código válido.</span>
+      </mat-error>
+  </mat-form-field>
   </div>
   <div class="btn-container">
       <button mat-stroked-button type="submit" class="saveBtn">

@@ -65,7 +65,7 @@ export class ThirdQuestionComponent implements OnInit {
     }
 
   // let str = this.points.toString()
-  this.points = str2
+  this.points = str2.toString()
   sessionStorage.setItem("Score3", this.points)
   sessionStorage.getItem("Score3")
   console.log(sessionStorage.getItem("Score3"))

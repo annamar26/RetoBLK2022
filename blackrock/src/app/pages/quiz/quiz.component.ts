@@ -12,6 +12,8 @@ export class QuizComponent implements OnInit {
 	level: any
 	resultarray = [sessionStorage.getItem("Score1"), sessionStorage.getItem("Score2"), sessionStorage.getItem("Score3"), sessionStorage.getItem("Score4")]
 	scoremap = this.resultarray.map((x) => parseInt(x!))
+	score = ((this.scoremap.reduce((a, b) => a + b)));
+	points = 0
 	firstFormGroup!: FormGroup;
 	secondFormGroup!: FormGroup;
 	thirdFormGroup!: FormGroup;
@@ -19,89 +21,35 @@ export class QuizComponent implements OnInit {
 	fifthFormGroup!: FormGroup;
 	constructor(private Router: Router) { }
 
-	ngOnInit(): void {
-		sessionStorage.clear()
+	ngOnInit(){
+		console.log(this.scoremap)
+		console.log(this.score)
+		this.points = parseInt(this.score.toString())
 
-  
- 
-
-
- 
-	
-			
-
-
-	
-
-	
-	
-
-	
-			
-
-	
-
-	
-
-	
-			
-			
-	
-
-	
-	
-
-	
-	
-	
-	
-	
-
-	}
-
-	// fwdMsgToSib2($event: any) { this.currentMsgFromChild1ToChild2 = $event; }
+  	}
 	pullname(e: any) {
 		this.name = e;
 		console.log(e)
 	}
 	punctuation() {
-		const score = (this.scoremap.reduce((a, b) => a + b));
 
-		if (score >=0 && score < 7) {
+		if (this.points >=0 && this.points < 7) {
 			this.level = "Iniciado Jedi"
 		}
-		else if (score >= 8 && score <= 10) {
+		 else if (this.points>= 8 && this.points<= 10) {
 			this.level = "Padawan Jedi"
 		}
-		else if (score >= 11 && score <= 13) {
+		else  if (this.points>= 11 && this.points<= 13) {
 			this.level = "Caballero Jedi"
 		}
-		else if (score >= 14 && score <= 16) {
+		 else if (this.points>= 14 && this.points<= 16) {
 			this.level = "Maestro Jedi"
 		}
-		else if (score >= 17){
+		else if (this.points>= 17){
 			this.level = 'Maestro Yoda'
-		} else {
-			this.level = 'Iniciado Jedi'
-		}
+		} 
 
-		/* else if (score <= 13) {
-			this.level = "Caballero Jedi"
-		}
-		else if (score >= 14) {
-			this.level = "Maestro Jedi"
-		}
-		else if (score <= 16) {
-			this.level = "Maestro Jedi"
-		}
-		else if (score >= 17) {
-			this.level = "Maestro Yoda"
-		}
-		else if (score == 11) {
-			this.level = "Caballero Jedi"
-
-		} */
-		console.log(score)
+		console.log(this.points)
 		return this.level
 	}
 

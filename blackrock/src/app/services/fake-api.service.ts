@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { user } from '../../classes/user';
 
-const ruta = "https://fakeapi-bk.herokuapp.com/users"
+const ruta = "https://fakeapi-bk.herokuapp.com"
 
 @Injectable({
   providedIn: 'root'
@@ -10,20 +10,23 @@ const ruta = "https://fakeapi-bk.herokuapp.com/users"
 export class FakeAPIService {
   constructor(private http: HttpClient) { }
 
-   async register(user: user) {
-    return await this.http.post(`${ruta}`, user);
+    register(user: user) {
+    return this.http.post(`${ruta}/users`, user);
   }
 
-  async getUserData(email: string, password:string){
-    return await this.http.get(`${ruta}`, {params: {email: email, password: password}})
+   getUserData(email: string, password:string){
+    return this.http.get(`${ruta}/users`, {params: {email: email, password: password}})
   }
-	async getEmailUser(email: string){
-		return await this.http.get(`${ruta}`, {params: {email: email}})
+	 getEmailUser(email: string){
+		return this.http.get(`${ruta}/users`, {params: {email: email}})
 	}
 //
-  async updateUserData(id:number, user: user) {
-    return await this.http.patch(`${ruta}/${id}`, user);
+   updateUserData(id:number, user: user) {
+    return this.http.patch(`${ruta}/users/${id}`, user);
     
+  }
+  getLevelData(level: string){
+    return this.http.get(`${ruta}/courses`, {params: {level: level}})
   }
 
 
