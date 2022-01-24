@@ -75,9 +75,18 @@ export class SpinnerComponent implements OnInit {
       case 16:
         level = 'Maestro Jedi';
         break;
+        case 17:
+          level = 'Maestro Yoda';
+          break;
+          case 18:
+            level = 'Maestro Yoda';
+            break;
+            case 19:
+              level = 'Maestro Yoda';
+              break;
 
       default:
-        level = 'Maestro Yoda';
+        level = 'Iniciado Jedi';
         break;
     }
     if (level === 'Iniciado Jedi') {

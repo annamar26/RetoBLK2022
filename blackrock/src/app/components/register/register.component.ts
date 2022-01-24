@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
       Validators.required,
       Validators.minLength(8),
     ]),
-    mail: new FormControl('', [Validators.required, Validators.email]),
+    email: new FormControl('', [Validators.required, Validators.email]),
   });
   constructor(private APIservice: FakeAPIService,
     private firebase: FirebaseService, public router: Router) { }

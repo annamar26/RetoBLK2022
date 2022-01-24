@@ -38,7 +38,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { PersonalInformationComponent } from './components/personal-information/personal-information.component';
 import {MatSelectModule} from '@angular/material/select';
-import { ResultsComponent } from './pages/results/results.component';
+import { ResultsComponent} from "./pages/results/results.component";
 import { CoursesComponent } from './pages/courses/courses.component';
 import { QuizMainComponent } from './pages/quiz-main/quiz-main.component';
 import { RegisterComponent } from './components/register/register.component';
