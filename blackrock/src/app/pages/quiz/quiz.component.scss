@@ -1,7 +1,7 @@
 $bg-color: #ffce00;
 mat-stepper{
 	.arrows{
-		height: 10vh;
+		height: fit-content;
 		padding: 0 4rem 2rem 0;
 	}
 }
@@ -10,7 +10,7 @@ div {
     background-color: $bg-color;
     padding: 1.5em;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 }
 mat-icon {
 	font-size: 40px;
@@ -42,6 +42,14 @@ mat-icon {
 }
 
 ::ng-deep .mat-horizontal-content-container{
-	height: 100vh;
+	height: fit-content;
 	padding: 0 !important;
+}
+
+
+@media (max-width: 600px)and (orientation: portrait){
+    .mat-horizontal-content-container {
+        overflow: visible !important;
+        padding: 0 !important;
+    }
 }

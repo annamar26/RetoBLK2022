@@ -11,12 +11,16 @@
 			</p>
 		</section>
 		<div class="register">
-			<h3  (click)="openDialog('register')">Registrate para comenzar a aprender</h3>
-			<mat-icon>share</mat-icon>
+			<h3 (click)="openDialog('register')">Registrate para comenzar a aprender</h3>
+			<share-buttons [theme]="'material-dark'" [include]="['facebook','twitter','linkedin','whatsapp','copy']"
+				[show]="5" [showText]="true" [url]="'https://blackrockchallenge-96045.web.app/'"
+				[title]="'Compartir quiz'" [description]="'¿Te gustaría ser un maestro Yoda de las finanzas?'"
+				[image]="'https://wallpapersmug.com/large/10903a/yoda-star-wars-battlefront-ii-game-minimal.jpg'"
+				[tags]="'quiz'" [autoSetMeta]="false"></share-buttons>
 		</div>
 	</section>
 	<section class="img">
-		<img id=levelimg  alt="guerrero">
+		<img id=levelimg alt="guerrero">
 	</section>
 </div>
 <div class="white-div"></div>
