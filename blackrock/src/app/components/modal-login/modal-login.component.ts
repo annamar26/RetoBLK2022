@@ -15,9 +15,14 @@ import { FirebaseService } from 'src/app/services/firebase.service';
 })
 export class ModalLoginComponent implements OnInit {
   hide = true;
-
+  level: any;
+  valorModal = true;
+  name: any;
+  doneCourses: any;
+  goal: any;
+  email: any
+  password: any
   user = new FormGroup({
-    name: new FormControl('', [Validators.required, Validators.minLength(2)]),
     password: new FormControl('', [
       Validators.required,
       Validators.minLength(8),
@@ -26,10 +31,19 @@ export class ModalLoginComponent implements OnInit {
   });
 
   constructor(
-    private firebase: FirebaseService, private router: Router
+    private firebase: FirebaseService,
+    private router: Router,
+    private APIservice: FakeAPIService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit() {
+    this.valorModal =
+      sessionStorage.getItem('valorModal') === 'true' ? true : false;
+    this.level = sessionStorage.getItem('level');
+    this.doneCourses = sessionStorage.getItem('doneCourses');
+    this.goal = sessionStorage.getItem('goal');
+    this.name = sessionStorage.getItem('Nombre');
+  }
   get f(): { [key: string]: AbstractControl } {
     return this.user.controls;
   }
@@ -40,17 +54,49 @@ export class ModalLoginComponent implements OnInit {
 
       .then((userCredential: any) => {
         console.log('inicio de sesión correcto', userCredential);
-        this.router.navigate(['profile'])
-
+        this.router.navigate(['profile']);
       })
       .catch((error) => console.log(error.message));
   }
-  google(){
-    this.firebase.loginGoogle()
-    .then((userCredential: any) => {
-      console.log('inicio de sesión correcto', userCredential);
-      this.router.navigate(['profile'])
-    })
-    .catch((error) => console.log(error.message));
+  google() {
+    this.firebase
+      .loginGoogle()
+      .then((userCredential: any) => {
+        console.log('inicio de sesión correcto', userCredential);
+        this.router.navigate(['profile']);
+      })
+      .catch((error) => console.log(error.message));
+  }
+  register() {
+    this.firebase
+      .singIn(this.user.value.mail, this.user.value.password)
+
+      .then((userCredential: any) => {
+        console.log('registro correcto', userCredential);
+       
+            this.APIservice.register({email: this.user.value.mail, name: this.name, level: this.level, doneCourses: this.doneCourses, goal: this.goal}).subscribe((users) => {
+              console.log(users);
+         this.router.navigate (['courses'])
+            });
+      })
+      .catch((error) => console.log(error.message));
+  }
+  google2() {
+    this.firebase
+      .loginGoogle()
+      .then((userCredential: any) => {
+        console.log('inicio de sesión correcto', userCredential);
+        this.APIservice.register({
+          name: userCredential.user._delegate.displayName,
+          email: userCredential.user._delegate.email,
+          level: this.level,
+          doneCourses: this.doneCourses,
+          goal: this.goal,
+        }).subscribe((users) => {
+          console.log(users);
+          this.router.navigate(['courses']);
+        });
+      })
+      .catch((error) => console.log(error.message));
   }
 }

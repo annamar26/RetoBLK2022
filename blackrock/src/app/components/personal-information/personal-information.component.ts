@@ -34,10 +34,10 @@ export class PersonalInformationComponent implements OnInit {
   ];
   userinfo = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(2)]),
-    sex: new FormControl(''),
+    gender: new FormControl(''),
     age: new FormControl(''),
     education: new FormControl(''),
-    ocupation: new FormControl('', [Validators.minLength(2)]),
+    workfield: new FormControl('', [Validators.minLength(2)]),
     cp: new FormControl('', [Validators.pattern(/^[0-9]\d*$/)]),
     didAcceptInfo: new FormControl(false),
     didAcceptTerms: new FormControl(false),
@@ -51,7 +51,7 @@ export class PersonalInformationComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  get f(): { [key: string]: AbstractControl } {
+  get k(): { [key: string]: AbstractControl } {
     return this.userinfo.controls;
   }
   onFormSubmit() {
@@ -72,9 +72,6 @@ export class PersonalInformationComponent implements OnInit {
     } else {
       return;
     }
-    /* this.APIservice.updateUserData(id, this.userinfo.value).subscribe((users) => {
-      console.log(users);
-    this.router.navigate (['profile'])
-  })  */
+  
   }
 }

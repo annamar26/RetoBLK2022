@@ -15,9 +15,10 @@ export class HeaderComponent implements OnInit {
   userEmail= this.userData.getUser()
   constructor(public dialog: MatDialog,  private userData: FirebaseService, private Router: Router) { }
 
-	openDialog() {
+	openDialog(valor :string) {
     const dialogRef = this.dialog.open(ModalLoginComponent, {panelClass: 'my-custom-dialog-login'});
-
+    sessionStorage.setItem('valorModal', "true")
+    console.log(sessionStorage.getItem('valorModal'))
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
