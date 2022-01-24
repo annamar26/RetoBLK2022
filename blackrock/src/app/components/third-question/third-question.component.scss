@@ -1,11 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+
 div{
     background-color: #ff4713;
     padding: 5%;
     height: 85%;
     .header{
         width: 100%;
-        h2{ font-size:40px;
+        h2{ font-size:36px;
             font-weight: 700;
+            font-family: "Noto Sans", sans-serif;
         width:75% ;}
         section{
             width: 25%;
@@ -31,6 +34,7 @@ div{
         width: 75%;
          line-height: 33px;
          font-size: 24px;
+         font-family: "Noto Sans", sans-serif;
      }
        section{
            width: 20%;
