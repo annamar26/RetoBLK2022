@@ -1,63 +1,107 @@
-<h2 mat-dialog-title> ¡Queremos conocerte mejor!</h2>
+<h1 mat-dialog-title>¡Queremos conocerte mejor!</h1>
 <mat-dialog-content class="mat-typography">
-<form [formGroup]="userinfo" (ngSubmit)="onFormSubmit()">
-    <mat-form-field appearance="legacy">
+  <form [formGroup]="userinfo" (ngSubmit)="onFormSubmit()">
+    <section>
+      <mat-form-field appearance="legacy">
         <mat-label>Nombre* </mat-label>
-        <input matInput id="name" name="name" formControlName="name" placeholder="Nombre completo" />
+        <input
+          matInput
+          id="name"
+          name="name"
+          formControlName="name"
+          placeholder="Nombre completo"
+        />
         <mat-error *ngIf="f['name'].touched">
-            <span *ngIf="f['name'].errors && f['name'].errors['required']">Este campo es obligatorio.</span>
-            <span *ngIf="f['name'].errors && f['name'].errors['minlength']">Ingresa un nombre válido.</span>
+          <span *ngIf="f['name'].errors && f['name'].errors['required']"
+            >Este campo es obligatorio.</span
+          >
+          <span *ngIf="f['name'].errors && f['name'].errors['minlength']"
+            >Ingresa un nombre válido.</span
+          >
         </mat-error>
-    </mat-form-field>
-    <mat-form-field appearance="legacy">
+      </mat-form-field>
+      <mat-form-field appearance="legacy">
         <mat-label>Sexo (Opcional)</mat-label>
         <mat-select formControlName="sex">
-            <mat-option value="NoData">Prefiero no responder</mat-option>
-            <mat-option *ngFor="let sex of Sex" [value]="sex">
-                {{sex}}
-            </mat-option>
+          <mat-option value="NoData">Prefiero no responder</mat-option>
+          <mat-option *ngFor="let sex of Sex" [value]="sex">
+            {{ sex }}
+          </mat-option>
         </mat-select>
-    </mat-form-field>
-    <mat-form-field appearance="legacy">
+      </mat-form-field>
+      <mat-form-field appearance="legacy">
         <mat-label>Edad (Opcional)</mat-label>
         <mat-select formControlName="age">
-            <mat-option value="NoData">Prefiero no responder</mat-option>
-            <mat-option *ngFor="let age of ages" [value]="age">
-                {{age}}
-            </mat-option>
+          <mat-option value="NoData">Prefiero no responder</mat-option>
+          <mat-option *ngFor="let age of ages" [value]="age">
+            {{ age }}
+          </mat-option>
         </mat-select>
-    </mat-form-field>
-    <mat-form-field appearance="legacy">
+      </mat-form-field>
+      <mat-form-field appearance="legacy">
         <mat-label>Educación (Opcional)</mat-label>
         <mat-select formControlName="education">
-            <mat-option value="NoData">Prefiero no responder</mat-option>
-            <mat-option *ngFor="let level of education" [value]="level">
-                {{level}}
-            </mat-option>
+          <mat-option value="NoData">Prefiero no responder</mat-option>
+          <mat-option *ngFor="let level of education" [value]="level">
+            {{ level }}
+          </mat-option>
         </mat-select>
-    </mat-form-field>
-    <mat-form-field appearance="legacy">
+      </mat-form-field>
+      <mat-form-field appearance="legacy">
         <mat-label>Ocupación </mat-label>
-        <input matInput id="ocupation" name="ocupation" formControlName="ocupation" placeholder="Tu ocupación" />
+        <input
+          matInput
+          id="ocupation"
+          name="ocupation"
+          formControlName="ocupation"
+          placeholder="Tu ocupación"
+        />
         <mat-error *ngIf="f['ocupation'].touched">
-            <span *ngIf="f['ocupation'].errors && f['ocupation'].errors['minlength']">Ingresa una ocupación válida.</span>
+          <span
+            *ngIf="f['ocupation'].errors && f['ocupation'].errors['minlength']"
+            >Ingresa una ocupación válida.</span
+          >
         </mat-error>
-    </mat-form-field>
-    <mat-form-field appearance="legacy">
+      </mat-form-field>
+      <mat-form-field appearance="legacy">
         <mat-label>Código Postal</mat-label>
-        <input matInput id="cp" name="cp" formControlName="cp" placeholder="Tu código postal" />
+        <input
+          matInput
+          id="cp"
+          name="cp"
+          formControlName="cp"
+          placeholder="Tu código postal"
+        />
         <mat-error *ngIf="f['cp'].touched">
-            <span *ngIf="f['cp'].errors && f['cp'].errors['pattern']">Ingresa un código válido.</span>
+          <span *ngIf="f['cp'].errors && f['cp'].errors['pattern']"
+            >Ingresa un código válido.</span
+            >
         </mat-error>
     </mat-form-field>
-    <section class="mat-form-field">
-        <mat-checkbox class="checkbox-margin" formControlName="didAcceptInfo">Haz click aquí para recibir comunicados sobre ofertas futuras de BlackRock.</mat-checkbox>
-        <mat-checkbox class="checkbox-margin" formControlName="didAcceptTerms"> Acepto la <span style="font-weight: bold;">Política de Privacidad</span> de BlackRock. </mat-checkbox>
-      </section>   
-    <section class='info-section'> 
-        <p class="info">* Información requerida</p>
-        <p class="privacyPolicy"> Lee nuestra <span style="font-weight: bold;">Política de Privacidad</span>. </p>
-    </section>   
-    <button mat-stroked-button type="submit"> <mat-icon class='arrow'>keyboard_arrow_right</mat-icon> Enviar </button>
-</form>
+</section>
+      <section class="mat-form-field" id="checkbox-section">
+        <mat-checkbox class="checkbox-margin" formControlName="didAcceptInfo"
+          >Haz click aquí para recibir comunicados sobre ofertas futuras de
+          BlackRock.</mat-checkbox
+        >
+        <mat-checkbox class="checkbox-margin" formControlName="didAcceptTerms">
+          Acepto la
+          <span style="font-weight: bold">Política de Privacidad</span> de
+          BlackRock.
+        </mat-checkbox>
+      </section>
+      <!-- <section class="info-section"> -->
+          <section class="btn-section">
+            <p class="info">* Información requerida</p>
+            <p class="privacyPolicy">
+              Lee nuestra
+              <span style="font-weight: bold">Política de Privacidad</span>.
+            </p>
+
+            <button mat-stroked-button type="submit" class="info-btn">
+              <mat-icon class="arrow">keyboard_arrow_right</mat-icon> Enviar
+            </button>
+        </section>
+      <!-- </section> -->
+  </form>
 </mat-dialog-content>
