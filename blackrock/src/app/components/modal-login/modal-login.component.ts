@@ -16,8 +16,7 @@ import { FirebaseService } from 'src/app/services/firebase.service';
   styleUrls: ['./modal-login.component.scss'],
 })
 export class ModalLoginComponent implements OnInit {
-  hide = true;
-  errormessage: string ='';
+  hide = true;  
   horizontalPosition: MatSnackBarHorizontalPosition = 'end';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   duration: number = 2000
@@ -38,7 +37,7 @@ export class ModalLoginComponent implements OnInit {
 
   constructor(
     private firebase: FirebaseService, private router: Router, private _snackBar: MatSnackBar, private APIservice: FakeAPIService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.valorModal =
@@ -57,22 +56,22 @@ export class ModalLoginComponent implements OnInit {
       .logIn(this.user.value.mail, this.user.value.password)
 
       .then((userCredential: any) => {
-        console.log('inicio de sesión correcto', userCredential);
-        this.loginopenSnackBar('Hola de nuevo');      
+        console.log('inicio de sesión correcto', userCredential);        
         this.router.navigate(['profile']);
+        this.loginopenSnackBar('Hola de nuevo');
       })
-      .catch((error) => {console.log(error.message);
-      this.errormessage= error.message
-      this.loginopenSnackBar(error.message)
-    });
+      .catch((error) => {
+        console.log(error.message);
+        this.loginopenSnackBar(error.message)
+      });
   }
   google() {
     this.firebase
       .loginGoogle()
       .then((userCredential: any) => {
-        console.log('inicio de sesión correcto', userCredential);
-        this.loginopenSnackBar('Hola de nuevo');
+        console.log('inicio de sesión correcto', userCredential);        
         this.router.navigate(['profile']);
+        this.loginopenSnackBar('Hola de nuevo');
       })
       .catch((error) => {
         console.log(error.message)
@@ -85,12 +84,12 @@ export class ModalLoginComponent implements OnInit {
 
       .then((userCredential: any) => {
         console.log('registro correcto', userCredential);
-       
-            this.APIservice.register({email: this.user.value.mail, name: this.name, level: this.level, doneCourses: this.doneCourses, goal: this.goal}).subscribe((users) => {
-              console.log(users);
-              this.loginopenSnackBar('Registro exitoso')
-         this.router.navigate (['courses'])
-            });
+
+        this.APIservice.register({ email: this.user.value.mail, name: this.name, level: this.level, doneCourses: this.doneCourses, goal: this.goal }).subscribe((users) => {
+          console.log(users);          
+          this.router.navigate(['courses'])
+          this.loginopenSnackBar('Registro exitoso')
+        });
       })
       .catch((error) => {
         console.log(error.message)
@@ -112,6 +111,7 @@ export class ModalLoginComponent implements OnInit {
           console.log(users);
           this.loginopenSnackBar('Registro exitoso')
           this.router.navigate(['courses']);
+          
         });
       })
       .catch((error) => {
@@ -122,7 +122,7 @@ export class ModalLoginComponent implements OnInit {
 
   loginopenSnackBar(message: string) {
     this._snackBar.open(message, 'close', {
-      duration: this.duration, 
+      duration: this.duration,
       verticalPosition: this.verticalPosition,
       horizontalPosition: this.horizontalPosition,
     });
