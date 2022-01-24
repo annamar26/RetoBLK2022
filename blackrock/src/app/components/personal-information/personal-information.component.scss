@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+
+::ng-deep .mat-dialog-container {
+  width: 75vw;
+  background-color: white;
+  padding: 5%;
+  height: 80vh;
+  align-items: center;
+}
+
+h1 {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 3rem;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    section {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        mat-form-field{    
+            margin-right: 1.5rem;
+            margin-bottom: 3rem;
+            width: 30%;
+        }
+    }
+}
+#checkbox-section{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+
+
+    .btn-section{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        width: 100%;
+        margin-top: 3rem;
+        align-items: flex-end;
+        gap: 1rem;
+
+        .info-btn {
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            // margin-left: 10px;
+            // margin-right: 2rem;
+          width: 25%;
+          mat-icon {
+            color: #ff4713;
+          }
+        }
+    }
+
