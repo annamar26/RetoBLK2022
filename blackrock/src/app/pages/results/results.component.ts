@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalLoginComponent } from 'src/app/components/modal-login/modal-login.component';
-import { RegisterComponent } from 'src/app/components/register/register.component';
 import { FakeAPIService } from 'src/app/services/fake-api.service';
 import { FirebaseService } from 'src/app/services/firebase.service';
 
