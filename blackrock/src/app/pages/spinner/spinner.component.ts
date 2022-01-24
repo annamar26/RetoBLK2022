@@ -10,6 +10,8 @@ export class SpinnerComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {
+		this.playAudio();
+
     const resultarray = [
       sessionStorage.getItem('Score1'),
       sessionStorage.getItem('Score2'),
@@ -76,15 +78,15 @@ export class SpinnerComponent implements OnInit {
       case 16:
         level = 'Maestro Jedi';
         break;
-        case 17:
-          level = 'Maestro Yoda';
-          break;
-          case 18:
-            level = 'Maestro Yoda';
-            break;
-            case 19:
-              level = 'Maestro Yoda';
-              break;
+      case 17:
+        level = 'Maestro Yoda';
+        break;
+      case 18:
+        level = 'Maestro Yoda';
+        break;
+      case 19:
+        level = 'Maestro Yoda';
+        break;
 
       default:
         level = 'Iniciado Jedi';
@@ -107,14 +109,24 @@ export class SpinnerComponent implements OnInit {
       description = 'Aliado de la fuerza ya eres... un último paso dar debes';
       doneCourses = 12
     }
-   sessionStorage.setItem('description', description)
+    sessionStorage.setItem('description', description);
     sessionStorage.setItem('score', score.toString());
     sessionStorage.setItem('level', level);
     sessionStorage.setItem('doneCourses', doneCourses.toString())
     sessionStorage.getItem('level');
     console.log(sessionStorage.getItem('level'));
     if (sessionStorage.getItem('level') != '') {
-      this.router.navigate(['results'])
+      setTimeout(() => {
+        this.router.navigate(['results']);
+      }, 3000);
     }
   }
+
+  playAudio() {
+    const audio = new Audio();
+    audio.src = '../../../assets/soundeffect_.mp3';
+    audio.load();
+    audio.play();
+  }
+
 }
