@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { FakeAPIService } from 'src/app/services/fake-api.service';
 import { FirebaseService } from 'src/app/services/firebase.service';
 
 @Component({
@@ -20,8 +21,14 @@ export class ModalLoginComponent implements OnInit {
   horizontalPosition: MatSnackBarHorizontalPosition = 'end';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   duration: number = 2000
+  level: any;
+  valorModal = true;
+  name: any;
+  doneCourses: any;
+  goal: any;
+  email: any
+  password: any
   user = new FormGroup({
-    name: new FormControl('', [Validators.required, Validators.minLength(2)]),
     password: new FormControl('', [
       Validators.required,
       Validators.minLength(8),
@@ -30,10 +37,17 @@ export class ModalLoginComponent implements OnInit {
   });
 
   constructor(
-    private firebase: FirebaseService, private router: Router, private _snackBar: MatSnackBar
+    private firebase: FirebaseService, private router: Router, private _snackBar: MatSnackBar, private APIservice: FakeAPIService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit() {
+    this.valorModal =
+      sessionStorage.getItem('valorModal') === 'true' ? true : false;
+    this.level = sessionStorage.getItem('level');
+    this.doneCourses = sessionStorage.getItem('doneCourses');
+    this.goal = sessionStorage.getItem('goal');
+    this.name = sessionStorage.getItem('Nombre');
+  }
   get f(): { [key: string]: AbstractControl } {
     return this.user.controls;
   }
@@ -44,26 +58,68 @@ export class ModalLoginComponent implements OnInit {
 
       .then((userCredential: any) => {
         console.log('inicio de sesión correcto', userCredential);
-        this.loginopenSnackBar('Hola de nuevo');        
-
+        this.loginopenSnackBar('Hola de nuevo');      
+        this.router.navigate(['profile']);
       })
       .catch((error) => {console.log(error.message);
       this.errormessage= error.message
       this.loginopenSnackBar(error.message)
     });
   }
-  google(){
-    this.firebase.loginGoogle()
-    .then((userCredential: any) => {
-      console.log('inicio de sesión correcto', userCredential);
-      this.loginopenSnackBar('Hola de nuevo');
-      this.router.navigate(['profile'])
-    })
-    .catch((error) => {console.log(error.message);
-      this.errormessage= error.message
-      this.loginopenSnackBar(error.message)
-    });
+  google() {
+    this.firebase
+      .loginGoogle()
+      .then((userCredential: any) => {
+        console.log('inicio de sesión correcto', userCredential);
+        this.loginopenSnackBar('Hola de nuevo');
+        this.router.navigate(['profile']);
+      })
+      .catch((error) => {
+        console.log(error.message)
+        this.loginopenSnackBar(error.message)
+      });
   }
+  register() {
+    this.firebase
+      .singIn(this.user.value.mail, this.user.value.password)
+
+      .then((userCredential: any) => {
+        console.log('registro correcto', userCredential);
+       
+            this.APIservice.register({email: this.user.value.mail, name: this.name, level: this.level, doneCourses: this.doneCourses, goal: this.goal}).subscribe((users) => {
+              console.log(users);
+              this.loginopenSnackBar('Registro exitoso')
+         this.router.navigate (['courses'])
+            });
+      })
+      .catch((error) => {
+        console.log(error.message)
+        this.loginopenSnackBar(error.message)
+      });
+  }
+  google2() {
+    this.firebase
+      .loginGoogle()
+      .then((userCredential: any) => {
+        console.log('inicio de sesión correcto', userCredential);
+        this.APIservice.register({
+          name: userCredential.user._delegate.displayName,
+          email: userCredential.user._delegate.email,
+          level: this.level,
+          doneCourses: this.doneCourses,
+          goal: this.goal,
+        }).subscribe((users) => {
+          console.log(users);
+          this.loginopenSnackBar('Registro exitoso')
+          this.router.navigate(['courses']);
+        });
+      })
+      .catch((error) => {
+        console.log(error.message)
+        this.loginopenSnackBar(error.message)
+      });
+  }
+
   loginopenSnackBar(message: string) {
     this._snackBar.open(message, 'close', {
       duration: this.duration, 

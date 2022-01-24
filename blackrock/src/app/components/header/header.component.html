@@ -5,7 +5,7 @@
 	<section class="main">
 		<section class="section-user" *ngIf="userEmail | async as user; else elseBlock">
 			<button class='name-user' mat-button routerLink="/profile">
-				Bienvenido(a) {{ !user.displayName ? user.email : user.displayName }}
+				Bienvenido(a) {{ !userName ? user.email : userName }}
 			</button>
 			<div class="container-logout">
 				<h3 class="logout" *ngIf="path === '/profile' || path === '/courses'" (click)="logOut()">Cerrar sesión</h3>
@@ -15,7 +15,7 @@
 		<ng-template #elseBlock>
 			<div>
 				<h3>¿Ya hiciste este quiz?</h3>
-				<button mat-stroked-button (click)="openDialog()">Iniciar sesión</button>
+				<button mat-stroked-button (click)="openDialog('login')">Iniciar sesión</button>
 			</div>
 		</ng-template>
 

@@ -1,10 +1,17 @@
+<section *ngIf="valorModal; else   elseBlock">
 <h2 mat-dialog-title>Inicia sesión</h2>
-<mat-dialog-content class="mat-typography" >
   <p>
     Inicia sesión para ver tu ruta de aprendizaje personalizada y continuar en
     tu camino al éxito
   </p>
-  <form (ngSubmit)="logIn()" [formGroup]="user">
+  </section>
+  <ng-template #elseBlock>
+    <h2 mat-dialog-title>Regístrate</h2>
+    <p>
+      Después de tu registro podras acceder a todos los cursos de nuestra plataforma.
+    </p>
+  </ng-template>
+  <form (ngSubmit)="valorModal  ? logIn() : register()" [formGroup]="user">
     <div class="inputs">
       <mat-form-field appearance="legacy" >
         <mat-label>Ingresa tu email</mat-label>
@@ -61,12 +68,18 @@
         </mat-error>
       </mat-form-field>
     </div>
-      <div class="login"> <button mat-button  [mat-dialog-close]="true" cdkFocusInitial type="submit">
+      <div class="login"  *ngIf="valorModal; else elseBlock2"> 
+        <button mat-button  [mat-dialog-close]="true" cdkFocusInitial type="submit">
         <mat-icon class='arrow'>keyboard_arrow_right</mat-icon>Inicia sesión</button>
         <button mat-button  [mat-dialog-close]="true" cdkFocusInitial type="button" (click)="google()">
-          <mat-icon class='arrow'>keyboard_arrow_right</mat-icon>Inicia sesión con Google</button>
-      </div>
-      
+          <mat-icon class='arrow'>keyboard_arrow_right</mat-icon>Inicia sesión con Google</button></div>
+          <ng-template #elseBlock2 >
+            <div class="login"><button mat-button  [mat-dialog-close]="true" cdkFocusInitial type="submit">
+              <mat-icon class='arrow'>keyboard_arrow_right</mat-icon>Registrarse</button>
+              <button mat-button  [mat-dialog-close]="true" cdkFocusInitial type="button" (click)="google2()">
+                <mat-icon class='arrow'>keyboard_arrow_right</mat-icon>Registrarse con Google</button></div>
+            
+          </ng-template>
 
   </form>
-</mat-dialog-content>
+

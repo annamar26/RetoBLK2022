@@ -16,7 +16,6 @@ export class EditProfileComponent implements OnInit {
   selectedEducation: string ="";
   name: any
   gender: any
-  default: any
   age: any
   education:any
   ocupation:any
