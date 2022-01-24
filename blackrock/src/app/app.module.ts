@@ -43,6 +43,10 @@ import { CoursesComponent } from './pages/courses/courses.component';
 import { QuizMainComponent } from './pages/quiz-main/quiz-main.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { SpinnerComponent } from './pages/spinner/spinner.component';
+import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
+import { ShareIconsModule } from 'ngx-sharebuttons/icons';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 @NgModule({
   declarations: [
@@ -95,6 +99,10 @@ import { SpinnerComponent } from './pages/spinner/spinner.component';
     MatProgressBarModule,
     MatSelectModule,
     MatProgressSpinnerModule,
+    ShareButtonsModule,
+    ShareIconsModule,
+    MatSnackBarModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],
