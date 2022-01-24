@@ -7,6 +7,7 @@ import { ResultsComponent } from './pages/results/results.component';
 import { QuizMainComponent } from './pages/quiz-main/quiz-main.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { CoursesComponent } from './pages/courses/courses.component';
+import { SpinnerComponent } from './pages/spinner/spinner.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path:"startquiz", component:QuizMainComponent, pathMatch:"full"},
   {path:"profile", component:ProfileComponent, pathMatch:"full"},
   {path:"courses", component:CoursesComponent, pathMatch:"full"},  
+  {path:"loading", component:SpinnerComponent, pathMatch:"full"},  
   { path: '**', redirectTo:"", pathMatch:'full'}
 
 ];
