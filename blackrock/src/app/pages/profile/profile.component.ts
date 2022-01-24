@@ -3,6 +3,8 @@ import { ThemePalette } from '@angular/material/core';
 import { ProgressBarMode } from '@angular/material/progress-bar';
 import { FakeAPIService } from 'src/app/services/fake-api.service';
 import { FirebaseService } from 'src/app/services/firebase.service';
+import { jsPDF } from "jspdf";
+
 
 @Component({
   selector: 'app-profile',
@@ -20,11 +22,36 @@ export class ProfileComponent implements OnInit {
   leftCourses = 0
   goal= ""
   coursesToShow = [] as any
+ doc = new jsPDF({
+    orientation: 'l',
+   unit: 'mm',
+   format: 'a4',
+   putOnlyUsedFonts:true,
+   precision: 2,
+  
+  });
   constructor(private userData: FirebaseService, private apiservice: FakeAPIService) { }
 
   ngOnInit() {
 this.getUserData()
 console.log(this.userLevel)
+
+let content = [] as any;
+
+
+this.apiservice.getAllUsersData().subscribe((data)=>{
+content = data
+let texto = ""
+for (let element of content) {
+let reglon = JSON.stringify(element)
+let elemento = reglon.replace(',', '\n')
+console.log(elemento)
+ texto += `\n ${elemento}`
+  this.doc.text(texto, 10, 10, );
+}
+
+
+})
   }
 
   getUserData(){
@@ -42,13 +69,11 @@ console.log(this.userLevel)
       
      })
   })})}
-  // getLevelData(){
-  //   this.apiservice.getLevelData(this.userLevel).subscribe((response: any)=>{
-     
-  //      console.log(response)
-       
-     
-  //   })
-  // }
+ createPdf(){
+  this.doc.save('users-data.pdf')
+ }
   
 }
+
+
+
