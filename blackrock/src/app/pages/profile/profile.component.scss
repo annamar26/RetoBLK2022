@@ -2,8 +2,9 @@
 
 $black: #000000;
 $white: #ffffff;
-$orange: #ff4713;
-$pink: #fd9bb4;
+$orange: #FF4713;
+$pink: #FC9BB3;
+$yellow: #FFCE00;
 
 @mixin noto($color, $x, $y) {
   color: $color;
