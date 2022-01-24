@@ -15,6 +15,7 @@ import { FirebaseService } from 'src/app/services/firebase.service';
   styleUrls: ['./personal-information.component.scss'],
 })
 export class PersonalInformationComponent implements OnInit {
+  nameQuiz: any;
   Sex: any = ['Mujer', 'Hombre'];
   ages: any = [
     'De 18 a 25',
@@ -49,7 +50,11 @@ export class PersonalInformationComponent implements OnInit {
     private userData: FirebaseService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit() {
+    const nameStorage = sessionStorage.getItem('Nombre');
+    this.nameQuiz = nameStorage;
+    this.userinfo.get('name')?.setValue(this.nameQuiz);
+  }
 
   get f(): { [key: string]: AbstractControl } {
     return this.userinfo.controls;
@@ -65,7 +70,7 @@ export class PersonalInformationComponent implements OnInit {
             .updateUserData(response[0].id, this.userinfo.value)
             .subscribe((data) => {
               console.log(data);
-              this.router.navigate (['profile'])
+              this.router.navigate(['profile']);
             });
         });
       });
@@ -77,4 +82,6 @@ export class PersonalInformationComponent implements OnInit {
     this.router.navigate (['profile'])
   })  */
   }
+
+  inputName() {}
 }
