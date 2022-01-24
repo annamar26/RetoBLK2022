@@ -44,6 +44,10 @@ import { QuizMainComponent } from './pages/quiz-main/quiz-main.component';
 import { RegisterComponent } from './components/register/register.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { SpinnerComponent } from './pages/spinner/spinner.component';
+import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
+import { ShareIconsModule } from 'ngx-sharebuttons/icons';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 @NgModule({
   declarations: [
@@ -97,8 +101,10 @@ import { SpinnerComponent } from './pages/spinner/spinner.component';
     MatCardModule,
 		MatProgressBarModule,
     MatSelectModule,
-    MatProgressSpinnerModule
-
+    MatProgressSpinnerModule,
+    ShareButtonsModule,
+    ShareIconsModule,
+    MatSnackBarModule
 
   ],
   providers: [],
