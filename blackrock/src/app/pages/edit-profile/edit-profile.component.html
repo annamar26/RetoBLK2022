@@ -1,0 +1,119 @@
+<app-header></app-header>
+
+<h1>Información de la cuenta</h1>
+
+<form [formGroup]="userinfo" >
+  <div class="inputs-edit">
+    <mat-form-field appearance="legacy">
+      <mat-label>Nombre</mat-label>
+      <input
+        size="large"
+        id="name-edit"
+        name="name"
+        matInput
+        placeholder="Nombre"
+        formControlName="name"
+        required
+        value="{{name}}"
+      />
+    </mat-form-field>
+
+       <section>
+        <mat-form-field appearance="legacy" disabled>
+          <mat-label>Sexo</mat-label>
+          <input
+            size="large"
+            id="gender-edit"
+            name="gender"
+            matInput
+            placeholder="Sexo"
+            [disabled]="true"
+            value="{{gender}}"
+          />
+        </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Sexo <span>(opcional)</span></mat-label>
+        <mat-select name="gender" formControlName="gender" (valueChange)="showGender($event)" >
+          <mat-option value="NoData">Prefiero no responder</mat-option>
+          <mat-option *ngFor="let gender of genderOptions" [value]="gender" >
+            {{gender}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="legacy" disabled>
+        <mat-label>Edad</mat-label>
+        <input
+          size="large"
+          id="age-edit"
+          name="age"
+          matInput
+          placeholder="Edad"   
+          [disabled]="true"
+          value="{{age}}"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+      <mat-label>Age <span>(opcional)</span></mat-label>
+        <mat-select name="age"  formControlName="age" (valueChange)="showAge($event)">
+          <mat-option value="NoData">Prefiero no responder</mat-option>
+          <mat-option *ngFor="let age of agesOptions" [value]="age">
+            {{ age }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="legacy" disabled>
+        <mat-label>Educación</mat-label>
+        <input
+          size="large"
+          id="education-edit"
+          name="education"
+          matInput
+          placeholder="Educación"
+          [disabled]="true"
+          value="{{education}}"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Educación </mat-label>
+          <mat-select name="educaction" required formControlName="education" (valueChange)="showEducation($event)">
+            <mat-option value="NoData">Prefiero no responder</mat-option>
+            <mat-option *ngFor="let education of educationOptions" [value]="education">
+              {{ education }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+    </section>
+
+
+    <mat-form-field appearance="legacy">
+      <mat-label>Ocupación</mat-label>
+      <input
+      value="{{ocupation}}"
+        size="large"
+        id="ocupation-edit"
+        name="ocupation"
+        matInput
+        formControlName="ocupation"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field appearance="legacy">
+      <mat-label>Código Postal</mat-label>
+      <input matInput id="cp" name="cp" formControlName="cp" placeholder="Tu código postal"  value="{{cp}}"/>
+      <mat-error *ngIf="f['cp'].touched">
+          <span *ngIf="f['cp'].errors && f['cp'].errors['pattern']">Ingresa un código válido.</span>
+      </mat-error>
+  </mat-form-field>
+  </div>
+  <div class="btn-container">
+      <button mat-stroked-button type="button" class="saveBtn" (click)="updateInfo()" >
+        <mat-icon class="iconBtn" aria-hidden="false" aria-label="Arrow forward"
+          >arrow_forward_ios </mat-icon
+        >Guardar
+      </button>
+  </div>
+</form>
+
+<footer></footer>

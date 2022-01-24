@@ -1,0 +1,22 @@
+<app-header></app-header>
+<div class="container">
+	<section class="data">
+
+		<h2 class="label-level">{{userName}}, tu nivel es:</h2>
+		<section class='level'>
+			<h2>{{level}}</h2>
+		</section>
+		<section class="description">
+			<p>{{description}}
+			</p>
+		</section>
+		<div class="register">
+			<h3 (click)="openDialog()">Registrate para comenzar a aprender</h3>
+			<mat-icon>share</mat-icon>
+		</div>
+	</section>
+	<section class="img">
+		<img id=levelimg  alt="guerrero">
+	</section>
+</div>
+<div class="white-div"></div>

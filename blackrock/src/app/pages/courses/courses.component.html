@@ -1,0 +1,25 @@
+<app-header></app-header>
+<h1>¡Estos son los cursos recomendados para ti!</h1>
+<div class='content'>
+    <div class='card' *ngFor="let course of coursesToShow">
+        <mat-card class="course-card" (click)="openDialog()">
+            <div class="maininfo">
+                <img mat-card-image src='{{course.image}}' alt="courseimage">
+                <mat-card-title>{{course.name}}</mat-card-title>
+                <mat-card-subtitle>{{course.topic}}</mat-card-subtitle>
+            </div>
+            <div class='hover-info'>
+            <mat-card-content>
+                <p>{{course.description}}</p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button> Comenzar </button>
+                <button mat-button> Compartir </button>
+            </mat-card-actions>
+            </div>
+        </mat-card>
+    </div>
+</div>
+
+
+<footer></footer>

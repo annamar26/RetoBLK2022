@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import {MatCardModule} from '@angular/material/card';
 
 @Component({
   selector: 'app-fifth-question',
@@ -8,17 +7,33 @@ import {MatCardModule} from '@angular/material/card';
 })
 export class FifthQuestionComponent implements OnInit {
   @Input() userName: string='';
-
+  resultarray = [sessionStorage.getItem("Score1"), sessionStorage.getItem("Score2"), sessionStorage.getItem("Score3"), sessionStorage.getItem("Score4")]
+	scoremap = this.resultarray.map((x) => parseInt(x!))
+	score = this.scoremap.reduce((a, b) => a + b) 
   
+
+  user: any
+
  isVisited = false;
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this.user= sessionStorage.getItem('Nombre')
+    console.log(this.scoremap)
+		console.log(this.score)
+
   }
   
-  checkVisited() {
-     this.isVisited = !this.isVisited;
+
+  checkVisited(event: any) {
+    const valor = event.target
+     console.log(valor.value)
+     valor.style.filter= "grayscale(0%)";
+     valor.style.transform= "scale(1.1)";
+     sessionStorage.setItem('goal', valor.value)
+     
   }
+
   
 }

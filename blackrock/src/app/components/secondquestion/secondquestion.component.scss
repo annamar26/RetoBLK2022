@@ -3,7 +3,7 @@
 
 div {
   padding: 4rem 2rem 2rem 0;
-  background-color: #ffce00;
+  background-color: white;
   height: 85%;
 	position: relative;
   h2 {
@@ -70,4 +70,25 @@ div {
 
 ::ng-deep .mat-accent .mat-slider-track-fill, .mat-accent .mat-slider-thumb, .mat-accent .mat-slider-thumb-label {
 	background-color: #ff4713 !important;
+  height: 10px !important;
+}
+::ng-deep .mat-slider:not(.mat-slider-disabled):not(.mat-slider-sliding) .mat-slider-thumb-label, .mat-slider:not(.mat-slider-disabled):not(.mat-slider-sliding) .mat-slider-thumb {
+  background-color: #ff4713 !important;
+  transform: scale(1.5);
+  color:#ff4713 !important;
+}
+::ng-deep .mat-slider-min-value:not(.mat-slider-thumb-label-showing) .mat-slider-thumb {
+  border: none !important;
+
+  background-color: #ff4713 !important;
+  transform: scale(1.4);
+}
+:ng-deep .mat-accent .mat-slider-track-fill, .mat-accent .mat-slider-thumb, .mat-accent .mat-slider-thumb-label {
+  background-color: #ff4713 !important;
+}
+:ng-deep .mat-slider:not(.mat-slider-disabled).cdk-mouse-focused .mat-slider-thumb, .mat-slider:not(.mat-slider-disabled).cdk-touch-focused .mat-slider-thumb, .mat-slider:not(.mat-slider-disabled).cdk-program-focused .mat-slider-thumb {
+  border-width: 2px !important;
+  transform: scale(1.5) !important;
+  border-color: #ff4713 !important;
+  background-color: #ff4713 !important;
 }

@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@300;400;700;900&family=Noto+Sans:wght@400;700&display=swap");
+
+$noto-fam: "Noto Sans", sans-serif;
+$noto-dis: "Noto Sans Display", sans-serif;
+
+$black: #000000;
+$white: #ffffff;
+$orange: #ff4713;
+$pink: #fd9bb4;
+
+@mixin noto($color, $font, $x, $y) {
+  color: $color;
+  font: {
+    family: $font;
+    size: $x;
+    weight: $y;
+  }
+}
+.container {
+  background-color: #fd9bb4;
+  display: flex;
+  flex-direction: row;
+  margin: 4rem 8rem 4rem 0;
+  padding: 3rem 1rem 5rem 10rem;
+  z-index: 0;
+  position: relative;
+
+  .data {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    .label-level {
+      @include noto($black, $noto-dis, 56px, 900);
+      width: 100%;
+      margin-left: 0;
+    }
+    .level {
+      margin-left: 150px;
+      margin-top: 60px;
+      margin-right: 0;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      background-color: black;
+      color: white;
+      line-height: 60px;
+      height: 70px;
+      padding: 3%;
+      z-index: 1;
+
+      h2 {
+        @include noto($white, $noto-dis, 56px, 900);
+        margin-bottom: 0;
+        width: 100%;
+      }
+    }
+    .description {
+      background-color: white;
+      color: black;
+      height: 100px;
+      line-height: 20px;
+      padding: 1%;
+      margin-left: 0;
+      box-sizing: border-box;
+      z-index: inherit;
+      p {
+        box-sizing: border-box;
+        padding: 1rem 15rem 1rem 3rem;
+        @include noto($black, $noto-fam, 18px, 400);
+      }
+    }
+  }
+  .img {
+    top: 6%;
+    left: 82%;
+    width: 400px;
+    position: absolute;
+    height: 200px;
+    z-index: 1;
+    img {
+      width: 100%;
+      z-index: 2;
+      box-sizing: border-box;
+    }
+  }
+  .register {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin-top: 12rem;
+    padding-left: 0;
+    padding-bottom: 5%;
+    h3 {
+      @include noto($black, $noto-fam, 24px, 700);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    mat-icon {
+      font-size: 30px;
+      cursor: pointer;
+    }
+  }
+}
+
+.white-div {
+  background-color: $white;
+  height: 3rem;
+  width: 90vw;
+}

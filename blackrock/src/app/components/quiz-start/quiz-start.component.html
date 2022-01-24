@@ -1,3 +1,4 @@
+<app-header></app-header>
 <section class="intro">
     <form [formGroup]="userquiz" (ngSubmit)= 'startQuiz()'>
     <h1> Aquí inicia tu travesía... </h1>
@@ -15,7 +16,7 @@
     <section class="quizGif">
         <app-gif-hello></app-gif-hello>
     </section>
-    <button mat-stroked-button type="submit" class= 'startBtn' [disabled]="!(userquiz.valid && userquiz.dirty)"> 
+    <button mat-stroked-button type="submit" class= 'startBtn' [disabled]="!(userquiz.valid && userquiz.dirty)" > 
         <mat-icon class='iconBtn' aria-hidden='false' aria-label='Arrow forward'>arrow_forward_ios            
         </mat-icon> Comenzar</button>
     </form>

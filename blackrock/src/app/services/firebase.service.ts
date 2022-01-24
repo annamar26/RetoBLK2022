@@ -16,12 +16,16 @@ export class FirebaseService {
       logIn=async (email: string, password: string)=>{
     return await this.afAuth.signInWithEmailAndPassword(email,password)
    }
+
   getUser=()=>{
      return this.afAuth.authState
    }
    loginGoogle =async()=>{
     return await this.afAuth.signInWithPopup( new firebase.auth.GoogleAuthProvider())
-     
+
   }
-  
+	logOut=async()=>{
+		return await this.afAuth.signOut();
+	}
+
 }

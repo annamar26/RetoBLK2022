@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap');
 $bg-color: #ffce00;
 
 div {
   background-color: $bg-color;
   height: 100%;
-  padding: 0.5rem;
+  padding: 1rem;
   h1 {
     margin: 2rem 0rem 2rem 2rem;
     font-weight: bold;
@@ -14,39 +15,59 @@ div {
   }
   section {
     display: grid;
-    justify-content: center;
-    width: 90%;
-    padding-left: 5%;
-    padding-top: 2rem;
-    grid-template-columns: 210px 210px 210px;
-    column-gap: 150px;
-    row-gap: 50px;
+    justify-content: center;    
+    padding-top: 1rem;
+    grid-template-columns: repeat(3,450px);
+    column-gap: 0.5rem;
+    row-gap: 30px;
+    box-sizing:border-box;
+    margin: 50px;
+    margin-left: 75px !important;
+    
 
-    .mat-card {
-      background-color: #ff4713;
-      justify-items: center;
-      width: 210px;
-
-      .mat-card-title {
-        color: #fff;
-        font-family: 'Noto Sans', sans-serif;
-        font-size: 16px;
-        font-weight: lighter;
-        text-align: center;
-      }
-
-      img {
-        border-radius: 0%;
-        width: 210px;
-        margin-left: 1px;
-      }
+    button{
+      align-self: center;
+      border: none;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      width: 420px;
+      height: 210px;
+      background-size: cover;
+      background-repeat: no-repeat;      
+      color: white;
+      padding: 0% 4% 4% 4%;
+      font-size: 24px;
+      font-family: "Oswald", sans-serif;
+      -webkit-text-stroke: 0.5px black; 
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+    }
+    button:hover {
+      -webkit-filter: grayscale(0%);
+      filter: grayscale(0%);
     }
 
-    .mat-card:active {
-      background-color: white;
-      .mat-card-title {
-        color: #ff4713;
-      }
-    }
+#q1{
+  background-image: url("https://media.giphy.com/media/p5P3aRq6wimsM/giphy.gif");
+}
+
+#q2{
+  background-image: url("https://media.giphy.com/media/mLzbcLQkufnRMFtDkf/giphy.gif");
+}
+#q3{
+  background-image: url("https://media.giphy.com/media/26tPgV8ceZTSxH9zG/giphy.gif");
+}
+#q4{
+  background-image: url("https://media.giphy.com/media/3o84sqIy1snNtV04SI/giphy.gif");
+}
+#q5{
+  background-image: url("https://media.giphy.com/media/sHI44zFGN1VWw7cjIJ/giphy.gif");
+}
+
+   
+
+   
   }
 }

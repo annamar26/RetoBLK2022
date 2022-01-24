@@ -10,26 +10,26 @@
       Entre mas diversificado un portafolio, mas rendimientos puedes esperar
     </p>
     <section>
-    <mat-checkbox formControlName="1-true"  (change)="toggleSelection()"></mat-checkbox>
-    <mat-checkbox formControlName="1-false" (change)="toggleSelection()"></mat-checkbox></section>
+    <mat-checkbox formControlName="onetrue"  (change)="toggleSelection()" [checked]="!disabled"  ></mat-checkbox>
+    <mat-checkbox formControlName="onefalse" (change)="toggleSelection()" [disabled]="checked" ></mat-checkbox></section>
   </section>
   <section>
       <p>Mayor diversificación es sinónimo de mayor seguridad en tus inversiones</p>
       <section>
-      <mat-checkbox formControlName="2-true" (change)="toggleSelection()"></mat-checkbox>
-      <mat-checkbox formControlName="2-false" (change)="toggleSelection()"></mat-checkbox></section>
+      <mat-checkbox formControlName="twotrue" (change)="toggleSelection()"></mat-checkbox>
+      <mat-checkbox formControlName="twofalse" (change)="toggleSelection()"></mat-checkbox></section>
      
   </section>
   <section>
       <p>Entre mas tipos de instrumentos financieros en tu portafolio menor será tu diversificación</p>
       <section>
-      <mat-checkbox formControlName="3-true" (change)="toggleSelection()"></mat-checkbox>
-      <mat-checkbox formControlName="3-false" (change)="toggleSelection()"></mat-checkbox></section>
+      <mat-checkbox formControlName="threetrue" (change)="toggleSelection()"></mat-checkbox>
+      <mat-checkbox formControlName="threefalse" (change)="toggleSelection()"></mat-checkbox></section>
       
   </section>
   <section>
       <p>Un portafolio diversificado siempre es preferible a uno no diversificado sin importar el tipo de inversionista</p>
-     <section> <mat-checkbox formControlName="4-true" (change)="toggleSelection()"></mat-checkbox>
-      <mat-checkbox formControlName="4-true" (change)="toggleSelection()"></mat-checkbox></section>
+     <section> <mat-checkbox formControlName="fourtrue" (change)="toggleSelection()"></mat-checkbox>
+      <mat-checkbox formControlName="fourtrue" (change)="toggleSelection()"></mat-checkbox></section>
   </section>
 </div>

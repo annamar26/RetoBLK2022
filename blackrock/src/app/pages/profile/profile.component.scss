@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+
+$black: #000000;
+$white: #ffffff;
+$orange: #ff4713;
+$pink: #fd9bb4;
+
+@mixin noto($color, $x, $y) {
+  color: $color;
+  font: {
+    family: "Noto Sans", sans-serif;
+    size: $x;
+    weight: $y;
+  }
+}
+
+main {
+  /*   padding: 2rem 80px 0; */
+  .admin-data {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-right: 2rem;
+    .stats {
+      padding: 3rem 8rem 0;
+      @include noto($black, 16px, 400);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+  .user-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 10rem 0;
+    .back-color-profile {
+      background-color: #ff4713;
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .circular--square {
+        border-radius: 50%;
+        width: 150px;
+      }
+    }
+
+    .profile-info {
+      padding-left: 2rem;
+      .profile-name-edit {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        gap: 1rem;
+        h1 {
+          @include noto($black, 40px, 700);
+        }
+        mat-icon {
+          cursor: pointer;
+        }
+      }
+      p {
+        @include noto($orange, 32px, 700);
+      }
+    }
+  }
+  .progress {
+    padding: 4rem 10rem 2rem;
+    .percetage {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      h2 {
+        @include noto($black, 36px, 700);
+        padding-bottom: 1rem;
+      }
+    }
+    h3 {
+      padding: 2rem 0 0;
+      @include noto($black, 22px, 700);
+    }
+  }
+  .training {
+    h3 {
+      padding: 3rem 10rem 0;
+      @include noto($orange, 18px, 700);
+    }
+    .grid-courses {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-rows: auto;
+      column-gap: 3rem;
+      padding: 2rem 5rem 3rem;
+      .card-general {
+				box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.7);
+        div {
+          height: 250px;
+          box-sizing: border-box;
+          overflow: hidden;
+          position: relative;
+          img {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            box-sizing: border-box;
+          }
+        }
+        .title-section {
+					display: flex;
+					align-items: center;
+					padding: 1rem 1rem 0 1rem;
+          height: 40px;
+          background-color: $black;
+          p {
+            @include noto($white, 16px, 700);
+          }
+        }
+      }
+    }
+  }
+}
+
+::ng-deep .mat-progress-bar {
+  height: 15px !important;
+}
+
+::ng-deep .mat-progress-bar.mat-accent .mat-progress-bar-buffer {
+  background-color: $black !important;
+}

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { ModalLoginComponent } from '../modal-login/modal-login.component';
 
@@ -10,8 +11,9 @@ import { ModalLoginComponent } from '../modal-login/modal-login.component';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+	path= window.location.pathname
   userEmail= this.userData.getUser()
-  constructor(public dialog: MatDialog,  private userData: FirebaseService ) { }
+  constructor(public dialog: MatDialog,  private userData: FirebaseService, private Router: Router) { }
 
 	openDialog() {
     const dialogRef = this.dialog.open(ModalLoginComponent);
@@ -24,6 +26,11 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+	logOut(){
+		this.userData.logOut()
+		.then(() => {
+			this.Router.navigate([""])
+		})
+	}
 
 }
