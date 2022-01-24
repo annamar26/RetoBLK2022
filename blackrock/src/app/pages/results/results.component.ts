@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { ModalLoginComponent } from 'src/app/components/modal-login/modal-login.component';
 import { RegisterComponent } from 'src/app/components/register/register.component';
 import { FakeAPIService } from 'src/app/services/fake-api.service';
 import { FirebaseService } from 'src/app/services/firebase.service';
@@ -50,9 +51,10 @@ if(this.level === "Maestro Yoda"){
 
 
   }
-  openDialog() {
-    const dialogRef = this.dialog.open(RegisterComponent, {panelClass: 'my-custom-dialog-register'});
-
+  openDialog(valor: string) {
+    const dialogRef = this.dialog.open(ModalLoginComponent, {panelClass: 'my-custom-dialog-login'});
+sessionStorage.setItem('valorModal', "")
+console.log(sessionStorage.getItem('valorModal'))
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });

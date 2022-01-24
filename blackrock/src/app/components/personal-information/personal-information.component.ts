@@ -51,7 +51,7 @@ export class PersonalInformationComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  get f(): { [key: string]: AbstractControl } {
+  get k(): { [key: string]: AbstractControl } {
     return this.userinfo.controls;
   }
   onFormSubmit() {
