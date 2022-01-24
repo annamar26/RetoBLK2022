@@ -35,10 +35,10 @@
     </mat-step>
     <mat-step [stepControl]="fifthFormGroup">
         <app-fifth-question ></app-fifth-question>
-        <div class="arrows">
-            <button mat-button matStepperPrevious><mat-icon class='iconBtn' aria-hidden='false' aria-label='arrow_back_ios_new'>arrow_back_ios_new
+        <div class="finalarrows">
+            <button mat-button id='leftarrow' matStepperPrevious><mat-icon class='iconBtn' aria-hidden='false' aria-label='arrow_back_ios_new'>arrow_back_ios_new
             </mat-icon></button>
-            <button mat-button routerLink="/loading"> <mat-icon class='iconBtn' aria-hidden='false' aria-label='Arrow forward' >arrow_forward_ios
+            <button mat-stroked-button type="button" id="finalBtn"routerLink="/loading"> <mat-icon class="finalarrow" aria-hidden="false" aria-label="Arrow forward">arrow_forward_ios
             </mat-icon> Ver mis resultados</button>
         </div>
     </mat-step>

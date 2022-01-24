@@ -86,7 +86,7 @@ $pink: #fd9bb4;
   }
   .register {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 2rem;
     margin-top: 12rem;
     padding-left: 0;
@@ -100,6 +100,12 @@ $pink: #fd9bb4;
       font-size: 30px;
       cursor: pointer;
     }
+    share-buttons{
+      background-color: black;
+      width: fit-content;
+      transform: scale(1.5);
+    }
+    
   }
 }
 
