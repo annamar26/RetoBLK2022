@@ -3,11 +3,11 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'app-secondquestion',
   templateUrl: './secondquestion.component.html',
-  styleUrls: ['./secondquestion.component.scss']
+  styleUrls: ['./secondquestion.component.scss'],
 })
 export class SecondquestionComponent implements OnInit {
-  @Input() userName: string='';
-	autoTicks = false;
+  @Input() userName: string = '';
+  autoTicks = false;
   disabled = false;
   invert = false;
   max = 100;
@@ -21,42 +21,83 @@ export class SecondquestionComponent implements OnInit {
 
   points = 0;
 
-	getSliderTickInterval(): number | 'auto' {
+  getSliderTickInterval(): number | 'auto' {
     if (this.showTicks) {
       return this.autoTicks ? 'auto' : this.tickInterval;
     }
 
     return 0;
   }
- user: any
+  user: any;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(){
-    this.user= sessionStorage.getItem('Nombre')
+  ngOnInit() {
+    this.user = sessionStorage.getItem('Nombre');
   }
 
-  sendResults(e: any){
+  sendResults(e: any) {
     //console.log(e.value)
     switch (e.value) {
-			case 0 :{this.points=0}
-			break;
-      case 10||20:{this.points = 1}
+      case 0:
+        {
+          this.points = 0;
+        }
         break;
-      case 30||40:{this.points = 2}
+      case 10:
+        {
+          this.points = 1;
+        }
         break;
-      case 50||60:{this.points = 3}
+      case 20:
+        {
+          this.points = 1;
+        }
         break;
-      case 70||80:{this.points = 4}
+      case 30:
+        {
+          this.points = 2;
+        }
         break;
-      case 90||100:{this.points = 5}
+      case 40:
+        {
+          this.points = 2;
+        }
         break;
-
+      case 50:
+        {
+          this.points = 3;
+        }
+        break;
+      case 60:
+        {
+          this.points = 3;
+        }
+        break;
+      case 70:
+        {
+          this.points = 4;
+        }
+        break;
+      case 80:
+        {
+          this.points = 4;
+        }
+        break;
+      case 90:
+        {
+          this.points = 5;
+        }
+        break;
+      case 100:
+        {
+          this.points = 5;
+        }
+        break;
+    }
+    let str = this.points.toString();
+    sessionStorage.setItem('Score2', str);
+    sessionStorage.getItem('Score2');
+    console.log(sessionStorage.getItem('Score2'));
   }
-  let str = this.points.toString()
-  sessionStorage.setItem("Score2", str)
-  sessionStorage.getItem("Score2")
-  console.log(sessionStorage.getItem("Score2"))
-}
-
 }

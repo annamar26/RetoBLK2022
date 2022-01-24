@@ -1,6 +1,6 @@
 <h1 mat-dialog-title>¡Queremos conocerte mejor!</h1>
 <mat-dialog-content class="mat-typography">
-  <form [formGroup]="userinfo" (ngSubmit)="onFormSubmit()">
+  <form [formGroup]="userinfo" (ngSubmit)="onFormSubmit()" >
     <section>
       <mat-form-field appearance="legacy">
         <mat-label>Nombre* </mat-label>
@@ -98,7 +98,7 @@
               <span style="font-weight: bold">Política de Privacidad</span>.
             </p>
 
-            <button mat-stroked-button type="submit" class="info-btn">
+            <button mat-stroked-button type="submit" class="info-btn" [mat-dialog-close]="true">
               <mat-icon class="arrow">keyboard_arrow_right</mat-icon> Enviar
             </button>
         </section>

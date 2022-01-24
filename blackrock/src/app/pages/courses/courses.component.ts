@@ -15,7 +15,7 @@ export class CoursesComponent implements OnInit {
   userName = ""
   userLevel = ''
   coursesToShow = [] as any
-  
+
   constructor(public dialog: MatDialog, private userData: FirebaseService, private apiservice: FakeAPIService) { }
 
   ngOnInit(){
@@ -23,7 +23,7 @@ export class CoursesComponent implements OnInit {
   }
 
   openDialog() {
-    const dialogRef = this.dialog.open(PersonalInformationComponent);
+    const dialogRef = this.dialog.open(PersonalInformationComponent, {panelClass: 'my-custom-dialog-class'});
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
@@ -38,8 +38,7 @@ export class CoursesComponent implements OnInit {
        this.apiservice.getLevelData(this.userLevel).subscribe((response: any)=>{
  this.coursesToShow = response
         console.log(this.coursesToShow)
-      
+
      })
   })})}
 }
-

@@ -49,7 +49,7 @@ this.addLevelAPI()
 
   }
   openDialog() {
-    const dialogRef = this.dialog.open(RegisterComponent);
+    const dialogRef = this.dialog.open(RegisterComponent, {panelClass: 'my-custom-dialog-register'});
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
@@ -66,5 +66,5 @@ this.addLevelAPI()
 			})
 		});
 	}
-	
+
 }
