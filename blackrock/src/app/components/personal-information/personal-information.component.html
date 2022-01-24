@@ -22,7 +22,7 @@
       </mat-form-field>
       <mat-form-field appearance="legacy">
         <mat-label>Sexo (Opcional)</mat-label>
-        <mat-select formControlName="sex">
+        <mat-select formControlName="gender">
           <mat-option value="NoData">Prefiero no responder</mat-option>
           <mat-option *ngFor="let sex of Sex" [value]="sex">
             {{ sex }}
@@ -53,7 +53,7 @@
           matInput
           id="ocupation"
           name="ocupation"
-          formControlName="ocupation"
+          formControlName="workfield"
           placeholder="Tu ocupación"
         />
         <mat-error *ngIf="f['ocupation'].touched">
