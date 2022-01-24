@@ -42,6 +42,8 @@ import { ResultsComponent } from './pages/results/results.component';
 import { CoursesComponent } from './pages/courses/courses.component';
 import { QuizMainComponent } from './pages/quiz-main/quiz-main.component';
 import { RegisterComponent } from './components/register/register.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { SpinnerComponent } from './pages/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +71,7 @@ import { RegisterComponent } from './components/register/register.component';
       EditProfileComponent,
       QuizMainComponent,
       RegisterComponent,
+      SpinnerComponent,
       
   ],
   imports: [
@@ -93,7 +96,8 @@ import { RegisterComponent } from './components/register/register.component';
     MatCheckboxModule,
     MatCardModule,
 		MatProgressBarModule,
-    MatSelectModule
+    MatSelectModule,
+    MatProgressSpinnerModule
 
 
   ],

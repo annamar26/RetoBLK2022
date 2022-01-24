@@ -1,6 +1,4 @@
-import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 import { Component, Input, OnInit } from '@angular/core';
-import {MatCardModule} from '@angular/material/card';
 
 @Component({
   selector: 'app-fifth-question',
@@ -9,6 +7,10 @@ import {MatCardModule} from '@angular/material/card';
 })
 export class FifthQuestionComponent implements OnInit {
   @Input() userName: string='';
+  resultarray = [sessionStorage.getItem("Score1"), sessionStorage.getItem("Score2"), sessionStorage.getItem("Score3"), sessionStorage.getItem("Score4")]
+	scoremap = this.resultarray.map((x) => parseInt(x!))
+	score = this.scoremap.reduce((a, b) => a + b) 
+  
 
   user: any
 
@@ -18,6 +20,9 @@ export class FifthQuestionComponent implements OnInit {
 
   ngOnInit(){
     this.user= sessionStorage.getItem('Nombre')
+    console.log(this.scoremap)
+		console.log(this.score)
+
   }
   
 
@@ -27,6 +32,7 @@ export class FifthQuestionComponent implements OnInit {
      valor.style.filter= "grayscale(0%)";
      valor.style.transform= "scale(1.1)";
      sessionStorage.setItem('goal', valor.value)
+     
   }
 
   
