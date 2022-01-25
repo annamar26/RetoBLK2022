@@ -1,7 +1,7 @@
 <app-header></app-header>
 <main *ngIf="userEmail | async as user">
 	<div class="admin-data">
-		<h3 class="stats" (click)='createPdf()'>Descargas estadísticas de los usuarios </h3>
+		<h3 class="stats" >Descargas estadísticas de los usuarios </h3>
 	</div>
 	<section class="user-info">
 		<div class="back-color-profile">
@@ -43,4 +43,19 @@
 			
 		</div>
 	</section>
+
+	<table id="users">
+
+		<tr>
+		  <th *ngFor="let col of columns">
+			{{col}}
+		  </th>
+		</tr>
+		<tr *ngFor="let user of tableContent">
+		  <td *ngFor="let col of index">
+			{{user[col]}}
+		  </td>
+		</tr>
+	  
+	  </table>
 </main>

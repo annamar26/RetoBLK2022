@@ -1,45 +1,59 @@
-<mat-stepper orientation="horizontal" #stepper>
+<mat-stepper #stepper>
     <mat-step [stepControl]="firstFormGroup">
         <app-first-question ></app-first-question>
-        <div class="arrows">
-            <button mat-button matStepperNext><mat-icon class='iconBtn' aria-hidden='false' aria-label='arrow_forward_ios'>arrow_forward_ios
-            </mat-icon></button>
+        <div id="arrows1">
+                <button mat-stroked-button type='button' id= 'nextBtn' matStepperNext> 
+                <mat-icon class='iconBtn' aria-hidden='false' aria-label='arrow_forward_ios'>arrow_forward_ios            
+                </mat-icon> Siguiente </button>            
         </div>
     </mat-step>
     <mat-step [stepControl]="secondFormGroup">
         <app-secondquestion ></app-secondquestion>
-        <div class="arrows">
-            <button mat-button matStepperPrevious><mat-icon class='iconBtn' aria-hidden='false' aria-label='arrow_back_ios_new'>arrow_back_ios_new
-            </mat-icon></button>
-            <button mat-button matStepperNext><mat-icon class='iconBtn' aria-hidden='false' aria-label='arrow_forward_ios'>arrow_forward_ios
-            </mat-icon></button>
+
+        <div id="arrows">
+            <button mat-stroked-button type='button' id= 'previousBtn' matStepperPrevious> 
+                <mat-icon class='iconBtn' aria-hidden='false' aria-label='arrow_back_ios_new'>arrow_back_ios_new            
+                </mat-icon> Anterior </button>
+            <button mat-stroked-button type='button' id= 'nextBtn' matStepperNext> 
+                <mat-icon class='iconBtn' aria-hidden='false' aria-label='arrow_forward_ios'>arrow_forward_ios            
+                </mat-icon> Siguiente </button>
+
         </div>
     </mat-step>
     <mat-step [stepControl]="thirdFormGroup">
         <app-third-question></app-third-question>
-        <div class="arrows">
-            <button mat-button matStepperPrevious><mat-icon class='iconBtn' aria-hidden='false' aria-label='arrow_back_ios_new'>arrow_back_ios_new
-            </mat-icon></button>
-            <button mat-button matStepperNext><mat-icon class='iconBtn' aria-hidden='false' aria-label='arrow_forward_ios'>arrow_forward_ios
-            </mat-icon></button>
+
+        <div id="arrows">
+            <button mat-stroked-button type='button' id= 'previousBtn' matStepperPrevious> 
+                <mat-icon class='iconBtn' aria-hidden='false' aria-label='arrow_back_ios_new'>arrow_back_ios_new            
+                </mat-icon> Anterior </button>
+            <button mat-stroked-button type='button' id= 'nextBtn' matStepperNext> 
+                <mat-icon class='iconBtn' aria-hidden='false' aria-label='arrow_forward_ios'>arrow_forward_ios            
+                </mat-icon> Siguiente </button>
+
+       
         </div>
     </mat-step>
     <mat-step [stepControl]="fourthFormGroup">
         <app-fourthquestion ></app-fourthquestion>
-        <div class="arrows">
-            <button mat-button matStepperPrevious><mat-icon class='iconBtn' aria-hidden='false' aria-label='arrow_back_ios_new'>arrow_back_ios_new
-            </mat-icon></button>
-            <button mat-button matStepperNext><mat-icon class='iconBtn' aria-hidden='false' aria-label='arrow_forward_ios'>arrow_forward_ios
-            </mat-icon></button>
+        <div id="arrows">
+            <button mat-stroked-button type='button' id= 'previousBtn' matStepperPrevious> 
+                <mat-icon class='iconBtn' aria-hidden='false' aria-label='arrow_back_ios_new'>arrow_back_ios_new            
+                </mat-icon> Anterior </button>
+            <button mat-stroked-button type='button' id= 'nextBtn' matStepperNext> 
+                <mat-icon class='iconBtn' aria-hidden='false' aria-label='arrow_forward_ios'>arrow_forward_ios            
+                </mat-icon> Siguiente </button>
         </div>
     </mat-step>
     <mat-step [stepControl]="fifthFormGroup">
         <app-fifth-question ></app-fifth-question>
-        <div class="finalarrows">
-            <button mat-button id='leftarrow' matStepperPrevious><mat-icon class='iconBtn' aria-hidden='false' aria-label='arrow_back_ios_new'>arrow_back_ios_new
-            </mat-icon></button>
-            <button mat-stroked-button type="button" id="finalBtn"routerLink="/loading"> <mat-icon class="finalarrow" aria-hidden="false" aria-label="Arrow forward">arrow_forward_ios
-            </mat-icon> Ver mis resultados</button>
-        </div>
+        <div id="arrows">
+            <button mat-stroked-button type='button' id= 'previousBtn' matStepperPrevious> 
+                <mat-icon class='iconBtn' aria-hidden='false' aria-label='arrow_back_ios_new'>arrow_back_ios_new            
+                </mat-icon> Anterior </button>
+            <button mat-stroked-button type='button' id= 'nextBtn' routerLink="/loading"> 
+                <mat-icon class='iconBtn' aria-hidden='false' aria-label='arrow_forward_ios'>arrow_forward_ios            
+                </mat-icon> Mi resultado </button>
+        </div>        
     </mat-step>
   </mat-stepper>

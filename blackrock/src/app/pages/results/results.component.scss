@@ -157,13 +157,13 @@ $pink: #fd9bb4;
       color: white;
       line-height: 60px;
       height: 70px;
-      width: 80vw;
+      width: 88vw;
       padding: 3%;
       z-index: 1;
       box-sizing: border-box;
 
       h2 {
-        @include noto($white, $noto-dis, 56px, 900);
+        @include noto($white, $noto-dis, 32px, 900);
         margin-bottom: 0;
         width: 100%;
       }
@@ -180,7 +180,7 @@ $pink: #fd9bb4;
       z-index: inherit;
       p {
         box-sizing: border-box;
-        padding: 1rem 15rem 1rem 3rem;
+        padding: 1rem 1rem 1rem 3rem;
         @include noto($black, $noto-fam, 18px, 400);
       }
     }
@@ -196,23 +196,34 @@ $pink: #fd9bb4;
       width: 100%;
       z-index: 2;
       box-sizing: border-box;
+      margin-top: 14rem;
     }
   }
   .register {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 2rem;
     margin-top: 12rem;
     padding-left: 0;
     padding-bottom: 5%;
     h3 {
-      @include noto($black, $noto-fam, 24px, 700);
+      @include noto($black, $noto-fam, 20px, 700);
       text-decoration: underline;
       cursor: pointer;
+      padding-top: 3rem;
     }
-    mat-icon {
-      font-size: 30px;
-      cursor: pointer;
+    .btns-share{
+      display: flex;
+      flex-direction:row ;
+      flex-wrap: wrap;
+      justify-items: center;
+      width: 40%;
+      margin-left: 25%;
+
+      .container, .register, share-buttons { 
+        font-size: 30px;
+        cursor: pointer;
+    }
     }
   }
 }

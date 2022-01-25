@@ -1,24 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap");
 $yellow: #ffce00;
+$pink: #FC9BB3;
 
 div {
-  background-color: $yellow;
-  height: 100%;
+  background-color: $pink;
+  height: 85%;
   padding: 83px;
   h1 {
     margin: 0rem 0rem 2rem 2rem;
     font-weight: bold;
     font-family: "Noto Sans", sans-serif;
     font-size: 36px;
-    
+
   }
   section {
     display: grid;
     justify-content: center;
     padding-top: 1rem;
-    grid-template-columns: repeat(3, 380px);
-    column-gap: 30px;
+    grid-template-columns: repeat(3, 450px);
+    column-gap: 0.5rem;
     row-gap: 30px;
     margin: 50px;
     margin-left: 75px !important;
@@ -30,8 +31,8 @@ div {
       display: flex;
       justify-content: center;
       align-items: flex-end;
-      width: 350px;
-      height: 180px;
+      width: 420px;
+      height: 210px;
       background-size: cover;
       background-repeat: no-repeat;
       color: white;
@@ -71,12 +72,14 @@ div {
     overflow: visible !important;
   }
   div {
-    background-color: $yellow;
+    background-color: $pink;
     justify-content: center;
     overflow-y: scroll;
+		padding: 1rem;
     h1 {
       margin: 1rem 0rem 2rem 2rem;
       padding-top: 1rem;
+			font-size: 24px;
     }
     section {
       display: grid;
