@@ -28,9 +28,10 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "firebase-tools": "^9.23.3",
     "json-server": "^0.17.0",
+       "jspdf": "^2.5.0",
+       "rxjs": "~7.4.0",
     "ngx-sharebuttons": "^10.0.0",
-    "rxjs": "~7.4.0",
-    "tslib": "^2.3.0",
+        "tslib": "^2.3.0",
     "universal-cookie": "^4.0.4",
     "zone.js": "~0.11.4"
   },

@@ -1,7 +1,7 @@
 <app-header></app-header>
 <main *ngIf="userEmail | async as user">
 	<div class="admin-data">
-		<h3 class="stats">Descargas estadísticas de los usuarios</h3>
+		<h3 class="stats" (click)='createPdf()'>Descargas estadísticas de los usuarios </h3>
 	</div>
 	<section class="user-info">
 		<div class="back-color-profile">
