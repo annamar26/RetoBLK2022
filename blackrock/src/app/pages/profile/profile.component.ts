@@ -58,6 +58,15 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     this.getUserData();
+    this.apiservice.getAllUsersData().subscribe((data: any) => {
+      let content = data;
+
+      for (let element of content) {
+        let valores = Object.values(element);
+
+        this.values.push(valores);
+      }
+    });
        
   }
 
