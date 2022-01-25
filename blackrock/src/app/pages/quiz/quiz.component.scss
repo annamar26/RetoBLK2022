@@ -11,6 +11,7 @@ mat-stepper {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+		gap: 3rem;
     padding: 0 2.5em 0 2.5em;
     button {
       background: $black;
@@ -55,6 +56,7 @@ mat-stepper {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+		gap: 3rem;
     padding: 0 2.5em 0 2.5em;
     button {
       background: $black;
@@ -99,6 +101,7 @@ mat-stepper {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+		gap: 3rem;
     padding: 0 2.5em 0 2.5em;
 
     button {
@@ -144,7 +147,8 @@ mat-stepper {
     background-color: $pink;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
+		gap: 3rem;
     padding: 0 2em 0 2em;
 
     button {
@@ -176,7 +180,7 @@ mat-stepper {
           transform: scale(1);
         }
 
-        
+
       }
       .iconBtn {
         color: $orange;
