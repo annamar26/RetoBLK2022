@@ -8,17 +8,19 @@ import { QuizMainComponent } from './pages/quiz-main/quiz-main.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { CoursesComponent } from './pages/courses/courses.component';
 import { SpinnerComponent } from './pages/spinner/spinner.component';
+import { AngularFireAuthGuard, redirectLoggedInTo, redirectUnauthorizedTo } from '@angular/fire/compat/auth-guard';
 
-
+const redirectLoggedInToILogin = () => redirectLoggedInTo(['profile']);
+const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['']);
 const routes: Routes = [
   {  path:"", component:HomeComponent, pathMatch:"full"},
-  {path:"quiz", component:QuizComponent, pathMatch:"full"},
-  { path:"edit", component:EditProfileComponent, pathMatch:"full"},
-   {path:"results", component:ResultsComponent, pathMatch:"full"},
-  { path:"startquiz", component:QuizMainComponent, pathMatch:"full"},
-  {path:"profile", component:ProfileComponent, pathMatch:"full"},
-  {path:"courses", component:CoursesComponent, pathMatch:"full"},  
-  {path:"loading", component:SpinnerComponent, pathMatch:"full"},  
+  {path:"quiz", component:QuizComponent, pathMatch:"full", canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectLoggedInToILogin }},
+  { path:"edit", component:EditProfileComponent, pathMatch:"full", canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
+   {path:"results", component:ResultsComponent, pathMatch:"full", canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectLoggedInToILogin }},
+  { path:"startquiz", component:QuizMainComponent, pathMatch:"full", canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectLoggedInToILogin }},
+  {path:"profile", component:ProfileComponent, pathMatch:"full", canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
+  {path:"courses", component:CoursesComponent, pathMatch:"full", canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},  
+  {path:"loading", component:SpinnerComponent, pathMatch:"full", canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectLoggedInToILogin }},  
   { path: '**', redirectTo:"", pathMatch:'full'}
 
 ];
