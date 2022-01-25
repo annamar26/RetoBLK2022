@@ -3,18 +3,15 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-quiz-main',
   templateUrl: './quiz-main.component.html',
-  styleUrls: ['./quiz-main.component.scss']
+  styleUrls: ['./quiz-main.component.scss'],
 })
 export class QuizMainComponent implements OnInit {
-name=""
-  constructor() { }
+  name = '';
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  pullname(e: any){
+  pullname(e: any) {
     this.name = e;
-    console.log(e)
-      }
-    
+  }
 }

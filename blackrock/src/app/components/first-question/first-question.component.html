@@ -1,13 +1,18 @@
 <section class="firstQuestion">
-<h1>  {{user}}, (con ayuda de la fuerza), selecciona todos los temas de los que tengas conocimiento. </h1> 
-   
-    <mat-chip-list  class= "optionscontainer" selectable multiple>
-        <mat-chip #c="matChip" *ngFor="let option of options" [value]="option" (click)="toggleSelection(c)" >
-            <mat-icon *ngIf="c.selected">check</mat-icon>
-            {{option}}
-        </mat-chip>
-    </mat-chip-list>
+  <h1>
+    {{ user }}, (con ayuda de la fuerza), selecciona todos los temas de los que
+    tengas conocimiento.
+  </h1>
+
+  <mat-chip-list class="optionscontainer" selectable multiple>
+    <mat-chip
+      #c="matChip"
+      *ngFor="let option of options"
+      [value]="option"
+      (click)="toggleSelection(c)"
+    >
+      <mat-icon *ngIf="c.selected">check</mat-icon>
+      {{ option }}
+    </mat-chip>
+  </mat-chip-list>
 </section>
-
-
-  

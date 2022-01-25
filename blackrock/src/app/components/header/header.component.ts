@@ -21,24 +21,24 @@ export class HeaderComponent implements OnInit {
     private APIservice: FakeAPIService
   ) {}
 
-	openDialog(valor :string) {
-    const dialogRef = this.dialog.open(ModalLoginComponent, {panelClass: 'my-custom-dialog-login'});
-    sessionStorage.setItem('valorModal', "true")
-    console.log(sessionStorage.getItem('valorModal'))
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+  openDialog(valor: string) {
+    const dialogRef = this.dialog.open(ModalLoginComponent, {
+      panelClass: 'my-custom-dialog-login',
+    });
+    sessionStorage.setItem('valorModal', 'true');
+    dialogRef.afterClosed().subscribe((result) => {
+      // console.log(`Dialog result: ${result}`);
     });
   }
 
   ngOnInit() {
-    console.log(this.getUserData());
+    // console.log(this.getUserData());
   }
 
   getUserData() {
     this.userData.getUser().subscribe((user: any) => {
-      console.log(user._delegate.displayName);
+      // console.log(user._delegate.displayName);
       this.APIservice.getEmailUser(user.email).subscribe((response: any) => {
-        console.log(response[0].name);
         this.userName = response[0].name;
       });
     });
