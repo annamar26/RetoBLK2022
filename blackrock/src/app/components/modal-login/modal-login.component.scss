@@ -75,6 +75,9 @@
             color: #ff4713;
             font-size: 18px;
           }
+          &:disabled {
+            color: white
+          }
         }
       }
     }

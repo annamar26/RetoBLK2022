@@ -95,7 +95,7 @@
       <p class="info">* Información requerida</p>
       <p class="privacyPolicy">
         Lee nuestra
-        <span style="font-weight: bold">Política de Privacidad</span>.
+        <a href="https://www.blackrock.com/corporate/compliance/privacy-policy" style="font-weight: bold">Política de privacidad</a>
       </p>
 
       <button
@@ -103,6 +103,7 @@
         type="submit"
         class="info-btn"
         [mat-dialog-close]="true"
+        [disabled]="!(userinfo.valid && userinfo.dirty)"
       >
         <mat-icon class="arrow">keyboard_arrow_right</mat-icon> Enviar
       </button>

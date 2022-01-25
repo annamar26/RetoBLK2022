@@ -4,7 +4,6 @@ import {
   FormControl,
   FormGroup,
   Validators,
-  FormBuilder,
 } from '@angular/forms';
 import {
   MatSnackBar,
@@ -36,7 +35,7 @@ export class EditProfileComponent implements OnInit {
   viewGender: any;
   viewAge: any;
   viewEducation: any;
-  userinfo = new FormGroup({
+  userinfoedit = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(2)]),
     gender: new FormControl(''),
     age: new FormControl(''),
@@ -70,7 +69,6 @@ export class EditProfileComponent implements OnInit {
   constructor(
     private userData: FirebaseService,
     private apiservice: FakeAPIService,
-    private formBuilder: FormBuilder,
     private router: Router,
     private _snackBar: MatSnackBar
   ) {}
@@ -80,7 +78,7 @@ export class EditProfileComponent implements OnInit {
   }
 
   get f(): { [key: string]: AbstractControl } {
-    return this.userinfo.controls;
+    return this.userinfoedit.controls;
   }
   getUserData() {
     this.userData.getUser().subscribe((user: any) => {
@@ -101,34 +99,35 @@ export class EditProfileComponent implements OnInit {
         this.apiservice
           .updateUserData(response[0].id, {
             name:
-              this.userinfo.value.name === ''
+              this.userinfoedit.value.name === ''
                 ? this.name
-                : this.userinfo.value.name,
+                : this.userinfoedit.value.name,
             email: user.email,
-            cp: this.userinfo.value.cp === 0 ? this.cp : this.userinfo.value.cp,
+            cp: this.userinfoedit.value.cp === 0 ? this.cp : this.userinfoedit.value.cp,
             education:
-              this.userinfo.value.education === ''
+              this.userinfoedit.value.education === ''
                 ? this.education
-                : this.userinfo.value.education,
+                : this.userinfoedit.value.education,
             age:
-              this.userinfo.value.age === ''
+              this.userinfoedit.value.age === ''
                 ? this.age
-                : this.userinfo.value.age,
+                : this.userinfoedit.value.age,
             gender:
-              this.userinfo.value.gender === ''
+              this.userinfoedit.value.gender === ''
                 ? this.gender
-                : this.userinfo.value.gender,
+                : this.userinfoedit.value.gender,
             workfield:
-              this.userinfo.value.ocupation === ''
+              this.userinfoedit.value.ocupation === ''
                 ? this.ocupation
-                : this.userinfo.value.ocupation,
+                : this.userinfoedit.value.ocupation,
 
             level: response[0].level,
             doneCourses: response[0].doneCourses,
             goal: response[0].goal,
           })
-          .subscribe((data) => {
+          .subscribe(() => {            
             this.editopenSnackBar('Datos actualizados');
+            this.router.navigate(['profile']);
           });
       });
     });

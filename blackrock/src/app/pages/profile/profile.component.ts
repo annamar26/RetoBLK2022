@@ -5,7 +5,7 @@ import { FakeAPIService } from 'src/app/services/fake-api.service';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { jsPDF } from 'jspdf';
 import 'jspdf-autotable';
-import { Chart } from 'chart.js';
+
 
 @Component({
   selector: 'app-profile',
