@@ -5,6 +5,7 @@ import { FakeAPIService } from 'src/app/services/fake-api.service';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { jsPDF } from 'jspdf';
 import 'jspdf-autotable';
+import { Chart } from 'chart.js';
 
 @Component({
   selector: 'app-profile',
@@ -22,6 +23,10 @@ export class ProfileComponent implements OnInit {
   leftCourses = 0;
   goal = '';
   coursesToShow = [] as any;
+  women = 0;
+  men = 0;
+  noanswerGender = 0;
+  chart: any;
   doc = new jsPDF({
     orientation: 'l',
     unit: 'mm',
@@ -53,16 +58,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     this.getUserData();
-
-    this.apiservice.getAllUsersData().subscribe((data: any) => {
-      let content = data;
-
-      for (let element of content) {
-        let valores = Object.values(element);
-
-        this.values.push(valores);
-      }
-    });
+       
   }
 
   getUserData() {
@@ -99,4 +95,5 @@ export class ProfileComponent implements OnInit {
     });
     this.doc.save('tableOfUsers.pdf');
   }
+  createGraphicBySex() {}
 }
