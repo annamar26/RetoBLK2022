@@ -64,6 +64,10 @@ Para descubir las principales necesidades de nuestros usuarios, realizamos una i
 ![CoursesPage](./blackrock/ReadmeFiles/Courses_page.jpg "Página de cursos")
 ![UpdateData](./blackrock/ReadmeFiles/Update_data.jpg "Actualización de datos")
 ![Footer](./blackrock/ReadmeFiles/Bottom_page.jpg "Footer")
+![Tabla de usuarios](./blackrock/ReadmeFiles/grafica.png "Tabla de usuarios")
+![Estadísticas](./blackrock/ReadmeFiles/graficasyestadisticas.jpg "Tabla de usuarios")
+
+
 
 ### Acceso al prototipo en [Figma](https://www.figma.com/file/WuY6svf3tpRThbA9UF7TjM/Reto-BLK?node-id=195%3A62)
 
