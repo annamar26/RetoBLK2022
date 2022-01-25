@@ -46,6 +46,7 @@ mat-stepper {
         transform: scale(0.5);
         height: inherit;
       }
+
     }
   }
   #arrows-white {
@@ -99,6 +100,7 @@ mat-stepper {
     align-items: center;
     justify-content: flex-end;
     padding: 0 2.5em 0 2.5em;
+
     button {
       background: $black;
       font-size: 15px;
@@ -120,6 +122,7 @@ mat-stepper {
       @keyframes pulse {
         0% {
           transform: scale(1);
+
         }
         70% {
           transform: scale(0.9);
@@ -172,6 +175,8 @@ mat-stepper {
         100% {
           transform: scale(1);
         }
+
+        
       }
       .iconBtn {
         color: $orange;

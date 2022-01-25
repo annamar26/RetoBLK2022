@@ -8,37 +8,44 @@ import { PersonalInformationComponent } from '../../components/personal-informat
 @Component({
   selector: 'app-courses',
   templateUrl: './courses.component.html',
-  styleUrls: ['./courses.component.scss']
+  styleUrls: ['./courses.component.scss'],
 })
 export class CoursesComponent implements OnInit {
-  userEmail= this.userData.getUser()
-  userName = ""
-  userLevel = ''
-  coursesToShow = [] as any
+  userEmail = this.userData.getUser();
+  userName = '';
+  userLevel = '';
+  coursesToShow = [] as any;
 
-  constructor(public dialog: MatDialog, private userData: FirebaseService, private apiservice: FakeAPIService) { }
+  constructor(
+    public dialog: MatDialog,
+    private userData: FirebaseService,
+    private apiservice: FakeAPIService
+  ) {}
 
-  ngOnInit(){
-    this.getUserLevel()
+  ngOnInit() {
+    this.getUserLevel();
   }
 
   openDialog() {
-    const dialogRef = this.dialog.open(PersonalInformationComponent, {panelClass: 'my-custom-dialog-class'});
+    const dialogRef = this.dialog.open(PersonalInformationComponent, {
+      panelClass: 'my-custom-dialog-class',
+    });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+    dialogRef.afterClosed().subscribe((result) => {
+      // console.log(`Dialog result: ${result}`);
     });
   }
-  getUserLevel(){
+  getUserLevel() {
     this.userData.getUser().subscribe((user: any) => {
-      console.log(user.email);
       this.apiservice.getEmailUser(user.email).subscribe((response: any) => {
-       this.userName =(response[0].name);
-       this.userLevel =(response[0].level)
-       this.apiservice.getLevelData(this.userLevel).subscribe((response: any)=>{
- this.coursesToShow = response
-        console.log(this.coursesToShow)
-
-     })
-  })})}
+        this.userName = response[0].name;
+        this.userLevel = response[0].level;
+        this.apiservice
+          .getLevelData(this.userLevel)
+          .subscribe((response: any) => {
+            this.coursesToShow = response;
+          });
+      });
+    });
+  }
 }
