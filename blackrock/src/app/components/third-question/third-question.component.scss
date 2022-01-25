@@ -1,10 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+$orange: #FF4713;
+
 div{
-    background-color: #ff4713;
+    background-color: $orange;
     padding: 5%;
     height: 85%;
     .header{
         width: 100%;
-        h2{ font-size:40px;
+        h2{ 
+            font-family: 'Noto Sans', sans-serif;
+            font-size:32px;
             font-weight: 700;
         width:75% ;}
         section{
@@ -20,6 +26,7 @@ div{
         }
 
     }
+
     section{
         width: 100%;
                 display: flex;
@@ -28,7 +35,9 @@ div{
         align-items: space-around;
         margin-bottom: 24px;
      p{
+        font-family: 'Noto Sans', sans-serif;
         width: 75%;
+        font-weight: 400;
          line-height: 33px;
          font-size: 24px;
      }
@@ -44,8 +53,10 @@ div{
     }
 }
 
+
 ::ng-deep .mat-checkbox-inner-container{
     width: 33px !important;
     height: 33px !important;
     margin-left: 33px !important;
 }
+
