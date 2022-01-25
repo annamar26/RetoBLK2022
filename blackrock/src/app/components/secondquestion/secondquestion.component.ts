@@ -37,7 +37,6 @@ export class SecondquestionComponent implements OnInit {
   }
 
   sendResults(e: any) {
-    //console.log(e.value)
     switch (e.value) {
       case 0:
         {
@@ -98,6 +97,5 @@ export class SecondquestionComponent implements OnInit {
     let str = this.points.toString();
     sessionStorage.setItem('Score2', str);
     sessionStorage.getItem('Score2');
-    console.log(sessionStorage.getItem('Score2'));
   }
 }
