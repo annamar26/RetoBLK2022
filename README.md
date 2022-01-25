@@ -48,36 +48,44 @@ Para descubir las principales necesidades de nuestros usuarios, realizamos una i
 
 ## 4. Prototipos de alta fidelidad
 
-![HomePage](./ReadmeFiles/Home "Página de inicio")
-![Registro](./src/assets/readMe/Registro.png "Página de registro")
-![Home](./src/assets/readMe/Home.png "Página de inicio")
-![Crear Post](./src/assets/readMe/Crear%20Post.png "Página para crear un post")
+![HomePage](./blackrock/ReadmeFiles/Homepage.jpg "Página de inicio")
+![Financial Quiz](./blackrock/ReadmeFiles/Financial_quiz.jpg "Inicio Cuestionario")
+![First Question](./blackrock/ReadmeFiles/First_question.jpg "Primera pregunta")
+![Second Question](./blackrock/ReadmeFiles/Second_question.jpg "Segunda pregunta")
 
-Acceso al prototipo en [Figma](https://www.figma.com/file/SVWYnBEJLvsVkxcpYU7WFo/Red-Social-NOVA?node-id=0%3A1)
+![Third Question](./blackrock/ReadmeFiles/Third_question.jpg "Tercera pregunta")
+![Fourth Queston](./blackrock/ReadmeFiles/Fourth_queston.jpg "Cuarta pregunta")
+![Fifth Question](./blackrock/ReadmeFiles/Fifth_question.jpg "Quinta pregunta")
+![Quiz Results](./blackrock/ReadmeFiles/Quiz_Results.jpg "Resultados del Quiz")
 
+![Log In](./blackrock/ReadmeFiles/Log_in.jpg "Inicio de sesión")
+![Sign Up](./blackrock/ReadmeFiles/Sign_up.jpg "Página de registro")
+![PersonalInformation](./blackrock/ReadmeFiles/Personal_information.jpg "Formulario de información personal")
+![Profile](./blackrock/ReadmeFiles/Profile.jpg "Perfil del usuario")
+![CoursesPage](./blackrock/ReadmeFiles/Courses_page.jpg "Página de cursos")
+![UpdateData](./blackrock/ReadmeFiles/Update_data.jpg "Actualización de datos")
+![Footer](./blackrock/ReadmeFiles/Bottom_page.jpg "Footer")
 
-## 5. Acceso a nuestra red social
-
-Consulta el siguiente enlace ara acceder a **NOVA**: 
-https://red-social-nova.web.app/
-
-Si no deseas registrarte, puedes utilizar la siguiente cuenta para ingresar:
-
-**Correo:** 
-
-**Contraseña:** _123abc_
-
+Acceso al prototipo en [Figma](https://www.figma.com/file/WuY6svf3tpRThbA9UF7TjM/Reto-BLK?node-id=195%3A62)
 
 ## 6. Tecnologías utilizadas
+- Angular
+- TypeScript
 - HTML
-- CSS
+- Sass
 - Vanilla JS
 - Firebase y Firestore
 - Figma 
-- Jest
-
+- Fake Api
+- Heroku
+- Angular Material 
+- Font Awesome
+- JSPDF
 
 ## 7. Cocreadoras
- - [Emma Aguila](https://github.com/emmaspace)
- - [Isabel Valdés](https://github.com/isvaoc)
  - [Angélica Venta](https://github.com/AngieVenta)
+ - [Anita Aguilar](https://github.com/annamar26)
+ - [Belem Hernández](https://github.com/belemHA)
+ - [Colette Ordoñez](https://github.com/ColetteOrdz)
+ - [Daniela Torrel](https://github.com/danitorrel)
+ 
