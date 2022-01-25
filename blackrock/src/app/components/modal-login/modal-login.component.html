@@ -75,6 +75,7 @@
       cdkFocusInitial
       type="submit"
       class="loginbutton"
+      [disabled]="!(user.valid && user.dirty)"
     >
       <mat-icon class="arrow">keyboard_arrow_right</mat-icon>Inicia sesión
     </button>
@@ -97,6 +98,7 @@
         [mat-dialog-close]="true"
         cdkFocusInitial
         type="submit"
+        [disabled]="!(user.valid && user.dirty)"
       >
         <mat-icon class="arrow">keyboard_arrow_right</mat-icon>Registrarse
       </button>
