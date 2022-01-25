@@ -73,8 +73,9 @@ Consulta el siguiente enlace para acceder a la página:
 https://blackrockchallenge-96045.web.app/
 
 ## 5. Rendimiento
-Se evaluó el rendimiento con la herramienta Lighthouse, obteniendo los siguientes resultados: 
+Se evaluó el rendimiento con las herramientas Lighthouse y PageSpeed Insights, obteniendo los siguientes resultados: 
 ![Rendimiento](./blackrock/ReadmeFiles/rendimiento.png "Rendimiento")
+<a href="https://ibb.co/VNDjPZh"><img src="https://i.ibb.co/YW8RqMK/pagespeedscore.png" alt="pagespeedscore" border="0"></a>
 
 
 ## 6. Tecnologías utilizadas
