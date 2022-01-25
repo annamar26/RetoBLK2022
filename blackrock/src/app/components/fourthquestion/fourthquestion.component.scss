@@ -108,17 +108,19 @@ $bg-color: #ffce00;
     margin: 0%;
   }
 }
-@media (max-width: 600px) and (orientation: portrait) {
-  .formulario {
-    overflow-y: scroll;
-    h1 {
-      width: 75%;
-    }
-  }
-  .example-list {
-    border: none;
-    min-height: 20px;
-  }
+
+@media (max-width: 600px)and (orientation: portrait){
+.formulario{
+  overflow-y: scroll;
+	h1{
+		width: 75%;
+		font-size: 26px !important;
+	}
+}
+.example-list {
+  border: none;
+  min-height: 20px;}
+
 
   #hidden {
     visibility: visible;
