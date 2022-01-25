@@ -68,16 +68,17 @@
         </mat-error>
       </mat-form-field>
     </div>
+   
       <div class="login"  *ngIf="valorModal; else elseBlock2"> 
-        <button mat-button  [mat-dialog-close]="true" cdkFocusInitial type="submit">
-        <mat-icon class='arrow'>keyboard_arrow_right</mat-icon>Inicia sesión</button>
+        <button mat-button  [mat-dialog-close]="true" cdkFocusInitial type="submit" class="loginbutton">
+                  <mat-icon class='arrow'>keyboard_arrow_right</mat-icon>Inicia sesión</button> <hr>
         <button mat-button  [mat-dialog-close]="true" cdkFocusInitial type="button" (click)="google()">
-          <mat-icon class='arrow'>keyboard_arrow_right</mat-icon>Inicia sesión con Google</button></div>
+          <mat-icon class='arrow'>Google</mat-icon>Inicia sesión con Google</button></div>
           <ng-template #elseBlock2 >
-            <div class="login"><button mat-button  [mat-dialog-close]="true" cdkFocusInitial type="submit">
-              <mat-icon class='arrow'>keyboard_arrow_right</mat-icon>Registrarse</button>
+            <div class="login"><button class="loginbutton" mat-button  [mat-dialog-close]="true" cdkFocusInitial type="submit">
+              <mat-icon class='arrow'>keyboard_arrow_right</mat-icon>Registrarse</button><hr>
               <button mat-button  [mat-dialog-close]="true" cdkFocusInitial type="button" (click)="google2()">
-                <mat-icon class='arrow'>keyboard_arrow_right</mat-icon>Registrarse con Google</button></div>
+                <mat-icon class='arrow'>Google_rounded</mat-icon>Registrarse con Google</button></div>
             
           </ng-template>
 
