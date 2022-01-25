@@ -9,11 +9,13 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { CoursesComponent } from './pages/courses/courses.component';
 import { SpinnerComponent } from './pages/spinner/spinner.component';
 import { AngularFireAuthGuard, redirectLoggedInTo, redirectUnauthorizedTo } from '@angular/fire/compat/auth-guard';
+import { CanvasComponent } from './pages/canvas/canvas.component';
 
 const redirectLoggedInToILogin = () => redirectLoggedInTo(['profile']);
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['']);
 const routes: Routes = [
   {  path:"", component:HomeComponent, pathMatch:"full"},
+  {path:"data", component:CanvasComponent, pathMatch:"full"},
   {path:"quiz", component:QuizComponent, pathMatch:"full", canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectLoggedInToILogin }},
   { path:"edit", component:EditProfileComponent, pathMatch:"full", canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
    {path:"results", component:ResultsComponent, pathMatch:"full", canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectLoggedInToILogin }},

@@ -46,6 +46,7 @@ import { SpinnerComponent } from './pages/spinner/spinner.component';
 import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
 import { ShareIconsModule } from 'ngx-sharebuttons/icons';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { CanvasComponent } from './pages/canvas/canvas.component';
 
 
 @NgModule({
@@ -74,6 +75,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     EditProfileComponent,
     QuizMainComponent,
     SpinnerComponent,
+    CanvasComponent,
   ],
   imports: [
     BrowserModule,

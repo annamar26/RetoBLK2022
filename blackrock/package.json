@@ -26,6 +26,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "chart.js": "^3.7.0",
     "faker": "^6.6.6",
     "firebase-tools": "^9.23.3",
     "html2canvas": "^1.4.1",
