@@ -104,7 +104,7 @@ Se evaluó el rendimiento con las herramientas Lighthouse y PageSpeed Insights, 
 <br>
 
 ### Otras tecnologías
-- Fake Api
+- JSON-Server
 - Font Awesome
 - JSPDF
 - Chart
