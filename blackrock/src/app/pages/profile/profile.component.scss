@@ -2,9 +2,9 @@
 
 $black: #000000;
 $white: #ffffff;
-$orange: #FF4713;
-$pink: #FC9BB3;
-$yellow: #FFCE00;
+$orange: #ff4713;
+$pink: #fc9bb3;
+$yellow: #ffce00;
 
 @mixin noto($color, $x, $y) {
   color: $color;
@@ -21,6 +21,7 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    flex-wrap: wrap;
     padding-right: 2rem;
     .stats {
       padding: 3rem 8rem 0;
@@ -32,6 +33,7 @@ main {
   .user-info {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     padding: 0 10rem 0;
     .back-color-profile {
@@ -53,6 +55,7 @@ main {
       .profile-name-edit {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         align-items: baseline;
         gap: 1rem;
         h1 {
@@ -94,11 +97,11 @@ main {
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       grid-template-rows: auto;
       column-gap: 3rem;
-			row-gap: 3rem;
+      row-gap: 3rem;
       padding: 2rem 5rem 3rem;
       .card-general {
-				box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.7);
-        cursor:pointer;
+        box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 0.7);
+        cursor: pointer;
         div {
           height: 250px;
           box-sizing: border-box;
@@ -112,9 +115,9 @@ main {
           }
         }
         .title-section {
-					display: flex;
-					align-items: center;
-					padding: 1rem 1rem 0 1rem;
+          display: flex;
+          align-items: center;
+          padding: 1rem 1rem 0 1rem;
           height: 40px;
           background-color: $black;
           p {
@@ -132,4 +135,37 @@ main {
 
 ::ng-deep .mat-progress-bar.mat-accent .mat-progress-bar-buffer {
   background-color: $black !important;
+}
+
+@media (max-height: 420px), screen and (orientation: portrait) {
+  main {
+    .admin-data {
+      justify-content: flex-end;
+      padding:0 1rem 2rem 0;
+      .stats {
+        padding: 2rem 0 0 !important;
+      }
+    }
+    .user-info {
+			  padding: 0 1rem 0 !important;
+      .back-color-profile {
+        border-radius: 50%;
+      }
+    }
+    .profile-info {
+			margin-top: 1rem !important;
+			 padding-left: 10px !important;
+    }
+		.progress{
+			padding: 2rem 1rem 2rem;
+		}
+		.training{
+			h3{
+				padding: 3rem 1rem 0;
+			}
+			.grid-courses{
+				padding: 2rem 2rem 3rem;
+			}
+		}
+  }
 }
