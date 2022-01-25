@@ -1,61 +1,57 @@
 <app-header></app-header>
 <main *ngIf="userEmail | async as user">
-	<div class="admin-data">
-		<h3 class="stats" >Descargas estadísticas de los usuarios </h3>
-	</div>
-	<section class="user-info">
-		<div class="back-color-profile">
-			<img class="circular--square" src="../../../assets/ukUQGo3a_400x400.jpeg" />
-		</div>
-		<div class="profile-info">
-			<div class="profile-name-edit">
-				<h1>{{userName}}</h1>
-				<mat-icon routerLink="/edit" style="font-size: 27px;">mode_edit</mat-icon>
-			</div>
-			<p>{{userLevel}}</p>
-		</div>
-	</section>
-	<section class="progress">
-		<div>
-			<div class="percetage">
-				<h2>{{percentage}}%</h2>
-			</div>
-			<mat-progress-bar [color]="color" [mode]="mode" [value]="percentage" >
-			</mat-progress-bar>
-		</div>
-		<h3>Te faltan {{leftCourses}} cursos para terminar tu entranamiento y cumplir tu meta</h3>
-		<h2>{{goal}}</h2>
-	</section>
-	<section class="training">
+  <div class="admin-data">
+    <h3 class="stats" (click)="createPdf()">
+      Descargas estadísticas de los usuarios
+    </h3>
+  </div>
+  <section class="user-info">
+    <div class="back-color-profile">
+      <img
+        class="circular--square"
+        src="../../../assets/ukUQGo3a_400x400.jpeg"
+      />
+    </div>
+    <div class="profile-info">
+      <div class="profile-name-edit">
+        <h1>{{ userName }}</h1>
+        <mat-icon routerLink="/edit" style="font-size: 27px"
+          >mode_edit</mat-icon
+        >
+      </div>
+      <p>{{ userLevel }}</p>
+    </div>
+  </section>
+  <section class="progress">
+    <div>
+      <div class="percetage">
+        <h2>{{ percentage }}%</h2>
+      </div>
+      <mat-progress-bar [color]="color" [mode]="mode" [value]="percentage">
+      </mat-progress-bar>
+    </div>
+    <h3>
+      Te faltan {{ leftCourses }} cursos para terminar tu entranamiento y
+      cumplir tu meta
+    </h3>
+    <h2>{{ goal }}</h2>
+  </section>
+  <section class="training">
+    <h3 routerLink="/courses">Continúa con tu entrenamiento</h3>
 
-		<h3 routerLink="/courses">Continúa con tu entrenamiento</h3>
-
-		<div class="grid-courses">
-			<div class="card-general" *ngFor="let course of coursesToShow" routerLink="/courses">
-				<div>
-					<img src="{{course.image}}" />
-				</div>
-				<div class="title-section">
-					<p>{{course.name}}</p>
-				</div>
-			</div>
-			
-			
-		</div>
-	</section>
-
-	<table id="users">
-
-		<tr>
-		  <th *ngFor="let col of columns">
-			{{col}}
-		  </th>
-		</tr>
-		<tr *ngFor="let user of tableContent">
-		  <td *ngFor="let col of index">
-			{{user[col]}}
-		  </td>
-		</tr>
-	  
-	  </table>
+    <div class="grid-courses">
+      <div
+        class="card-general"
+        *ngFor="let course of coursesToShow"
+        routerLink="/courses"
+      >
+        <div>
+          <img src="{{ course.image }}" />
+        </div>
+        <div class="title-section">
+          <p>{{ course.name }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>

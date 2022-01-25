@@ -3,7 +3,8 @@ import { ThemePalette } from '@angular/material/core';
 import { ProgressBarMode } from '@angular/material/progress-bar';
 import { FakeAPIService } from 'src/app/services/fake-api.service';
 import { FirebaseService } from 'src/app/services/firebase.service';
-//import { jsPDF } from 'jspdf';
+import { jsPDF } from 'jspdf';
+import 'jspdf-autotable';
 
 @Component({
   selector: 'app-profile',
@@ -21,52 +22,49 @@ export class ProfileComponent implements OnInit {
   leftCourses = 0;
   goal = '';
   coursesToShow = [] as any;
-  /* doc = new jsPDF({
-    orientation: 'p',
+  doc = new jsPDF({
+    orientation: 'l',
     unit: 'mm',
     format: 'a4',
     putOnlyUsedFonts: true,
-  }); */
+  });
+  keys = [] as any;
+  values = [] as any;
+  header = [
+    [
+      'Nombre',
+      'Email',
+      'CP.',
+      'Educacion',
+      'Edad',
+      'Sexo',
+      'Ocupación',
+      'Nivel',
+      'Cursos hechos',
+      'Meta',
+      'ID',
+    ],
+  ];
 
   constructor(
     private userData: FirebaseService,
     private apiservice: FakeAPIService
-  ) { }
-  columns = ["id", "name", "email", "cp", "education", "age", "gender", "workfield", "level", "doneCourses", "goal"]
-  index = ["id", "name", "email", "cp", "education", "age", "gender", "workfield", "level", "doneCourses", "goal"]
-  tableContent = [] as any
+  ) {}
+
   ngOnInit() {
     this.getUserData();
     console.log(this.userLevel);
 
-    //let content = [] as any;
+    this.apiservice.getAllUsersData().subscribe((data: any) => {
+      let content = data;
 
-    /* this.apiservice.getAllUsersData().subscribe((data) => {
-      content = data;
-      let texto = '';
       for (let element of content) {
-        let claves = Object.keys(element);
+        let valores = Object.values(element);
 
-        for (let i = 0; i < claves.length; i++) {
-          let clave = claves[i];
-          texto += `${clave}: ${element[clave]} \n`;
-        }
-
-        texto += `............................. \n`;
-       
+        this.values.push(valores);
       }
-      this.doc.text(texto, 20, 20);
-//       for(let i= 0; content.length; i+3){
-//  this.doc.addPage('a4', 'p');
-//       }
-      console.log(content);
-    }); */
-    this.apiservice.getAllUsersData().subscribe((responses) => {
-      this.tableContent = responses
     });
   }
-
-
 
   getUserData() {
     this.userData.getUser().subscribe((user: any) => {
@@ -86,7 +84,22 @@ export class ProfileComponent implements OnInit {
       });
     });
   }
-  /* createPdf() {
-    this.doc.save('users-data.pdf');
-  } */
+
+  createPdf() {
+    this.doc.setFontSize(24);
+    this.doc.text('Usuarios registrados', 110, 10);
+    this.doc.setFontSize(12);
+    this.doc.setTextColor(99);
+
+    (this.doc as any).autoTable({
+      head: this.header,
+      body: this.values,
+      theme: 'grid',
+
+      didDrawCell: (data: any) => {
+        console.log(data.column.index);
+      },
+    });
+    this.doc.save('tableOfUsers.pdf');
+  }
 }
