@@ -11,7 +11,7 @@
 * [7. Cocreadoras](#7-cocreadoras)
 
 
-## 1. Resumen del proyecto:
+## 1. Resumen del proyecto
 Desarrollo de una plataforma de educación financiera para clientes retail de Citibanamex para obtener datos demográficos sobre nuestras inversionistas y crear un plan de aprendizaje personalizada. Creamos el plan de aprendizaje a través de una prueba de perfilamiento del cliente para entender su demográfica y nivel de educación financiera actual. La plataforma y la prueba deben de estar muy user-friendly, y animar a los clientes para tomar la prueba/completar su plan de aprendizaje. 
 
 ### Contexto: 
@@ -72,7 +72,7 @@ Consulta el siguiente enlace para acceder a la página:
 
 https://blackrockchallenge-96045.web.app/
 
-### 5. Rendimiento
+## 5. Rendimiento
 Se evaluó el rendimiento con la herramienta ligthhousescore, obteniendo los siguientes resultados: 
 ![Rendimiento](./blackrock/ReadmeFiles/rendimiento.png "Rendimiento")
 
