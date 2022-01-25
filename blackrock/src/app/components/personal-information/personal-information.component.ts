@@ -5,6 +5,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { FakeAPIService } from 'src/app/services/fake-api.service';
 import { FirebaseService } from 'src/app/services/firebase.service';
@@ -15,6 +16,9 @@ import { FirebaseService } from 'src/app/services/firebase.service';
   styleUrls: ['./personal-information.component.scss'],
 })
 export class PersonalInformationComponent implements OnInit {
+  horizontalPosition: MatSnackBarHorizontalPosition = 'end';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
+  duration: number = 2000
   nameQuiz: any;
   Sex: any = ['Mujer', 'Hombre'];
   ages: any = [
@@ -47,7 +51,8 @@ export class PersonalInformationComponent implements OnInit {
   constructor(
     private apiService: FakeAPIService,
     public router: Router,
-    private userData: FirebaseService
+    private userData: FirebaseService,
+    private _snackBar: MatSnackBar
   ) {}
 
   ngOnInit() {
@@ -71,6 +76,7 @@ export class PersonalInformationComponent implements OnInit {
             .subscribe((data) => {
               console.log(data);
               this.router.navigate(['profile']);
+              this.saveDataopenSnackBar('Los datos se han guardado')
             });
         });
       });
@@ -81,4 +87,11 @@ export class PersonalInformationComponent implements OnInit {
   }
 
   inputName() {}
+  saveDataopenSnackBar(message: string) {
+    this._snackBar.open(message, 'close', {
+      duration: this.duration,
+      verticalPosition: this.verticalPosition,
+      horizontalPosition: this.horizontalPosition,
+    });
+  }
 }

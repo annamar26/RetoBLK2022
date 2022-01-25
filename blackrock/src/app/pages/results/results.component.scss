@@ -17,23 +17,27 @@ $pink: #fd9bb4;
     weight: $y;
   }
 }
+
 .container {
   background-color: #fd9bb4;
   display: flex;
   flex-direction: row;
-  margin: 4rem 8rem 4rem 0;
+	flex-wrap: wrap;
+  margin-top: 3rem;
   padding: 3rem 1rem 5rem 10rem;
   z-index: 0;
+  width: 80vw;
   position: relative;
 
   .data {
     display: flex;
     flex-direction: column;
     position: relative;
+    box-sizing: border-box;
     .label-level {
       @include noto($black, $noto-dis, 56px, 900);
-      width: 100%;
       margin-left: 0;
+      box-sizing: border-box;
     }
     .level {
       margin-left: 150px;
@@ -46,8 +50,10 @@ $pink: #fd9bb4;
       color: white;
       line-height: 60px;
       height: 70px;
+      width: 80vw;
       padding: 3%;
       z-index: 1;
+      box-sizing: border-box;
 
       h2 {
         @include noto($white, $noto-dis, 56px, 900);
@@ -58,7 +64,115 @@ $pink: #fd9bb4;
     .description {
       background-color: white;
       color: black;
-      height: 100px;
+      height: 100%;
+      width: 100%;
+      line-height: 20px;
+      padding: 1%;
+      margin-left: 0;
+      box-sizing: border-box;
+      z-index: inherit;
+      p {
+        box-sizing: border-box;
+        padding: 1rem 15rem 1rem 3rem;
+        @include noto($black, $noto-fam, 20px, 400);
+      }
+    }
+  }
+  .img {
+    top: 6%;
+    left: 83%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    width: 400px;
+    position: absolute;
+    height: 200px;
+    z-index: 1;
+    img {
+      width: 100%;
+      z-index: 2;
+      box-sizing: border-box;
+    }
+  }
+  .register {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 12rem;
+    padding-left: 0;
+    padding-bottom: 5%;
+    h3 {
+      @include noto($black, $noto-fam, 24px, 700);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    mat-icon {
+      font-size: 30px;
+      cursor: pointer;
+    }
+    share-buttons{
+      background-color: black;
+      width: fit-content;
+      transform: scale(1.5);
+    }
+    
+  }
+}
+
+.white-div {
+  background-color: $white;
+  height: 3rem;
+  width: 90vw;
+}
+
+@media (max-width: 1250px), screen and (orientation: portrait){
+	.container {
+  background-color: #fd9bb4;
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+  padding: 3rem 1rem 5rem 2rem;
+  z-index: 0;
+  position: relative;
+
+  .data {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-sizing: border-box;
+    .label-level {
+      @include noto($black, $noto-dis, 36px, 900);
+      margin-left: 0;
+      box-sizing: border-box;
+    }
+    .level {
+      margin-left: 10px;
+      margin-top: 60px;
+      margin-right: 0;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      background-color: black;
+      color: white;
+      line-height: 60px;
+      height: 70px;
+      width: 80vw;
+      padding: 3%;
+      z-index: 1;
+      box-sizing: border-box;
+
+      h2 {
+        @include noto($white, $noto-dis, 56px, 900);
+        margin-bottom: 0;
+        width: 100%;
+      }
+    }
+    .description {
+      background-color: white;
+      color: black;
+      height: 100%;
+      width: 100%;
       line-height: 20px;
       padding: 1%;
       margin-left: 0;
@@ -72,9 +186,9 @@ $pink: #fd9bb4;
     }
   }
   .img {
-    top: 6%;
-    left: 82%;
-    width: 400px;
+    top: 10%;
+    left: 55%;
+    width: 170px;
     position: absolute;
     height: 200px;
     z-index: 1;
@@ -102,9 +216,4 @@ $pink: #fd9bb4;
     }
   }
 }
-
-.white-div {
-  background-color: $white;
-  height: 3rem;
-  width: 90vw;
 }
