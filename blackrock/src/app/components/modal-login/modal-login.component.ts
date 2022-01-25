@@ -63,12 +63,10 @@ export class ModalLoginComponent implements OnInit {
       .logIn(this.user.value.mail, this.user.value.password)
 
       .then((userCredential: any) => {
-        console.log('inicio de sesión correcto', userCredential);
         this.router.navigate(['profile']);
         this.loginopenSnackBar('Hola de nuevo');
       })
       .catch((error) => {
-        console.log(error.message);
         this.loginopenSnackBar(error.message);
       });
   }
@@ -76,12 +74,10 @@ export class ModalLoginComponent implements OnInit {
     this.firebase
       .loginGoogle()
       .then((userCredential: any) => {
-        console.log('inicio de sesión correcto', userCredential);
         this.router.navigate(['profile']);
         this.loginopenSnackBar('Hola de nuevo');
       })
       .catch((error) => {
-        console.log(error.message);
         this.loginopenSnackBar(error.message);
       });
   }
@@ -90,27 +86,23 @@ export class ModalLoginComponent implements OnInit {
       .singIn(this.user.value.mail, this.user.value.password)
 
       .then((userCredential: any) => {
-        console.log('registro correcto', userCredential);
-
         this.APIservice.register({
           name: this.name,
           email: this.user.value.mail,
           cp: 0,
           education: '',
           age: 0,
-          gender: "",
+          gender: '',
           workfield: '',
           level: this.level,
           doneCourses: this.doneCourses,
           goal: this.goal,
         }).subscribe((users) => {
-          console.log(users);
           this.router.navigate(['courses']);
           this.loginopenSnackBar('Registro exitoso');
         });
       })
       .catch((error) => {
-        console.log(error.message);
         this.loginopenSnackBar(error.message);
       });
   }
@@ -118,26 +110,23 @@ export class ModalLoginComponent implements OnInit {
     this.firebase
       .loginGoogle()
       .then((userCredential: any) => {
-        console.log('inicio de sesión correcto', userCredential);
         this.APIservice.register({
-                  name: userCredential.user._delegate.displayName,
+          name: userCredential.user._delegate.displayName,
           email: userCredential.user._delegate.email,
           cp: 0,
           education: '',
           age: 0,
-          gender: "",
+          gender: '',
           workfield: '',
           level: this.level,
           doneCourses: this.doneCourses,
           goal: this.goal,
         }).subscribe((users) => {
-          console.log(users);
           this.loginopenSnackBar('Registro exitoso');
           this.router.navigate(['courses']);
         });
       })
       .catch((error) => {
-        console.log(error.message);
         this.loginopenSnackBar(error.message);
       });
   }

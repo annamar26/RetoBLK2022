@@ -1,6 +1,6 @@
 <h1 mat-dialog-title>¡Queremos conocerte mejor!</h1>
 <mat-dialog-content class="mat-typography">
-  <form [formGroup]="userinfo" (ngSubmit)="onFormSubmit()" >
+  <form [formGroup]="userinfo" (ngSubmit)="onFormSubmit()">
     <section>
       <mat-form-field appearance="legacy">
         <mat-label>Nombre* </mat-label>
@@ -75,33 +75,39 @@
         <mat-error *ngIf="k['cp'].touched">
           <span *ngIf="k['cp'].errors && k['cp'].errors['pattern']"
             >Ingresa un código válido.</span
-            >
+          >
         </mat-error>
-    </mat-form-field>
-</section>
-      <section class="mat-form-field" id="checkbox-section">
-        <mat-checkbox class="checkbox-margin" formControlName="didAcceptInfo"
-          >Haz click aquí para recibir comunicados sobre ofertas futuras de
-          BlackRock.</mat-checkbox
-        >
-        <mat-checkbox class="checkbox-margin" formControlName="didAcceptTerms">
-          Acepto la
-          <span style="font-weight: bold">Política de Privacidad</span> de
-          BlackRock.
-        </mat-checkbox>
-      </section>
-      <!-- <section class="info-section"> -->
-          <section class="btn-section">
-            <p class="info">* Información requerida</p>
-            <p class="privacyPolicy">
-              Lee nuestra
-              <span style="font-weight: bold">Política de Privacidad</span>.
-            </p>
+      </mat-form-field>
+    </section>
+    <section class="mat-form-field" id="checkbox-section">
+      <mat-checkbox class="checkbox-margin" formControlName="didAcceptInfo"
+        >Haz click aquí para recibir comunicados sobre ofertas futuras de
+        BlackRock.</mat-checkbox
+      >
+      <mat-checkbox class="checkbox-margin" formControlName="didAcceptTerms">
+        Acepto la
+        <span style="font-weight: bold">Política de Privacidad</span> de
+        BlackRock.
+      </mat-checkbox>
+    </section>
+    <!-- <section class="info-section"> -->
+    <section class="btn-section">
+      <p class="info">* Información requerida</p>
+      <p class="privacyPolicy">
+        Lee nuestra
+        <a href="https://www.blackrock.com/corporate/compliance/privacy-policy" style="font-weight: bold">Política de privacidad</a>
+      </p>
 
-            <button mat-stroked-button type="submit" class="info-btn" [mat-dialog-close]="true">
-              <mat-icon class="arrow">keyboard_arrow_right</mat-icon> Enviar
-            </button>
-        </section>
-      <!-- </section> -->
+      <button
+        mat-stroked-button
+        type="submit"
+        class="info-btn"
+        [mat-dialog-close]="true"
+        [disabled]="!(userinfo.valid && userinfo.dirty)"
+      >
+        <mat-icon class="arrow">keyboard_arrow_right</mat-icon> Enviar
+      </button>
+    </section>
+    <!-- </section> -->
   </form>
 </mat-dialog-content>

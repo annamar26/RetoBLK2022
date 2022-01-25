@@ -64,7 +64,7 @@ export class FourthquestionComponent implements OnInit {
         event.currentIndex
       );
     }
-    console.log(this.ahorrar.sort(), this.invertir.sort());
+
     const selectAhorrar = this.ahorrar.sort();
     const selectInvertir = this.invertir.sort();
     let points = 0;
@@ -87,9 +87,8 @@ export class FourthquestionComponent implements OnInit {
     if (selectInvertir.includes('Me protege contra la inflación')) {
       points++;
     }
-    console.log(points);
+
     sessionStorage.setItem('Score4', points.toString());
-    console.log(sessionStorage.getItem('Score4'));
   }
 
   noReturnPredicate() {

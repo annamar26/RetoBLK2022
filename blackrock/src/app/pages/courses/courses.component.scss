@@ -1,16 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
 
-$white: #FFFFFF;
-$yellow: #FFCE00;
+$white: #ffffff;
+$yellow: #ffce00;
 $black: #000000;
 .course-card {
   font-family: "Noto Sans", sans-serif;
   width: 100%;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-  cursor:pointer;
+  cursor: pointer;
   button {
-    background-color:$black;
-    color:$white;
+    background-color: $black;
+    color: $white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,7 +23,6 @@ $black: #000000;
   }
 }
 
-
 .content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -33,7 +32,7 @@ $black: #000000;
   align-items: center;
   column-gap: 5rem;
   row-gap: 3rem;
-  margin: 0 3rem 0 3rem;
+  margin: 0 3rem 5rem 3rem;
 }
 .card {
   /* width: min-content; */
@@ -50,13 +49,13 @@ $black: #000000;
     width: 100%;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
     .maininfo {
-			.mat-card-title{
-				margin-bottom: .5rem;
-				font: {
-					family: "Noto Sans", sans-serif;
-					weight: 700;
-				}
-			}
+      .mat-card-title {
+        margin-bottom: 0.5rem;
+        font: {
+          family: "Noto Sans", sans-serif;
+          weight: 700;
+        }
+      }
       .mat-card-image {
         object-fit: cover !important;
       }
@@ -102,14 +101,6 @@ $black: #000000;
   }
 }
 
-footer {
-  margin: 0%;
-  width: 100%;
-  height: 50px;
-  background-color: $yellow;
-  margin-top: 5.4rem;
-}
-
 @media (max-width: 1250px) {
   .content {
     display: grid;
@@ -119,7 +110,7 @@ footer {
     justify-content: center;
     column-gap: 5rem;
     row-gap: 3rem;
-    margin: 0 3rem 0 3rem;
+    margin: 0 3rem 5rem 3rem;
   }
   .card {
     width: min-content;

@@ -87,6 +87,7 @@ main {
     }
   }
   .training {
+		padding-bottom: 5rem;
     h3 {
       padding: 3rem 10rem 0;
       cursor: pointer;
@@ -141,31 +142,32 @@ main {
   main {
     .admin-data {
       justify-content: flex-end;
-      padding:0 1rem 2rem 0;
+      padding: 0 1rem 2rem 0;
       .stats {
         padding: 2rem 0 0 !important;
       }
     }
     .user-info {
-			  padding: 0 1rem 0 !important;
+      padding: 0 1rem 0 !important;
       .back-color-profile {
         border-radius: 50%;
       }
     }
     .profile-info {
-			margin-top: 1rem !important;
-			 padding-left: 10px !important;
+      margin-top: 1rem !important;
+      padding-left: 10px !important;
     }
-		.progress{
-			padding: 2rem 1rem 2rem;
-		}
-		.training{
-			h3{
-				padding: 3rem 1rem 0;
-			}
-			.grid-courses{
-				padding: 2rem 2rem 3rem;
-			}
-		}
+    .progress {
+      padding: 2rem 1rem 2rem;
+    }
+    .training {
+			padding-bottom: 5rem;
+      h3 {
+        padding: 3rem 1rem 0;
+      }
+      .grid-courses {
+        padding: 2rem 2rem 3rem;
+      }
+    }
   }
 }

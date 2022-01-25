@@ -5,7 +5,7 @@ import { FakeAPIService } from 'src/app/services/fake-api.service';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { jsPDF } from 'jspdf';
 import 'jspdf-autotable';
-import { Chart } from 'chart.js';
+
 
 @Component({
   selector: 'app-profile',
@@ -58,12 +58,20 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     this.getUserData();
+    this.apiservice.getAllUsersData().subscribe((data: any) => {
+      let content = data;
+
+      for (let element of content) {
+        let valores = Object.values(element);
+
+        this.values.push(valores);
+      }
+    });
        
   }
 
   getUserData() {
     this.userData.getUser().subscribe((user: any) => {
-      console.log(user.email);
       this.apiservice.getEmailUser(user.email).subscribe((response: any) => {
         this.userName = response[0].name;
         this.userLevel = response[0].level;
@@ -74,7 +82,6 @@ export class ProfileComponent implements OnInit {
           .getLevelData(this.userLevel)
           .subscribe((response: any) => {
             this.coursesToShow = response;
-            console.log(this.coursesToShow);
           });
       });
     });
@@ -92,7 +99,7 @@ export class ProfileComponent implements OnInit {
       theme: 'grid',
 
       didDrawCell: (data: any) => {
-        console.log(data.column.index);
+        // console.log(data.column.index);
       },
     });
     this.doc.save('tableOfUsers.pdf');
