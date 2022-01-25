@@ -12,7 +12,7 @@ $bg-color: #ffce00;
     padding: 2rem;
     font-family: "Noto Sans", sans-serif;
     font-weight: bold;
-    font-size: 32px;
+    font-size: 36px;
     line-height: 110%;
   }
 
@@ -29,6 +29,7 @@ $bg-color: #ffce00;
     ::ng-deep .mat-chip-list-wrapper {
       justify-content: center;
       margin-bottom: 3rem;
+      margin-right: 5rem;
     }
     ::ng-deep .mat-chip.mat-standard-chip {
       padding: 1.6rem;
@@ -37,6 +38,7 @@ $bg-color: #ffce00;
       background-color: black;
       color: white;
       margin: 1em;
+      border-radius: 100px;
 
     }
     .mat-chip.mat-standard-chip.mat-chip-selected.mat-primary {

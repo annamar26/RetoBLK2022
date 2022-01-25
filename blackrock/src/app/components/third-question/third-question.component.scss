@@ -1,51 +1,60 @@
-div{
-    background-color: #ff4713;
-    padding: 5%;
-    height: 85%;
-    .header{
-        width: 100%;
-        h2{ font-size:40px;
-            font-weight: 700;
-        width:75% ;}
-        section{
-            width: 25%;
-            display: flex;
-            justify-content: flex-end;
-            span{
-                text-align: center;
-                width:33px;
-                font-size:24px;
-                margin-left: 33px
-            }
-        }
-
-    }
-    section{
-        width: 100%;
-                display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: space-around;
-        margin-bottom: 24px;
-     p{
-        width: 75%;
-         line-height: 33px;
-         font-size: 24px;
-     }
-       section{
-           width: 20%;
-           display: flex;
-           flex-direction: row;
-           align-items: center;
-           justify-content: flex-end;
-
-
-       }
-    }
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+@mixin noto($color, $x, $y) {
+  color: $color;
+  font: {
+    family: "Noto Sans", sans-serif;
+    size: $x;
+    weight: $y;
+  }
 }
 
+div{
+  background-color: #FF4713;
+  padding: 5%;
+  height: 85%;
+  .header{
+      width: 100%;
+      h2{ 
+        @include noto(black, 36px,700 );
+          
+      width:75% ;}
+      section{
+          width: 25%;
+          display: flex;
+          justify-content: flex-end;
+          span{
+            @include noto(black, 36px,700 );
+              text-align: center;
+              width:33px;
+             
+              margin-left: 33px
+          }
+      }
+  }
+  section{
+      width: 100%;
+              display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: space-around;
+      margin-bottom: 24px;
+   p{
+    @include noto(black, 20px,400 );
+      width: 75%;
+       line-height: 33px;
+      
+   }
+     section{
+         width: 20%;
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+         justify-content: flex-end;
+     }
+  }
+}
 ::ng-deep .mat-checkbox-inner-container{
-    width: 33px !important;
-    height: 33px !important;
-    margin-left: 33px !important;
+  width: 33px !important;
+  height: 33px !important;
+  margin-left: 33px !important;
 }
