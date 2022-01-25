@@ -1,5 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
 
+$white: #FFFFFF;
+$yellow: #FFCE00;
+$black: #000000;
+.course-card {
+  font-family: "Noto Sans", sans-serif;
+  width: 100%;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  cursor:pointer;
+  button {
+    background-color:$black;
+    color:$white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    margin-left: 3px;
+  }
+  .mat-card-actions {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+
 .content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -82,7 +106,7 @@ footer {
   margin: 0%;
   width: 100%;
   height: 50px;
-  background-color: #fece00;
+  background-color: $yellow;
   margin-top: 5.4rem;
 }
 

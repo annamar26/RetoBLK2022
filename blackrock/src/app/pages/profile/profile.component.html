@@ -27,9 +27,11 @@
 		<h2>{{goal}}</h2>
 	</section>
 	<section class="training">
+
 		<h3 routerLink="/courses">Continúa con tu entrenamiento</h3>
+
 		<div class="grid-courses">
-			<div class="card-general" *ngFor="let course of coursesToShow">
+			<div class="card-general" *ngFor="let course of coursesToShow" routerLink="/courses">
 				<div>
 					<img src="{{course.image}}" />
 				</div>
