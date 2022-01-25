@@ -24,6 +24,11 @@ export class CanvasComponent implements AfterViewInit {
   nivel3 = 0;
   nivel4 = 0;
   nivel5 = 0;
+  primaria = 0;
+  media = 0;
+  tecnico = 0;
+  licenciatura = 0;
+  posgrado = 0;
 
   constructor(
     private apiservice: FakeAPIService,
@@ -46,6 +51,21 @@ export class CanvasComponent implements AfterViewInit {
       );
       const nivel4 = data.filter((item: any) => item.level === 'Maestro Jedi');
       const nivel5 = data.filter((item: any) => item.level === 'Maestro Yoda');
+      const primaria = data.filter(
+        (item: any) => item.education === 'Educación básica'
+      );
+      const media = data.filter(
+        (item: any) => item.education === 'Educación media superior'
+      );
+      const tecnico = data.filter(
+        (item: any) => item.education === 'Técnico superior'
+      );
+      const licenciatura = data.filter(
+        (item: any) => item.education === 'Licenciatura'
+      );
+      const posgrado = data.filter(
+        (item: any) => item.education === 'Posgrado'
+      );
 
       this.women = women.length;
       this.men = men.length;
@@ -55,8 +75,14 @@ export class CanvasComponent implements AfterViewInit {
       this.nivel3 = nivel3.length;
       this.nivel4 = nivel4.length;
       this.nivel5 = nivel5.length;
+      this.primaria = primaria.length;
+      this.media = media.length;
+      this.tecnico = tecnico.length;
+      this.licenciatura = licenciatura.length;
+      this.posgrado = posgrado.length;
       this.createCanva();
       this.createBar();
+      this.createPolar()
     });
   }
   createCanva(): void {
@@ -120,6 +146,7 @@ export class CanvasComponent implements AfterViewInit {
             ],
             borderWidth: 1,
             label: 'Usuarios por nivel',
+            minBarLength: 10,
           },
         ],
       },
@@ -132,6 +159,54 @@ export class CanvasComponent implements AfterViewInit {
           title: {
             display: true,
             text: 'Usuarios por nivel',
+          },
+        },
+      },
+    });
+  }
+  createPolar(): void {
+    const ctx = this.elementRef.nativeElement
+      .querySelector('#polarCanvas')
+      .getContext('2d');
+    this.chart = new Chart(ctx, {
+      type: 'polarArea',
+      data: {
+        labels: [
+          'Educación básica',
+          'Educación media superior',
+          'Técnico superior',
+          'Licenciatura',
+          'Posgrado',
+        ],
+        datasets: [
+          {
+            backgroundColor: [
+              '#FD9BB4',
+              '#C80058',
+              '#FECE00',
+              '#008B5C',
+              '#6D3FA2',
+            ],
+            data: [
+              this.primaria,
+              this.media,
+              this.tecnico,
+              this.licenciatura,
+              this.posgrado,
+            ],
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'top',
+          },
+          title: {
+            display: true,
+            text: 'Usuarios por nivel educativo',
           },
         },
       },
