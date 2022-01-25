@@ -27,6 +27,7 @@ export class ProfileComponent implements OnInit {
     format: 'a4',
     putOnlyUsedFonts: true,
   });
+
   constructor(
     private userData: FirebaseService,
     private apiservice: FakeAPIService
@@ -42,20 +43,20 @@ export class ProfileComponent implements OnInit {
       content = data;
       let texto = '';
       for (let element of content) {
-        console.log(content.length)
-        let divlength= content.length%4 
-        if (divlength===0) {
-         console.log("hola")
-        }
-        let claves = Object.keys(element); 
+        let claves = Object.keys(element);
+
         for (let i = 0; i < claves.length; i++) {
           let clave = claves[i];
           texto += `${clave}: ${element[clave]} \n`;
         }
 
         texto += `............................. \n`;
-        this.doc.text(texto, 10, 10);
+       
       }
+      this.doc.text(texto, 20, 20);
+//       for(let i= 0; content.length; i+3){
+//  this.doc.addPage('a4', 'p');
+//       }
       console.log(content);
     });
   }
