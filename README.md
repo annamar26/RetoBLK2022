@@ -72,6 +72,10 @@ Consulta el siguiente enlace para acceder a la página:
 
 https://blackrockchallenge-96045.web.app/
 
+Deploy de Fake API: 
+
+https://fakeapi-bk.herokuapp.com/
+
 ## 5. Rendimiento
 Se evaluó el rendimiento con las herramientas Lighthouse y PageSpeed Insights, obteniendo los siguientes resultados: 
 ![Rendimiento](./blackrock/ReadmeFiles/rendimiento.png "Rendimiento")
@@ -79,19 +83,27 @@ Se evaluó el rendimiento con las herramientas Lighthouse y PageSpeed Insights, 
 
 
 ## 6. Tecnologías utilizadas
-- Angular
-- TypeScript
-- HTML
-- Sass
-- Vanilla JS
-- Firebase y Firestore
-- Figma 
+<br>
+<div align="center">
+<img width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" />
+<img width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" />
+<img width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
+<img width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" />
+<img width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
+<img width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" />
+<img width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" />
+<img width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/heroku/heroku-original.svg" />
+<img width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg" />
+<img width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" />
+<img width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
+</div>
+<br>
+
+### Otras tecnologías
 - Fake Api
-- Heroku
-- Angular Material 
 - Font Awesome
 - JSPDF
-- Git y GutHub.
+- Chart
 
 ## 7. Cocreadoras 
 ### Squad 4...ojos
