@@ -18,8 +18,8 @@ div {
     display: grid;
     justify-content: center;
     padding-top: 1rem;
-    grid-template-columns: repeat(3, 380px);
-    column-gap: 30px;
+    grid-template-columns: repeat(3, 450px);
+    column-gap: 0.5rem;
     row-gap: 30px;
     margin: 50px;
     margin-left: 75px !important;
@@ -31,8 +31,8 @@ div {
       display: flex;
       justify-content: center;
       align-items: flex-end;
-      width: 350px;
-      height: 180px;
+      width: 420px;
+      height: 210px;
       background-size: cover;
       background-repeat: no-repeat;
       color: white;
