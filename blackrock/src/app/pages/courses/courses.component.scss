@@ -32,7 +32,7 @@ $black: #000000;
   align-items: center;
   column-gap: 5rem;
   row-gap: 3rem;
-  margin: 0 3rem 0 3rem;
+  margin: 0 3rem 5rem 3rem;
 }
 .card {
   /* width: min-content; */
@@ -101,14 +101,6 @@ $black: #000000;
   }
 }
 
-footer {
-  margin: 0%;
-  width: 100%;
-  height: 50px;
-  background-color: $yellow;
-  margin-top: 5.4rem;
-}
-
 @media (max-width: 1250px) {
   .content {
     display: grid;
@@ -118,7 +110,7 @@ footer {
     justify-content: center;
     column-gap: 5rem;
     row-gap: 3rem;
-    margin: 0 3rem 0 3rem;
+    margin: 0 3rem 5rem 3rem;
   }
   .card {
     width: min-content;

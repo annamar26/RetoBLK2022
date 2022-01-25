@@ -26,12 +26,18 @@ footer {
     padding: 4rem 0 3rem 5rem;
     gap: 5%;
 		width: 90vw;
-    p {
+    p, a {
+			cursor:pointer;
+			color: black;
+			text-decoration: underline;
       font: {
         family: "Noto Sans Display", Sans-serif;
         weight: 400;
         size: 16px;
       }
+			&:hover{
+			color: #ff4713;
+		}
     }
   }
 
