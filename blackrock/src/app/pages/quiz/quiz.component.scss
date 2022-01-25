@@ -1,138 +1,216 @@
 $bg-color: #ffce00;
 $black: #000000;
-$white: #FFFFFF;
-$orange: #FF4713;
-$pink: #FC9BB3;
+$white: #ffffff;
+$orange: #ff4713;
+$pink: #fc9bb3;
 
-mat-stepper{  
-    #arrows1{
-        height: 6.5em;
-        background-color: $bg-color;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        padding: 0 2.5em 0 2.5em;
-        button{
-            background: $black;
-            font-size: 15px;
-            letter-spacing: 2px;
-            text-align: center;
-            width: fit-content;
-            font-weight: bold;
-            font-family: "Noto Sans", sans-serif;
-            color: $white;
-            border: none;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
-            padding: 0.7rem;
-            cursor: pointer;
-            transition: .3s;             
-            &:hover{
-                animation: pulse 1s infinite;
-                transition: .3s;
-            }
-            @keyframes pulse {
-                0% {
-                  transform: scale(1);
-                }
-                70% {
-                  transform: scale(.9);
-                }
-                  100% {
-                  transform: scale(1);
-                }
-              }
-              .iconBtn {
-                color: $orange;
-                transform: scale(0.5);
-                height: inherit;
-              }
-        }    
-    }
-	#arrows{
-		height: 6.5em;
-        background-color: $bg-color;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 2em 0 2em;
-        
-
-        button{
-            background: $black;
-            font-size: 15px;
-            letter-spacing: 2px;
-            text-align: center;
-            width: fit-content;
-            font-weight: bold;
-            font-family: "Noto Sans", sans-serif;
-            color: $white;
-            border: none;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
-            padding: 0.7rem;
-            cursor: pointer;
-            transition: .3s;             
-            &:hover{
-                animation: pulse 1s infinite;
-                transition: .3s;
-            }
-            @keyframes pulse {
-                0% {
-                  transform: scale(1);
-                }
-                70% {
-                  transform: scale(.9);
-                }
-                  100% {
-                  transform: scale(1);
-                }
-              }
-              .iconBtn {
-                color: $orange;
-                transform: scale(0.5);
-                height: inherit;
-              }
-        }    
-	}
-    ::ng-deep .mat-step-header .mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit {
-        background-color: $orange ;
-        transform: scale(1.5);
-    }    
-    
-    ::ng-deep .mat-step-header {
-        overflow: hidden;
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        height: 3em;
-    }
-    ::ng-deep .mat-horizontal-content-container{
-        height: fit-content;
-        padding: 0 !important;
-    }
-
-    
-}    
-    
-
-
-
-
-@media (max-width: 600px)and (orientation: portrait){
-    mat-stepper{
-        min-height: fit-content;
-        .mat-horizontal-content-container {
-            overflow: visible;
-            padding: 0;
-            height: fit-content;
+mat-stepper {
+  #arrows1 {
+    height: 6.5em;
+    background-color: $bg-color;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 2.5em 0 2.5em;
+    button {
+      background: $black;
+      font-size: 15px;
+      letter-spacing: 2px;
+      text-align: center;
+      width: fit-content;
+      font-weight: bold;
+      font-family: "Noto Sans", sans-serif;
+      color: $white;
+      border: none;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+      padding: 0.7rem;
+      cursor: pointer;
+      transition: 0.3s;
+      &:hover {
+        animation: pulse 1s infinite;
+        transition: 0.3s;
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
         }
-        button {            
-            font-size: 11px;
-           
+        70% {
+          transform: scale(0.9);
         }
+        100% {
+          transform: scale(1);
+        }
+      }
+      .iconBtn {
+        color: $orange;
+        transform: scale(0.5);
+        height: inherit;
+      }
     }
-    
-    
+  }
+  #arrows-white {
+    height: 6.5em;
+    background-color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 2.5em 0 2.5em;
+    button {
+      background: $black;
+      font-size: 15px;
+      letter-spacing: 2px;
+      text-align: center;
+      width: fit-content;
+      font-weight: bold;
+      font-family: "Noto Sans", sans-serif;
+      color: $white;
+      border: none;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+      padding: 0.7rem;
+      cursor: pointer;
+      transition: 0.3s;
+      &:hover {
+        animation: pulse 1s infinite;
+        transition: 0.3s;
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        70% {
+          transform: scale(0.9);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      .iconBtn {
+        color: $orange;
+        transform: scale(0.5);
+        height: inherit;
+      }
+    }
+  }
+
+	#arrows-pink {
+    height: 6.5em;
+    background-color: $pink;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 2.5em 0 2.5em;
+    button {
+      background: $black;
+      font-size: 15px;
+      letter-spacing: 2px;
+      text-align: center;
+      width: fit-content;
+      font-weight: bold;
+      font-family: "Noto Sans", sans-serif;
+      color: $white;
+      border: none;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+      padding: 0.7rem;
+      cursor: pointer;
+      transition: 0.3s;
+      &:hover {
+        animation: pulse 1s infinite;
+        transition: 0.3s;
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        70% {
+          transform: scale(0.9);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      .iconBtn {
+        color: $orange;
+        transform: scale(0.5);
+        height: inherit;
+      }
+    }
+  }
+
+  #arrows {
+    height: 6.5em;
+    background-color: $pink;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2em 0 2em;
+
+    button {
+      background: $black;
+      font-size: 15px;
+      letter-spacing: 2px;
+      text-align: center;
+      width: fit-content;
+      font-weight: bold;
+      font-family: "Noto Sans", sans-serif;
+      color: $white;
+      border: none;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+      padding: 0.7rem;
+      cursor: pointer;
+      transition: 0.3s;
+      &:hover {
+        animation: pulse 1s infinite;
+        transition: 0.3s;
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        70% {
+          transform: scale(0.9);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      .iconBtn {
+        color: $orange;
+        transform: scale(0.5);
+        height: inherit;
+      }
+    }
+  }
+  ::ng-deep .mat-step-header .mat-step-icon-selected,
+  .mat-step-header .mat-step-icon-state-done,
+  .mat-step-header .mat-step-icon-state-edit {
+    background-color: $orange;
+    transform: scale(1.5);
+  }
+
+  ::ng-deep .mat-step-header {
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 3em;
+  }
+  ::ng-deep .mat-horizontal-content-container {
+    height: fit-content;
+    padding: 0 !important;
+  }
 }
 
-
+@media (max-width: 600px) and (orientation: portrait) {
+  mat-stepper {
+    min-height: fit-content;
+    .mat-horizontal-content-container {
+      overflow: visible;
+      padding: 0;
+      height: fit-content;
+    }
+    button {
+      font-size: 11px;
+    }
+  }
+}
