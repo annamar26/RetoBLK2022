@@ -26,19 +26,20 @@ header {
         justify-content: center;
         .logout {
           text-decoration: underline;
-					cursor: pointer;
+          cursor: pointer;
           font: {
             family: "Noto Sans", sans-serif;
             size: 16px;
             weight: 400;
           }
-					&:hover{
-						color: #ff4713;
-					}
+          &:hover {
+            color: #ff4713;
+          }
         }
       }
     }
-    div {
+    div,
+    .session {
       display: flex;
       flex-direction: row;
       justify-content: center;
@@ -85,3 +86,44 @@ header {
     }
   }
 }
+
+@media (max-width: 420px) and (orientation: portrait) {
+  header {
+    flex-direction: row;
+    margin-right:0;
+    align-items: flex-start;
+    padding: 1rem 0 1rem 2rem;
+    img{
+      margin: 10px 10px 20px;
+    }
+    .main {
+      display: flex;
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap:2rem;
+      .session {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        gap:0;
+        
+        h3 {
+          width: fit-content;
+          flex:100%;
+          text-align: right;
+        }
+      }
+      span{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        padding-left: 4rem;
+      }
+     
+    }
+    
+  }
+}
+
+

@@ -27,7 +27,7 @@ export class FourthquestionComponent implements OnInit {
     'Me da rendimientos',
     'Es la opción más liquida',
     'Existen múltiples instrumentos financieros para esta estrategia',
-    'Me producirá mas dinero en el futuro',
+    'Me producirá más dinero en el futuro',
     'Me protege contra la inflación',
   ];
 
@@ -38,7 +38,7 @@ export class FourthquestionComponent implements OnInit {
   answersInvertir = [
     'Existen múltiples instrumentos financieros para esta estrategia',
     'Me da rendimientos',
-    'Me producirá mas dinero en el futuro',
+    'Me producirá más dinero en el futuro',
     'Me protege contra la inflación',
     'Te puedes diversificar',
   ];
