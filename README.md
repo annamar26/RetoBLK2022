@@ -6,6 +6,7 @@
 * [2. Historias de usuario](#2-historias-de-usuario)
 * [3. Prototipos de alta fidelidad](#3-prototipos-de-alta-fidelidad)
 * [4. Deploy del proyecto](#4-deploy-del-proyecto)
+* [4.1 Rendimiento](#4.1-rendimiento)
 * [5. Tecnologías utilizadas](#5-tecnologías-utilizadas)
 * [6. Cocreadoras](#6-cocreadoras)
 
@@ -62,7 +63,7 @@ Para descubir las principales necesidades de nuestros usuarios, realizamos una i
 ![Profile](./blackrock/ReadmeFiles/Profile.jpg "Perfil del usuario")
 ![CoursesPage](./blackrock/ReadmeFiles/Courses_page.jpg "Página de cursos")
 ![UpdateData](./blackrock/ReadmeFiles/Update_data.jpg "Actualización de datos")
-![Footer](./blackrock/ReadmeFiles/Bottom_page.jpg "Footer")
+![Footer](./blackrock/ReadmeFiles/footer.jpg "Footer")
 
 ### Acceso al prototipo en [Figma](https://www.figma.com/file/WuY6svf3tpRThbA9UF7TjM/Reto-BLK?node-id=195%3A62)
 
@@ -70,6 +71,10 @@ Para descubir las principales necesidades de nuestros usuarios, realizamos una i
 Consulta el siguiente enlace para acceder a la página:
 
 https://blackrockchallenge-96045.web.app/
+
+### 4.1 Rendimiento
+Se evaluó el rendimiento con la herramienta ligthhousescore, obteniendo los siguientes resultados: 
+![Rendimiento](./blackrock/ReadmeFiles/rendimiento.png "Rendimiento")
 
 
 ## 5. Tecnologías utilizadas
