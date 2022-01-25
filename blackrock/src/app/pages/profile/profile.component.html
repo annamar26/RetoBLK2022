@@ -1,7 +1,7 @@
 <app-header></app-header>
 <main *ngIf="userEmail | async as user">
 	<div class="admin-data">
-		<h3 class="stats">Descargas estadísticas de los usuarios</h3>
+		<h3 class="stats" (click)='createPdf()'>Descargas estadísticas de los usuarios </h3>
 	</div>
 	<section class="user-info">
 		<div class="back-color-profile">
@@ -27,7 +27,9 @@
 		<h2>{{goal}}</h2>
 	</section>
 	<section class="training">
-		<h3 >Continua con tu entrenamiento</h3>
+
+		<h3 routerLink="/courses">Continúa con tu entrenamiento</h3>
+
 		<div class="grid-courses">
 			<div class="card-general" *ngFor="let course of coursesToShow" routerLink="/courses">
 				<div>

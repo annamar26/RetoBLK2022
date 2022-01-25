@@ -1,31 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap');
-$bg-color: #ffce00;
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap");
+$yellow: #ffce00;
 
 div {
-  background-color: $bg-color;
+  background-color: $yellow;
   height: 100%;
-  padding: 1rem;
+  padding: 83px;
   h1 {
-    margin: 2rem 0rem 2rem 2rem;
+    margin: 0rem 0rem 2rem 2rem;
     font-weight: bold;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: "Noto Sans", sans-serif;
     font-size: 36px;
-    padding-top: 2rem;
+    
   }
   section {
     display: grid;
-    justify-content: center;    
+    justify-content: center;
     padding-top: 1rem;
-    grid-template-columns: repeat(3,450px);
+    grid-template-columns: repeat(3, 450px);
     column-gap: 0.5rem;
     row-gap: 30px;
-    box-sizing:border-box;
     margin: 50px;
     margin-left: 75px !important;
-    
 
-    button{
+    button {
       align-self: center;
       border: none;
       border-radius: 5px;
@@ -35,12 +33,12 @@ div {
       width: 420px;
       height: 210px;
       background-size: cover;
-      background-repeat: no-repeat;      
+      background-repeat: no-repeat;
       color: white;
       padding: 0% 4% 4% 4%;
       font-size: 24px;
       font-family: "Oswald", sans-serif;
-      -webkit-text-stroke: 0.5px black; 
+      -webkit-text-stroke: 0.5px black;
       -webkit-filter: grayscale(100%);
       filter: grayscale(100%);
     }
@@ -49,25 +47,47 @@ div {
       filter: grayscale(0%);
     }
 
-#q1{
-  background-image: url("https://media.giphy.com/media/p5P3aRq6wimsM/giphy.gif");
+    #q1 {
+      background-image: url("https://media.giphy.com/media/p5P3aRq6wimsM/giphy.gif");
+    }
+
+    #q2 {
+      background-image: url("https://media.giphy.com/media/mLzbcLQkufnRMFtDkf/giphy.gif");
+    }
+    #q3 {
+      background-image: url("https://media.giphy.com/media/26tPgV8ceZTSxH9zG/giphy.gif");
+    }
+    #q4 {
+      background-image: url("https://media.giphy.com/media/3o84sqIy1snNtV04SI/giphy.gif");
+    }
+    #q5 {
+      background-image: url("https://media.giphy.com/media/sHI44zFGN1VWw7cjIJ/giphy.gif");
+    }
+  }
 }
 
-#q2{
-  background-image: url("https://media.giphy.com/media/mLzbcLQkufnRMFtDkf/giphy.gif");
-}
-#q3{
-  background-image: url("https://media.giphy.com/media/26tPgV8ceZTSxH9zG/giphy.gif");
-}
-#q4{
-  background-image: url("https://media.giphy.com/media/3o84sqIy1snNtV04SI/giphy.gif");
-}
-#q5{
-  background-image: url("https://media.giphy.com/media/sHI44zFGN1VWw7cjIJ/giphy.gif");
-}
-
-   
-
-   
+@media (max-width: 420px) and (orientation: portrait) {
+  ::ng-deep .mat-horizontal-content-container {
+    overflow: visible !important;
+  }
+  div {
+    background-color: $yellow;
+    justify-content: center;
+    overflow-y: scroll;
+    h1 {
+      margin: 1rem 0rem 2rem 2rem;
+      padding-top: 1rem;
+    }
+    section {
+      display: grid;
+      justify-content: center;
+      padding-top: 1rem;
+      grid-template-columns: repeat(1, 390px);
+      margin-left: 40% !important;
+      button {
+        width: 300px;
+        height: 150px;
+      }
+    }
   }
 }

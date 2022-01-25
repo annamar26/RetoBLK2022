@@ -29,4 +29,7 @@ export class FakeAPIService {
   getLevelData(level: string) {
     return this.http.get(`${ruta}/courses`, { params: { level: level } });
   }
+  getAllUsersData(){
+    return this.http.get(`${ruta}/users`)
+  }
 }

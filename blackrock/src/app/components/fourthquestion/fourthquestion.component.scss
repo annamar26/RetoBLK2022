@@ -2,25 +2,51 @@
 $bg-color: #ffce00;
 .formulario {
   font-family: "Noto Sans", sans-serif;
-  font-weight: bold;
+  font-weight: 700;
   background-color: $bg-color;
-  height: 80vh;
-  display: flex;
+   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+ min-height: 100%;
+  
   h1 {
+    font-family: "Noto Sans", sans-serif;
     margin-top: 60px;
     width: 90%;
-    font-size: 40px;
+    font-size: 24px;
     font-weight: 700;
     margin-bottom: 33px;
   }
   div {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+   height: 100%;
+   
   }
   .example-container {
+    width: 33.3%;
+   justify-content: flex-start !important;
+   #hidden{
+     visibility: hidden;
+     p img{
+       visibility: hidden;
+     }
+   }
+    section{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.8rem;
+      img{
+        width: 5rem;
+        background-color: #FF4713; ;
+      }
+    }
     font-family: "Noto Sans", sans-serif;
     font-weight: bold;
     width: 320px;
@@ -31,7 +57,7 @@ $bg-color: #ffce00;
   }
   .example-list {
     border: none;
-    min-height: 60px;
+    min-height: 300px;
     background: $bg-color;
     border-radius: 4px;
     overflow: hidden;
@@ -39,19 +65,18 @@ $bg-color: #ffce00;
     align-items: center;
   }
   .example-box {
-    padding: 20px 10px;
+padding-bottom: 0.5rem;
     border: none;
     color: rgba(0, 0, 0, 0.87);
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    box-sizing: border-box;
-    cursor: move;
+       box-sizing: border-box;cursor: move;
+
     background-color: #fece00;
     font-size: 14px;
     app-chip {
-      font-size: 24px;
+      font-size: 24px;   
     }
   }
   .cdk-drag-preview {
@@ -83,3 +108,19 @@ $bg-color: #ffce00;
     margin: 0%;
   }
 }
+@media (max-width: 600px)and (orientation: portrait){
+.formulario{
+  overflow-y: scroll;
+}
+.example-list {
+  border: none;
+  min-height: 20px;}
+
+   #hidden{
+     visibility:visible;
+     display: none;
+     p img{
+       visibility: visible;
+       display: none;
+     }
+   }}

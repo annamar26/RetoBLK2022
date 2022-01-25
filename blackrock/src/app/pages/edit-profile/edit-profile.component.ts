@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { FakeAPIService } from 'src/app/services/fake-api.service';
 import { FirebaseService } from 'src/app/services/firebase.service';
@@ -10,7 +11,9 @@ import { FirebaseService } from 'src/app/services/firebase.service';
   styleUrls: ['./edit-profile.component.scss']
 })
 export class EditProfileComponent implements OnInit {
-
+  horizontalPosition: MatSnackBarHorizontalPosition = 'end';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
+  duration: number = 2000
   selectedGender: string ="";
   selectedAge: string ="";
   selectedEducation: string ="";
@@ -54,7 +57,7 @@ export class EditProfileComponent implements OnInit {
     'Posgrado',
   ];
   
-  constructor(private userData: FirebaseService, private apiservice: FakeAPIService, private formBuilder: FormBuilder, private router: Router) { }
+  constructor(private userData: FirebaseService, private apiservice: FakeAPIService, private formBuilder: FormBuilder, private router: Router, private _snackBar: MatSnackBar) { }
   
   ngOnInit(){
     this.getUserData()
@@ -101,7 +104,7 @@ export class EditProfileComponent implements OnInit {
             })
             .subscribe((data) => {
               console.log(data);
-              alert("Datos actualizados")
+              this.editopenSnackBar("Datos actualizados")
             });
         });
       });
@@ -116,5 +119,12 @@ export class EditProfileComponent implements OnInit {
   }
   showEducation(e:any){
     this.education = e
+  }
+  editopenSnackBar(message: string) {
+    this._snackBar.open(message, 'close', {
+      duration: this.duration,
+      verticalPosition: this.verticalPosition,
+      horizontalPosition: this.horizontalPosition,
+    });
   }
 }

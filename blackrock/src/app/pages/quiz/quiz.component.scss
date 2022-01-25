@@ -1,36 +1,92 @@
 $bg-color: #ffce00;
-mat-stepper{
+
+mat-stepper{    
+
+
 	.arrows{
-		height: 10vh;
-		padding: 0 4rem 2rem 0;
+		height: fit-content;		
 	}
+    mat-icon {
+        font-size: 40px;
+        transform: scale(2);
+     }
+
+     ::ng-deep .mat-step-header .mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit {
+        background-color: #FF4713 ;
+        transform: scale(1.5);
+    }
+     
+    ::ng-deep .mat-horizontal-stepper-header-container {
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        height: 3em;
+    }
+
+    button {
+        padding: 0em 6.5em 1.5em 4em;
+        cursor: pointer;
+    }
+    
+    .arrows {
+        background-color: $bg-color;
+        padding: 1.5em;
+        display: flex;
+        justify-content: center;
+    }
+    .finalarrows {
+        background-color: $bg-color;
+        padding: 1.5em;
+        display: flex;
+        justify-content: space-between;
+        #finalBtn{
+            background: #000000;
+            font-size: 1em;
+            letter-spacing: 2px;
+            text-align: center;
+            width: 15rem;
+            font-weight: bold;
+            font-family: "Noto Sans", sans-serif;
+            color: white;
+            border: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+            padding: 0.7rem;
+            cursor: pointer;
+            transition: .3s;             
+            &:hover{
+                animation: pulse 1s infinite;
+                transition: .3s;
+            }
+            @keyframes pulse {
+                0% {
+                  transform: scale(1);
+                }
+                70% {
+                  transform: scale(.9);
+                }
+                  100% {
+                  transform: scale(1);
+                }
+              }
+              .finalarrow {
+                color: #ff4713;
+                transform: scale(0.5)
+              }
+        }
+        #leftarrow{
+            padding: 0em 4em 1.5em 0em;
+        }
+    }
 }
 
-div {
-    background-color: $bg-color;
-    padding: 1.5em;
-    display: flex;
-    justify-content: flex-end;
-}
-mat-icon {
-	font-size: 40px;
-    transform: scale(2);
- }
 
 
 
- ::ng-deep .mat-vertical-stepper-header {
-    height: 0.5em !important;
-}
-
- ::ng-deep .mat-step-header .mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit {
-    background-color: #FF4713 ;
-    transform: scale(1.5);
-}
 
 .mat-vertical-stepper-header .mat-step-icon-state-number {
     transform: scale(1.5) !important;
 }
+
 
 ::ng-deep .mat-stepper-vertical-line::before{
     content: "";
@@ -42,6 +98,18 @@ mat-icon {
 }
 
 ::ng-deep .mat-horizontal-content-container{
-	height: 100vh;
+	height: fit-content;
 	padding: 0 !important;
+}
+
+
+@media (max-width: 600px)and (orientation: portrait){
+    mat-stepper{
+        max-height: fit-content;
+    }
+    .mat-horizontal-content-container {
+        overflow: visible !important;
+        padding: 0 !important;
+    }
+    
 }
