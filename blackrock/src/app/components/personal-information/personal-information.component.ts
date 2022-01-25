@@ -5,7 +5,11 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
+import {
+  MatSnackBar,
+  MatSnackBarHorizontalPosition,
+  MatSnackBarVerticalPosition,
+} from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { FakeAPIService } from 'src/app/services/fake-api.service';
 import { FirebaseService } from 'src/app/services/firebase.service';
@@ -18,7 +22,7 @@ import { FirebaseService } from 'src/app/services/firebase.service';
 export class PersonalInformationComponent implements OnInit {
   horizontalPosition: MatSnackBarHorizontalPosition = 'end';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
-  duration: number = 2000
+  duration: number = 2000;
   nameQuiz: any;
   Sex: any = ['Mujer', 'Hombre'];
   ages: any = [
@@ -72,18 +76,28 @@ export class PersonalInformationComponent implements OnInit {
         this.apiService.getEmailUser(user.email).subscribe((response: any) => {
           console.log(response);
           this.apiService
-            .updateUserData(response[0].id, this.userinfo.value)
+            .updateUserData(response[0].id, {
+              name: this.userinfo.value.name,
+              email: this.userinfo.value.email,
+              cp: this.userinfo.value.cp,
+              education: this.userinfo.value.education,
+              age: this.userinfo.value.age,
+              gender: this.userinfo.value.gender,
+              workfield: this.userinfo.value.workfield,
+              level: response[0].level,
+              doneCourses: response[0].doneCourses,
+              goal: response[0].goal,
+            })
             .subscribe((data) => {
               console.log(data);
               this.router.navigate(['profile']);
-              this.saveDataopenSnackBar('Los datos se han guardado')
+              this.saveDataopenSnackBar('Los datos se han guardado');
             });
         });
       });
     } else {
       return;
     }
-  
   }
 
   inputName() {}
