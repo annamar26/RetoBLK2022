@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap");
 $yellow: #ffce00;
+$pink: #FC9BB3;
 
 div {
-  background-color: $yellow;
+  background-color: $pink;
   height: 100%;
   padding: 83px;
   h1 {
@@ -11,7 +12,7 @@ div {
     font-weight: bold;
     font-family: "Noto Sans", sans-serif;
     font-size: 36px;
-    
+
   }
   section {
     display: grid;
@@ -71,12 +72,14 @@ div {
     overflow: visible !important;
   }
   div {
-    background-color: $yellow;
+    background-color: $pink;
     justify-content: center;
     overflow-y: scroll;
+		padding: 1rem;
     h1 {
       margin: 1rem 0rem 2rem 2rem;
       padding-top: 1rem;
+			font-size: 24px;
     }
     section {
       display: grid;

@@ -9,7 +9,7 @@ $bg-color: #ffce00;
   justify-content: flex-start;
   align-items: center;
  min-height: 100%;
-  
+
   h1 {
     font-family: "Noto Sans", sans-serif;
     margin-top: 60px;
@@ -25,7 +25,7 @@ $bg-color: #ffce00;
     width: 100%;
     flex-wrap: wrap;
    height: 100%;
-   
+
   }
   .example-container {
     width: 33.3%;
@@ -76,7 +76,7 @@ padding-bottom: 0.5rem;
     background-color: #fece00;
     font-size: 14px;
     app-chip {
-      font-size: 24px;   
+      font-size: 24px;
     }
   }
   .cdk-drag-preview {
@@ -111,6 +111,9 @@ padding-bottom: 0.5rem;
 @media (max-width: 600px)and (orientation: portrait){
 .formulario{
   overflow-y: scroll;
+	h1{
+		width: 75%;
+	}
 }
 .example-list {
   border: none;
