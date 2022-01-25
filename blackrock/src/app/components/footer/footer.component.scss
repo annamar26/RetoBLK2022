@@ -5,35 +5,52 @@ $font-color: #000000;
 
 footer {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+/*   justify-content: space-around; */
   align-items: center;
   border-top: 10px solid #000000;
   background-color: #ffffff;
   font-family: "Noto Sans Display", sans-serif;
   color: $font-color;
   font-size: 16px;
-  height: 146px;
-  bottom: 0px;
-  padding: 5%;
-  backdrop-filter: blur(1rem);
+/*   height: 146px; */
+/*   bottom: 0px; */
+/*   backdrop-filter: blur(1rem); */
+	padding: 0 0 3rem;
 
-	p{
-		font: {
-			family: "Noto Sans Display", Sans-serif;
-			weight:300;
-			size: 16px;
-		}
+
+  .terms {
+    display: flex;
+    flex-direction: row;
+		justify-items: flex-start;
+    padding: 4rem 0 3rem 5rem;
+    gap: 5%;
+		width: 90vw;
+    p {
+      font: {
+        family: "Noto Sans Display", Sans-serif;
+        weight: 400;
+        size: 16px;
+      }
+    }
+  }
+
+	div{
+		display: flex;
+		justify-content: center;
 	}
 
-  section {
+
+  /* section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-  }
+  } */
   .iconos {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+
   }
 }

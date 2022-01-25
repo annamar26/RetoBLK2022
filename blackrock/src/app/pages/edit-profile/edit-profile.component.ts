@@ -84,7 +84,6 @@ export class EditProfileComponent implements OnInit {
   }
   getUserData() {
     this.userData.getUser().subscribe((user: any) => {
-      console.log(user.email);
       this.apiservice.getEmailUser(user.email).subscribe((response: any) => {
         this.name = response[0].name;
         this.gender = response[0].gender;
@@ -97,20 +96,17 @@ export class EditProfileComponent implements OnInit {
   }
 
   updateInfo() {
-    console.log(this.userinfo.value);
     this.userData.getUser().subscribe((user: any) => {
-      console.log(user.email);
       this.apiservice.getEmailUser(user.email).subscribe((response: any) => {
-        console.log(response);
         this.apiservice
           .updateUserData(response[0].id, {
             name:
               this.userinfo.value.name === ''
                 ? this.name
                 : this.userinfo.value.name,
-                email: user.email,
+            email: user.email,
             cp: this.userinfo.value.cp === 0 ? this.cp : this.userinfo.value.cp,
-                        education:
+            education:
               this.userinfo.value.education === ''
                 ? this.education
                 : this.userinfo.value.education,
@@ -126,14 +122,12 @@ export class EditProfileComponent implements OnInit {
               this.userinfo.value.ocupation === ''
                 ? this.ocupation
                 : this.userinfo.value.ocupation,
-              
-                level: response[0].level,
-                doneCourses: response[0].doneCourses,
-                goal: response[0].goal,
-               
+
+            level: response[0].level,
+            doneCourses: response[0].doneCourses,
+            goal: response[0].goal,
           })
           .subscribe((data) => {
-            console.log(data);
             this.editopenSnackBar('Datos actualizados');
           });
       });

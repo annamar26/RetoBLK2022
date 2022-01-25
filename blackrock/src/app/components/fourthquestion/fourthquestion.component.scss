@@ -4,11 +4,11 @@ $bg-color: #ffce00;
   font-family: "Noto Sans", sans-serif;
   font-weight: 700;
   background-color: $bg-color;
-   display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
- min-height: 85%;
+  min-height: 85%;
 
   h1 {
     font-family: "Noto Sans", sans-serif;
@@ -24,27 +24,26 @@ $bg-color: #ffce00;
     justify-content: center;
     width: 100%;
     flex-wrap: wrap;
-   height: 100%;
-
+    height: 100%;
   }
   .example-container {
     width: 33.3%;
-   justify-content: flex-start !important;
-   #hidden{
-     visibility: hidden;
-     p img{
-       visibility: hidden;
-     }
-   }
-    section{
+    justify-content: flex-start !important;
+    #hidden {
+      visibility: hidden;
+      p img {
+        visibility: hidden;
+      }
+    }
+    section {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       margin-bottom: 0.8rem;
-      img{
+      img {
         width: 5rem;
-        background-color: #FF4713; ;
+        background-color: #ff4713;
       }
     }
     font-family: "Noto Sans", sans-serif;
@@ -65,13 +64,14 @@ $bg-color: #ffce00;
     align-items: center;
   }
   .example-box {
-padding-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
     border: none;
     color: rgba(0, 0, 0, 0.87);
     display: flex;
     flex-direction: row;
     align-items: center;
-       box-sizing: border-box;cursor: move;
+    box-sizing: border-box;
+    cursor: move;
 
     background-color: #fece00;
     font-size: 14px;
@@ -108,22 +108,26 @@ padding-bottom: 0.5rem;
     margin: 0%;
   }
 }
+
 @media (max-width: 600px)and (orientation: portrait){
 .formulario{
   overflow-y: scroll;
 	h1{
 		width: 75%;
+		font-size: 26px !important;
 	}
 }
 .example-list {
   border: none;
   min-height: 20px;}
 
-   #hidden{
-     visibility:visible;
-     display: none;
-     p img{
-       visibility: visible;
-       display: none;
-     }
-   }}
+
+  #hidden {
+    visibility: visible;
+    display: none;
+    p img {
+      visibility: visible;
+      display: none;
+    }
+  }
+}

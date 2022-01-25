@@ -63,7 +63,6 @@ export class ProfileComponent implements OnInit {
 
   getUserData() {
     this.userData.getUser().subscribe((user: any) => {
-      console.log(user.email);
       this.apiservice.getEmailUser(user.email).subscribe((response: any) => {
         this.userName = response[0].name;
         this.userLevel = response[0].level;
@@ -74,7 +73,6 @@ export class ProfileComponent implements OnInit {
           .getLevelData(this.userLevel)
           .subscribe((response: any) => {
             this.coursesToShow = response;
-            console.log(this.coursesToShow);
           });
       });
     });
@@ -92,7 +90,7 @@ export class ProfileComponent implements OnInit {
       theme: 'grid',
 
       didDrawCell: (data: any) => {
-        console.log(data.column.index);
+        // console.log(data.column.index);
       },
     });
     this.doc.save('tableOfUsers.pdf');
