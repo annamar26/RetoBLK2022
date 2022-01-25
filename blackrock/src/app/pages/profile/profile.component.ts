@@ -3,7 +3,7 @@ import { ThemePalette } from '@angular/material/core';
 import { ProgressBarMode } from '@angular/material/progress-bar';
 import { FakeAPIService } from 'src/app/services/fake-api.service';
 import { FirebaseService } from 'src/app/services/firebase.service';
-import { jsPDF } from 'jspdf';
+//import { jsPDF } from 'jspdf';
 
 @Component({
   selector: 'app-profile',
@@ -21,25 +21,27 @@ export class ProfileComponent implements OnInit {
   leftCourses = 0;
   goal = '';
   coursesToShow = [] as any;
-  doc = new jsPDF({
+  /* doc = new jsPDF({
     orientation: 'p',
     unit: 'mm',
     format: 'a4',
     putOnlyUsedFonts: true,
-  });
+  }); */
 
   constructor(
     private userData: FirebaseService,
     private apiservice: FakeAPIService
-  ) {}
-
+  ) { }
+  columns = ["id", "name", "email", "cp", "education", "age", "gender", "workfield", "level", "doneCourses", "goal"]
+  index = ["id", "name", "email", "cp", "education", "age", "gender", "workfield", "level", "doneCourses", "goal"]
+  tableContent = [] as any
   ngOnInit() {
     this.getUserData();
     console.log(this.userLevel);
 
-    let content = [] as any;
+    //let content = [] as any;
 
-    this.apiservice.getAllUsersData().subscribe((data) => {
+    /* this.apiservice.getAllUsersData().subscribe((data) => {
       content = data;
       let texto = '';
       for (let element of content) {
@@ -58,8 +60,13 @@ export class ProfileComponent implements OnInit {
 //  this.doc.addPage('a4', 'p');
 //       }
       console.log(content);
+    }); */
+    this.apiservice.getAllUsersData().subscribe((responses) => {
+      this.tableContent = responses
     });
   }
+
+
 
   getUserData() {
     this.userData.getUser().subscribe((user: any) => {
@@ -79,7 +86,7 @@ export class ProfileComponent implements OnInit {
       });
     });
   }
-  createPdf() {
+  /* createPdf() {
     this.doc.save('users-data.pdf');
-  }
+  } */
 }
